@@ -1,7 +1,7 @@
 /*
  * File:   main.c
- * Author: jack
- *
+ * Author: Shankar Ramharack
+ * UWI ID: 816019096
  * Created on July 17, 2021, 5:07 PM
  */
 
