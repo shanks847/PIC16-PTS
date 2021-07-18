@@ -20789,7 +20789,9 @@ extern __bank0 __bit __timeout;
 
 
 
-int frequency = 5;
+
+
+
 
 void Initialize(void)
 {
@@ -20828,17 +20830,15 @@ void send_string(char* st_pt){
     while(*st_pt)
         send_char(*st_pt++);
 }
-
-
+# 212 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
 void main(void){
-
-    ANSELD = 0x00;
-    TRISD = 0x00;
-    RD7=1;
+# 238 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     Initialize();
 
     send_string("----------------left----------------");
-    send_char(10);
+
+
+
 
     return;
 }

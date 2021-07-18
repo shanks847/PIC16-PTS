@@ -3,13 +3,13 @@
 [d edition pro ]
 [d chip 16F18877 ]
 [d frameptr 6 ]
-"39 C:/Users/rocke/Desktop/PIC16-PTS/main.c
+"41 C:/Users/rocke/Desktop/PIC16-PTS/main.c
 [v _Initialize Initialize `(v  1 e 1 0 ]
-"67
+"69
 [v _send_char send_char `(v  1 e 1 0 ]
-"72
+"74
 [v _send_string send_string `(v  1 e 1 0 ]
-"78
+"212
 [v _main main `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
@@ -55,8 +55,6 @@
 "818
 [u S53 . 1 `S44 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES53  1 e 1 @19 ]
-"863
-[v _TRISD TRISD `VEuc  1 e 1 @20 ]
 "3828
 [v _TXREG TXREG `VEuc  1 e 1 @282 ]
 "3880
@@ -115,36 +113,32 @@
 "34176
 "34176
 [v _ANSELBbits ANSELBbits `VES140  1 e 1 @8003 ]
-"35399
-[v _ANSELD ANSELD `VEuc  1 e 1 @8025 ]
-"41830
-"41830
-[v _RD7 RD7 `VEb  1 e 0 @127 ]
+"43147
 "43147
 [v _SPEN SPEN `VEb  1 e 0 @2287 ]
 "44485
 [v _TXIF TXIF `VEb  1 e 0 @14460 ]
-"78 C:/Users/rocke/Desktop/PIC16-PTS/main.c
+"212 C:/Users/rocke/Desktop/PIC16-PTS/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"89
+"246
 } 0
-"72
+"74
 [v _send_string send_string `(v  1 e 1 0 ]
 {
 [v send_string@st_pt st_pt `*.25uc  1 p 2 1 ]
-"75
+"77
 } 0
-"67
+"69
 [v _send_char send_char `(v  1 e 1 0 ]
 {
 [v send_char@word word `uc  1 a 1 wreg ]
 [v send_char@word word `uc  1 a 1 wreg ]
 [v send_char@word word `uc  1 a 1 0 ]
-"70
+"72
 } 0
-"39
+"41
 [v _Initialize Initialize `(v  1 e 1 0 ]
 {
-"65
+"67
 } 0
