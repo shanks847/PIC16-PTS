@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\PIC16-PTS.production.sym \
   --cmf=dist/default/production\PIC16-PTS.production.cmf -z -Q16F18877 \
-  -oC:\Users\rocke\AppData\Local\Temp\xcAslus.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\rocke\AppData\Local\Temp\xcAsqus.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/PIC16-PTS.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=02000h-02FEFh -pstack=STACK -ACODE=00h-07FFhx16 \
   -ASTRCODE=00h-07FFFh -ASTRING=00h-0FFhx128 -ACONST=00h-0FFhx128 \
@@ -54,7 +54,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\rocke\AppData\Local\Temp\xcAslus.o \
+  -pfunctab=ENTRY -k C:\Users\rocke\AppData\Local\Temp\xcAsqus.o \
   dist/default/production\PIC16-PTS.production.o 
 
 Object code version is 3.11
@@ -64,7 +64,7 @@ Machine type is 16F18877
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\rocke\AppData\Local\Temp\xcAslus.o
+C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
@@ -76,7 +76,7 @@ dist/default/production\PIC16-PTS.production.o
                 text1                               7C9      7C9       17      F92       0
                 maintext                            7BD      7BD        C      F7A       0
                 cstackCOMMON                         70       70        4       70       1
-                stringtext1                         800      800       25     1000       0
+                stringtext1                         800      800       20     1000       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -91,7 +91,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 maintext                            7BD      7BD        C         0
 
         CLASS   STRCODE        
-                stringtext1                         800      800       25         0
+                stringtext1                         800      800       20         0
 
         CLASS   STRING         
 
@@ -383,7 +383,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text1                          0007C9  000017  0007E0       F92       0  CODE        2
                 text3                          0007E0  00001D  0007FD       FC0       0  CODE        2
                 cinit                          0007FD  000003  000800       FFA       0  CODE        2
-                stringtext1                    000800  000025  000825      1000       0  STRCODE     2
+                stringtext1                    000800  000020  000820      1000       0  STRCODE     2
 
 
 UNUSED ADDRESS RANGES
@@ -442,13 +442,13 @@ UNUSED ADDRESS RANGES
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-02FEF             FF0           1
         CODE             00004-007B2             7AF           2
-                         00825-07FFF             800
+                         00820-07FFF             800
         COMMON           00074-0007D               A           1
         CONST            00004-007B2             100           2
-                         00825-07FFF             100
+                         00820-07FFF             100
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00004-007B2             100           2
-                         00825-07FFF             100
+                         00820-07FFF             100
         IDLOC            08000-08003               4           2
         RAM              00020-0006F              50           1
                          000A0-000EF              50
@@ -567,9 +567,9 @@ UNUSED ADDRESS RANGES
         SFR9             00480-0049F              20           1
         STACK            02000-02FEF             FF0           1
         STRCODE          00004-007B2             7AF           2
-                         00825-07FFF            77DB
+                         00820-07FFF            77E0
         STRING           00004-007B2             100           2
-                         00825-07FFF             100
+                         00820-07FFF             100
 
                                   Symbol Table
 
@@ -732,7 +732,7 @@ __Hsfr63                 sfr63        00000
 __Hsfr7                  sfr7         00000
 __Hsfr8                  sfr8         00000
 __Hsfr9                  sfr9         00000
-__Hspace_0               (abs)        00825
+__Hspace_0               (abs)        00820
 __Hspace_1               (abs)        00074
 __Hspace_2               (abs)        00000
 __Hspace_3               (abs)        00000
@@ -897,7 +897,7 @@ __Lstrings               strings      00000
 __Lstringtext1           stringtext1  00000
 __Lstringtext2           stringtext2  00000
 __Ltext                  text         00000
-__S0                     (abs)        00825
+__S0                     (abs)        00820
 __S1                     (abs)        00074
 __S2                     (abs)        00000
 __S3                     (abs)        00000

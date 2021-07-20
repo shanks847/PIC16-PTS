@@ -9,7 +9,7 @@
 [v _send_char send_char `(v  1 e 1 0 ]
 "74
 [v _send_string send_string `(v  1 e 1 0 ]
-"212
+"269
 [v _main main `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
@@ -118,10 +118,10 @@
 [v _SPEN SPEN `VEb  1 e 0 @2287 ]
 "44485
 [v _TXIF TXIF `VEb  1 e 0 @14460 ]
-"212 C:/Users/rocke/Desktop/PIC16-PTS/main.c
+"269 C:/Users/rocke/Desktop/PIC16-PTS/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"246
+"302
 } 0
 "74
 [v _send_string send_string `(v  1 e 1 0 ]

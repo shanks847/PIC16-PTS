@@ -20830,12 +20830,11 @@ void send_string(char* st_pt){
     while(*st_pt)
         send_char(*st_pt++);
 }
-# 212 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 269 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
 void main(void){
-# 238 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 295 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     Initialize();
-
-    send_string("----------------left----------------");
+    send_string("[!]Serial Connection successful");
 
 
 

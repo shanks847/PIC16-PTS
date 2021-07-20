@@ -1,4 +1,4 @@
-
+//Pic16f877 
 #include <xc.h>
 #include <pic.h>
 #define _XTAL_FREQ   20000000 

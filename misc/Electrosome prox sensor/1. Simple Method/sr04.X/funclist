@@ -1,0 +1,18 @@
+_Lcd_Write_String: CODE, 798 0 34
+___awdiv: CODE, 1132 0 91
+_Lcd_Init: CODE, 1041 0 91
+__stringtab: STRING, 3 0 6
+__stringdata: STRING, 9 0 53
+_Lcd_Write_Char: CODE, 832 0 57
+___ftpack: CODE, 1223 0 104
+___awmod: CODE, 964 0 77
+_main: CODE, 1653 0 391
+_Lcd_Cmd: CODE, 739 0 26
+__initialization: CODE, 2044 0 0
+_Lcd_Set_Cursor: CODE, 889 0 75
+_Lcd_Clear: CODE, 702 0 11
+___awtoft: CODE, 765 0 33
+_Lcd_Port: CODE, 713 0 26
+___fttol: CODE, 1327 0 142
+___ftdiv: CODE, 1469 0 184
+Total: 1401

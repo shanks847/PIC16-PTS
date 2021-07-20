@@ -209,6 +209,139 @@ void LCD_SR()
 }
 */
 
+
+/* ===========================
+ * ULTRASONIC DISTANCE SENSOR
+ * ============================
+ * 
+ * 
+ * MODIFY CODE TO USE IOC ON RB4
+ * 
+ * 
+ * void main(void){
+
+    send_string("[!]Serial Connection successful");
+    
+    int a;
+
+    TRISB = 0b00010000;           //RB4 as Input PIN (ECHO)
+
+
+    T1CON = 0x10;                 //Initialize Timer Module
+
+     while(1)
+  {
+    TMR1H = 0;                  //Sets the Initial Value of Timer
+    TMR1L = 0;                  //Sets the Initial Value of Timer
+
+    RB0 = 1;               //TRIGGER HIGH
+    __delay_us(10);               //10uS Delay
+    RB0 = 0;               //TRIGGER LOW
+    
+    while(!RB4);           //Waiting for Echo
+    TMR1ON = 1;               //Timer Starts
+    while(RB4);            //Waiting for Echo goes LOW
+    TMR1ON = 0;               //Timer Stops
+
+    a = (TMR1L | (TMR1H<<8));   //Reads Timer Value
+    a = a*0.068;                //Converts Time to Distance
+    //a = a + 1;
+    
+    //Distance Calibration
+    if(a>=2 && a<=400)          //Check whether the result is valid or not
+    {
+        send_string("In range");
+    }
+    else
+    {
+      send_string("Out of Range");
+    }
+    __delay_ms(400);
+  }
+    
+    return;
+}
+
+ * 
+ */
+
+
+
+/*
+ * =================
+ * ORIENTATION LUT
+ * =================
+ */
+
+#define LDRI0       RA0
+#define LDRI1       RA1
+
+char* angle;
+void calcAngle()
+{
+
+    //1)Poll pins RA0 and RA1
+    
+    if(LDRI0 == 1 && LDRI1 == 0)
+    {
+        //90 deg
+        angle = "90";
+    }
+    else if(LDRI0 == 1 && LDRI1 == 1)
+    {
+        //180 deg
+        angle = "180";
+    }
+    else if(LDRI0 == 0 && LDRI1 == 1)
+    {
+        //270deg
+        angle = "270";
+    }
+    else
+    {
+        //0 or 360deg or error
+        angle = "0";   
+    }
+}
+
+/*
+ * =====================
+ * PWM BLDC FAN CONTROL
+ * ======================
+ * 
+ * TODO: MODIFY CODE TO WORK WITH MY PIC AND ADJUST TMR2 VALUE
+ */
+
+#define s1           RA0
+#define s2           RA1
+#define s3           RA2
+#define s4           RA3
+#define s5           RA4
+#define s6           RA5
+
+
+
+void rundutycycle(unsigned int dutycyc){
+    T2CON = 0x01;           // Set Prescaler to be 4, hence PWM frequency is set to 4.88KHz.
+    T2CON |= 0x04;          // Enable the Timer2, hence enable the PWM. 
+                            // the |= sets the bits ref xc8 mannual for info
+
+    while(1){
+        CCPR1L   = dutycyc>>2;                  // Put MSB 8 bits in CCPR1L
+        CCP1CON &= 0xCF;                        // Make bit4 and 5 zero
+        CCP1CON |= (0x30&(dutycyc<<4));         // Assign Last 2 LSBs to CCP1CON
+        if(s1==1){dutycyc=172; }
+        if(s2==1){dutycyc=342; }
+        if(s3==1){dutycyc=512; }
+        if(s4==1){dutycyc=686; }
+        if(s5==1){dutycyc=858; }
+        if(s6==1){dutycyc=1020; }
+        dutycyc=dutycyc;
+    }
+}
+
+
+
 void main(void){
        
     //ANSELD = 0x00;
@@ -236,10 +369,7 @@ void main(void){
     */
     //Configuring EUSART for transmission
     Initialize();    
-       
-    send_string("----------------left----------------");
-    //send_char(10);
-    
+    send_string("[!]Serial Connection successful");
     
     
     return;
