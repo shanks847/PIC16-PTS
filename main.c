@@ -6,75 +6,89 @@
  */
 
 
-#pragma config FEXTOSC = XT     
-#pragma config RSTOSC = EXT1X   
-#pragma config CLKOUTEN = OFF  
-#pragma config CSWEN = OFF      
-#pragma config FCMEN = OFF     
-#pragma config MCLRE = ON       
-#pragma config PWRTE = OFF      
-#pragma config LPBOREN = OFF    
-#pragma config BOREN = OFF     
-#pragma config BORV = LO        
-#pragma config ZCD = OFF       
-#pragma config PPS1WAY = OFF    
-#pragma config STVREN = ON      
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF      
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC      
-#pragma config WRT = OFF        
-#pragma config SCANE = not_available
-#pragma config LVP = ON      
-#pragma config CP = OFF         
-#pragma config CPD = OFF       
+// CONFIG1
+#pragma config FEXTOSC = XT    // External Oscillator mode selection bits->XT (crystal oscillator) above 500kHz, below 4MHz; PFM set to medium power
+#pragma config RSTOSC = EXT1X    // Power-up default value for COSC bits->EXTOSC operating per FEXTOSC bits
+#pragma config CLKOUTEN = OFF    // Clock Out Enable bit->CLKOUT function is disabled; i/o or oscillator function on OSC2
+#pragma config CSWEN = ON    // Clock Switch Enable bit->Writing to NOSC and NDIV is allowed
+#pragma config FCMEN = ON    // Fail-Safe Clock Monitor Enable bit->FSCM timer enabled
+
+// CONFIG2
+#pragma config MCLRE = ON    // Master Clear Enable bit->MCLR pin is Master Clear function
+#pragma config PWRTE = OFF    // Power-up Timer Enable bit->PWRT disabled
+#pragma config LPBOREN = OFF    // Low-Power BOR enable bit->ULPBOR disabled
+#pragma config BOREN = ON    // Brown-out reset enable bits->Brown-out Reset Enabled, SBOREN bit is ignored
+#pragma config BORV = LO    // Brown-out Reset Voltage Selection->Brown-out Reset Voltage (VBOR) set to 1.9V on LF, and 2.45V on F Devices
+#pragma config ZCD = OFF    // Zero-cross detect disable->Zero-cross detect circuit is disabled at POR.
+#pragma config PPS1WAY = ON    // Peripheral Pin Select one-way control->The PPSLOCK bit can be cleared and set only once in software
+#pragma config STVREN = ON    // Stack Overflow/Underflow Reset Enable bit->Stack Overflow or Underflow will cause a reset
+#pragma config DEBUG = OFF    // Background Debugger->Background Debugger disabled
+
+// CONFIG3
+#pragma config WDTCPS = WDTCPS_31    // WDT Period Select bits->Divider ratio 1:65536; software control of WDTPS
+#pragma config WDTE = OFF    // WDT operating mode->WDT Disabled, SWDTEN is ignored
+#pragma config WDTCWS = WDTCWS_7    // WDT Window Select bits->window always open (100%); software control; keyed access not required
+#pragma config WDTCCS = SC    // WDT input clock selector->Software Control
+
+// CONFIG4
+#pragma config WRT = OFF    // UserNVM self-write protection bits->Write protection off
+#pragma config SCANE = available    // Scanner Enable bit->Scanner module is available for use
+#pragma config LVP = ON    // Low Voltage Programming Enable bit->Low Voltage programming enabled. MCLR/Vpp pin function is MCLR.
+
+// CONFIG5
+#pragma config CP = OFF    // UserNVM Program memory code protection bit->Program Memory code protection disabled
+#pragma config CPD = OFF    // DataNVM code protection bit->Data EEPROM code protection disabled
+
 
 
 #include <xc.h>
+#include <stdbool.h>
+#include <stdint.h>
+
+
 #define _XTAL_FREQ 2000000
-#define Baud_rate 9600
+#define Baud_rate 1200
 
 /* =======|
  * EUSART |
  * =======|
  */
-void Initialize(void)
+
+
+
+void EUSART_Initialize(void)
 {
-    RB4PPS = 0x10;
-
-    TX1STAbits.TXEN = 1;
-    TX1STAbits.TX9 = 0;
-    TX1STAbits.SYNC = 0;
-    TRISCbits.TRISC6 = 0;
-
-    RC1STAbits.CREN = 1;
-    RC1STAbits.RX9 = 0;
-    TRISCbits.TRISC7 = 1;
-
-    SP1BRGH = 0x00;
-    SP1BRGL = 0x32;
-    TX1STAbits.BRGH = 1;
-    BAUD1CONbits.BRG16 = 1;
-
-    RC1STAbits.SPEN = 1;
+    TRISCbits.TRISC6 = 0;   // configuring pin 6 on port c as output
+    ANSELCbits.ANSC6 = 0;   // configuring pin 6 on port c as digital output
+    RC6PPS = 0x10;          // configuring pin 6 on port c for 
+                            // serial transmission(TX)
+    SP1BRGH = 0x00;         // setting lower reg to 0 
+    SP1BRGL = 0b00011001;   // Setting baud rate of 1200
+    BAUD1CONbits.BRG16 = 0; // configuring BRG for 8-bit mode
     
-    SPEN  = 1;
+    TX1STAbits.BRGH = 0;    // configures BRG for low baud rate
+    TX1STAbits.SYNC = 0;    // configures EUSART for async. transmission
     
-    TRISBbits.TRISB1=0;
-    ANSELBbits.ANSB1=0;
-    PORTBbits.RB1=1;
+    RC1STAbits.SPEN = 1;    // enables serial port
     
+    TX1STAbits.TXEN = 1;    // enables serial transmission
+    TX1STAbits.TX9 = 0;     // disables 9 bit transmission
+    
+
 }
+
 
 void send_char(char word){
     while(!TXIF);
     TXREG = word;
 }
 
-void send_string(char* st_pt){
+void send_string(char* st_pt)
+{
     while(*st_pt)
         send_char(*st_pt++);
 }
+
 
 /* =========|
  * LCD      |
@@ -83,8 +97,8 @@ void send_string(char* st_pt){
 
 #define LCD_EN_Delay 500
 #define LCD_DATA_PORT_D TRISD
-#define LCD_RS_D TRISD5 // TRISX are used for configuring port for I or O
-#define LCD_EN_D TRISD4
+#define LCD_RS_D TRISD0 // TRISX are used for configuring port for I or O
+#define LCD_EN_D TRISD1
 #define RS RD0
 #define EN RD1
 #define D4 RD4
@@ -312,51 +326,46 @@ void calcAngle()
  * TODO: MODIFY CODE TO WORK WITH MY PIC AND ADJUST TMR2 VALUE
  */
 
-#define s1           RA0
-#define s2           RA1
-#define s3           RA2
-#define s4           RA3
-#define s5           RA4
-#define s6           RA5
-
+#define DPSW0           RC2
+#define DPSW1           RC3
 
 
 void rundutycycle(unsigned int dutycyc){
+    
+    //This needs to be modified to work, ref Lab Script #2 from ECNG LAB III
+    
     T2CON = 0x01;           // Set Prescaler to be 4, hence PWM frequency is set to 4.88KHz.
     T2CON |= 0x04;          // Enable the Timer2, hence enable the PWM. 
-                            // the |= sets the bits ref xc8 mannual for info
+                            // the |= sets the bits, ref xc8 mannual for info
 
     while(1){
         CCPR1L   = dutycyc>>2;                  // Put MSB 8 bits in CCPR1L
         CCP1CON &= 0xCF;                        // Make bit4 and 5 zero
         CCP1CON |= (0x30&(dutycyc<<4));         // Assign Last 2 LSBs to CCP1CON
-        if(s1==1){dutycyc=172; }
-        if(s2==1){dutycyc=342; }
-        if(s3==1){dutycyc=512; }
-        if(s4==1){dutycyc=686; }
-        if(s5==1){dutycyc=858; }
-        if(s6==1){dutycyc=1020; }
-        dutycyc=dutycyc;
+        if(DPSW0==1 && DPSW0==0){dutycyc=172; }
+        else if(DPSW1==1 && DPSW0==1){dutycyc=512; }
+        else if(DPSW1==0 && DPSW0==1){dutycyc=858; }
+        else {dutycyc=1020;}
+
+        dutycyc=dutycyc; //is this line necessary?
     }
 }
+
+//char data;
+//
+//void send_string(const char *x)
+//{
+//    while(*x)
+//    {
+//        EUSART_Write(*x++);
+//    }
+//}
 
 
 
 void main(void){
        
-    //ANSELD = 0x00;
-    //TRISD = 0x00;
-    //RD7=1;
-    
-    
-//    LCD_Init();
-//    LCD_Clear();
-//    LCD_Set_Cursor(1,1);
-//    LCD_Write_String("Hello World\0");
-//    while(1)
-//    {
-//      
-//    }
+ 
     
     
     
@@ -368,8 +377,26 @@ void main(void){
      
     */
     //Configuring EUSART for transmission
-    Initialize();    
-    send_string("[!]Serial Connection successful");
+    //Initialize();  
+    //PIN_MANAGER_Initialize();
+    EUSART_Initialize();
+    //Initialize();
+    send_string("[*]Serial Connection successful");
+    //send_char('U');
+    while(1){}
+    
+    //while(1){}
+   
+    
+    
+    //ADCON1=0x06;             //All pins as digital
+    //TRISA=0b111111;          //PortA as Input
+    //TRISC2  = 0;             //Make CCP1 pin as output
+    //CCP1CON = 0x0C;          //Configure CCP1 module in PWM mode
+    //PR2   = 0xFF;            //Configure the Timer2 period
+    //rundutycycle(512);
+    
+    
     
     
     return;

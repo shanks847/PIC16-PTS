@@ -12,15 +12,19 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\PIC16-PTS.production.o
-cinit CODE 0 7FD 7FD 3 2
-text1 CODE 0 7C9 7C9 17 2
-text2 CODE 0 7B3 7B3 A 2
-text3 CODE 0 7E0 7E0 1D 2
-maintext CODE 0 7BD 7BD C 2
+cinit CODE 0 7FB 7FB 5 2
+text1 CODE 0 7E4 7E4 17 2
+text2 CODE 0 7BC 7BC A 2
+text3 CODE 0 7D3 7D3 11 2
+maintext CODE 0 7C6 7C6 D 2
 cstackCOMMON COMMON 1 70 70 4 1
 stringtext1 STRCODE 0 800 800 20 2
+stringtext2 STRCODE 0 820 820 4 2
+stringtext3 STRCODE 0 824 824 4 2
+stringtext4 STRCODE 0 828 828 3 2
+bssCOMMON COMMON 1 74 74 2 1
 config CONFIG 4 8007 8007 5 2
-$C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
+$C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 4 8007 8007 5 2
@@ -91,10 +95,10 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 4-7B2 2
-CONST 820-7FFF 2
-ENTRY 4-7B2 2
-ENTRY 820-7FFF 2
+CONST 4-7BB 2
+CONST 82B-7FFF 2
+ENTRY 4-7BB 2
+ENTRY 82B-7FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -151,8 +155,8 @@ SFR61 1E80-1EEF 1
 SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
 STACK 2000-2FEF 1
-CODE 4-7B2 2
-CODE 820-7FFF 2
+CODE 4-7BB 2
+CODE 82B-7FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -205,12 +209,12 @@ BANK48 1820-186F 1
 BANK49 18A0-18EF 1
 BANK50 1920-196F 1
 BIGRAM 2000-2FEF 1
-COMMON 74-7D 1
+COMMON 76-7D 1
 EEDATA F000-F0FF 2
-STRCODE 4-7B2 2
-STRCODE 820-7FFF 2
-STRING 4-7B2 2
-STRING 820-7FFF 2
+STRCODE 4-7BB 2
+STRCODE 82B-7FFF 2
+STRING 4-7BB 2
+STRING 82B-7FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -225,43 +229,39 @@ STRING 820-7FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC16-PTS.production.o
-7FD cinit CODE >2377:C:\Users\rocke\AppData\Local\Temp\xcAsqus.s
-7FD cinit CODE >2380:C:\Users\rocke\AppData\Local\Temp\xcAsqus.s
-7FD cinit CODE >2386:C:\Users\rocke\AppData\Local\Temp\xcAsqus.s
-7FD cinit CODE >2388:C:\Users\rocke\AppData\Local\Temp\xcAsqus.s
-7FE cinit CODE >2389:C:\Users\rocke\AppData\Local\Temp\xcAsqus.s
-7E0 text3 CODE >41:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7E0 text3 CODE >43:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7E3 text3 CODE >45:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7E5 text3 CODE >46:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7E6 text3 CODE >47:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7E7 text3 CODE >48:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7E9 text3 CODE >50:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7EB text3 CODE >51:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7EC text3 CODE >52:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7EE text3 CODE >54:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F0 text3 CODE >55:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F2 text3 CODE >56:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F3 text3 CODE >57:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F4 text3 CODE >59:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F5 text3 CODE >61:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F6 text3 CODE >63:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F8 text3 CODE >64:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7FA text3 CODE >65:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7FC text3 CODE >67:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7B3 text2 CODE >69:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7B4 text2 CODE >70:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7B9 text2 CODE >71:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7BC text2 CODE >72:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7C9 text1 CODE >74:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7C9 text1 CODE >75:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7CA text1 CODE >76:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7D6 text1 CODE >75:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7DF text1 CODE >77:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7BD maintext CODE >269:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7BD maintext CODE >295:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7C0 maintext CODE >296:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7C7 maintext CODE >302:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7FB cinit CODE >2414:C:\Users\rocke\AppData\Local\Temp\xcAsiko.s
+7FB cinit CODE >2417:C:\Users\rocke\AppData\Local\Temp\xcAsiko.s
+7FB cinit CODE >2429:C:\Users\rocke\AppData\Local\Temp\xcAsiko.s
+7FC cinit CODE >2430:C:\Users\rocke\AppData\Local\Temp\xcAsiko.s
+7FD cinit CODE >2436:C:\Users\rocke\AppData\Local\Temp\xcAsiko.s
+7FD cinit CODE >2438:C:\Users\rocke\AppData\Local\Temp\xcAsiko.s
+7FE cinit CODE >2439:C:\Users\rocke\AppData\Local\Temp\xcAsiko.s
+7D3 text3 CODE >59:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7D3 text3 CODE >61:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7D5 text3 CODE >62:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7D7 text3 CODE >63:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7D9 text3 CODE >65:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7DB text3 CODE >66:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7DD text3 CODE >67:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7DE text3 CODE >69:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7DF text3 CODE >70:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E0 text3 CODE >72:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E1 text3 CODE >74:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E2 text3 CODE >75:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E3 text3 CODE >78:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7BC text2 CODE >81:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7BD text2 CODE >82:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7C2 text2 CODE >83:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7C5 text2 CODE >84:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E4 text1 CODE >86:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E4 text1 CODE >88:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E5 text1 CODE >89:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7F1 text1 CODE >88:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7FA text1 CODE >90:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7C6 maintext CODE >366:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7C6 maintext CODE >382:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7C9 maintext CODE >384:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7D0 maintext CODE >386:C:/Users/rocke/Desktop/PIC16-PTS/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -275,46 +275,48 @@ $dist/default/production\PIC16-PTS.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 4 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-_send_string F92 0 CODE 0 text1 dist/default/production\PIC16-PTS.production.o
-__Hspace_0 820 0 ABS 0 - -
-__Hspace_1 74 0 ABS 0 - -
+_send_string FC8 0 CODE 0 text1 dist/default/production\PIC16-PTS.production.o
+__Hspace_0 82B 0 ABS 0 - -
+__Hspace_1 76 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10013 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-_SPEN 8EF 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 _TXIF 387C 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-___sp 0 0 STACK 2 stack C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-_main F7A 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
+___sp 0 0 STACK 2 stack C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+_main F8C 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-start 4 0 CODE 0 init C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
+start 4 0 CODE 0 init C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
 __size_of_main 0 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_EUSART_Initialize FC8 0 CODE 0 text3 dist/default/production\PIC16-PTS.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 send_string@st_pt 71 0 COMMON 1 cstackCOMMON dist/default/production\PIC16-PTS.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 _RC1STAbits 11D 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_send_char F7A 0 CODE 0 text2 dist/default/production\PIC16-PTS.production.o
+__end_of_send_char F8C 0 CODE 0 text2 dist/default/production\PIC16-PTS.production.o
+_CCPR1L 30C 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 __size_of_send_char 0 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-_send_char F66 0 CODE 0 text2 dist/default/production\PIC16-PTS.production.o
-___stackhi 2FEF 0 ABS 0 - C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-___stacklo 2000 0 ABS 0 - C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-start_initialization FFA 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
-_TRISBbits 12 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_send_char F78 0 CODE 0 text2 dist/default/production\PIC16-PTS.production.o
+___stackhi 2FEF 0 ABS 0 - C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+___stacklo 2000 0 ABS 0 - C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+_EUSART_Initialize FA6 0 CODE 0 text3 dist/default/production\PIC16-PTS.production.o
+start_initialization FF6 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
 _TRISCbits 13 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-_RB4PPS 1F1C 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-_Initialize FC0 0 CODE 0 text3 dist/default/production\PIC16-PTS.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
-__end_of_send_string FC0 0 CODE 0 text1 dist/default/production\PIC16-PTS.production.o
+_RC6PPS 1F26 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
+__end_of_send_string FF6 0 CODE 0 text1 dist/default/production\PIC16-PTS.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -449,7 +451,7 @@ __Lbank6 0 0 ABS 0 bank6 -
 __Lbank7 0 0 ABS 0 bank7 -
 __Lbank8 0 0 ABS 0 bank8 -
 __Lbank9 0 0 ABS 0 bank9 -
-__Lcinit FFA 0 CODE 0 cinit -
+__Lcinit FF6 0 CODE 0 cinit -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -505,7 +507,6 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
-_PORTBbits D 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -535,17 +536,26 @@ __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
 __pstringtext1 1000 0 STRCODE 0 stringtext1 dist/default/production\PIC16-PTS.production.o
-__pstringtext2 0 0 STRCODE 0 stringtext2 dist/default/production\PIC16-PTS.production.o
+__pstringtext2 1040 0 STRCODE 0 stringtext2 dist/default/production\PIC16-PTS.production.o
+__pstringtext3 1048 0 STRCODE 0 stringtext3 dist/default/production\PIC16-PTS.production.o
+__pstringtext4 1050 0 STRCODE 0 stringtext4 dist/default/production\PIC16-PTS.production.o
+__pstringtext5 0 0 STRCODE 0 stringtext5 dist/default/production\PIC16-PTS.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 820 0 ABS 0 - -
-__S1 74 0 ABS 0 - -
+_RA0 60 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_RA1 61 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_RC2 72 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_RC3 73 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+__S0 82B 0 ABS 0 - -
+__S1 76 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-__end_of_Initialize FFA 0 CODE 0 text3 dist/default/production\PIC16-PTS.production.o
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\rocke\AppData\Local\Temp\xcAsqus.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\rocke\AppData\Local\Temp\xcAsiko.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 __Lstringtext2 0 0 ABS 0 stringtext2 -
+__Lstringtext3 0 0 ABS 0 stringtext3 -
+__Lstringtext4 0 0 ABS 0 stringtext4 -
+__Lstringtext5 0 0 ABS 0 stringtext5 -
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -600,7 +610,7 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext F7A 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
+__pmaintext F8C 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
@@ -610,6 +620,7 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
+__pbssCOMMON 74 0 COMMON 1 bssCOMMON dist/default/production\PIC16-PTS.production.o
 __Lend_init 4 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
@@ -618,29 +629,35 @@ _TX1STAbits 11E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 _BAUD1CONbits 11F 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-__ptext1 F92 0 CODE 0 text1 dist/default/production\PIC16-PTS.production.o
-__ptext2 F66 0 CODE 0 text2 dist/default/production\PIC16-PTS.production.o
-__ptext3 FC0 0 CODE 0 text3 dist/default/production\PIC16-PTS.production.o
+__ptext1 FC8 0 CODE 0 text1 dist/default/production\PIC16-PTS.production.o
+__ptext2 F78 0 CODE 0 text2 dist/default/production\PIC16-PTS.production.o
+__ptext3 FA6 0 CODE 0 text3 dist/default/production\PIC16-PTS.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
-__size_of_Initialize 0 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+__Hstringtext3 0 0 ABS 0 stringtext3 -
+__Hstringtext4 0 0 ABS 0 stringtext4 -
+__Hstringtext5 0 0 ABS 0 stringtext5 -
 __end_of__initialization FFA 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 _SP1BRGH 11C 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 _SP1BRGL 11B 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 send_char@word 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC16-PTS.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
+__size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC16-PTS.production.o
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_main F92 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
+__end_of_main FA6 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
+_T2CON 28E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 _TXREG 11A 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__initialization FFA 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
-_ANSELBbits 1F43 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_angle 74 0 COMMON 1 bssCOMMON dist/default/production\PIC16-PTS.production.o
+_CCP1CON 30E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+__initialization FF6 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
+_ANSELCbits 1F4E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -666,13 +683,13 @@ _ANSELBbits 1F43 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7FD FFA 3 2
-text1 0 7C9 F92 17 2
-text2 0 7B3 F66 A 2
-text3 0 7E0 FC0 1D 2
-maintext 0 7BD F7A C 2
-cstackCOMMON 1 70 70 4 1
-stringtext1 0 800 1000 20 2
+cinit 0 7FB FF6 5 2
+text1 0 7E4 FC8 17 2
+text2 0 7BC F78 A 2
+text3 0 7D3 FA6 11 2
+maintext 0 7C6 F8C D 2
+cstackCOMMON 1 70 70 6 1
+stringtext1 0 800 1000 2B 2
 reset_vec 0 0 0 4 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

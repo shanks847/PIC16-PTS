@@ -7,36 +7,39 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "C:/Users/rocke/Desktop/PIC16-PTS/main.c" 2
-
-
-
-
-
-
-
-
+# 10 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
 #pragma config FEXTOSC = XT
 #pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
-#pragma config CSWEN = OFF
-#pragma config FCMEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
 #pragma config MCLRE = ON
 #pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
+#pragma config BOREN = ON
 #pragma config BORV = LO
 #pragma config ZCD = OFF
-#pragma config PPS1WAY = OFF
+#pragma config PPS1WAY = ON
 #pragma config STVREN = ON
+#pragma config DEBUG = OFF
+
+
 #pragma config WDTCPS = WDTCPS_31
 #pragma config WDTE = OFF
 #pragma config WDTCWS = WDTCWS_7
 #pragma config WDTCCS = SC
+
+
 #pragma config WRT = OFF
-#pragma config SCANE = not_available
+#pragma config SCANE = available
 #pragma config LVP = ON
+
+
 #pragma config CP = OFF
 #pragma config CPD = OFF
+
 
 
 
@@ -20784,60 +20787,100 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 2 3
-# 33 "C:/Users/rocke/Desktop/PIC16-PTS/main.c" 2
+# 44 "C:/Users/rocke/Desktop/PIC16-PTS/main.c" 2
 
-
-
-
-
-
-
-
-void Initialize(void)
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 45 "C:/Users/rocke/Desktop/PIC16-PTS/main.c" 2
+# 59 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+void EUSART_Initialize(void)
 {
-    RB4PPS = 0x10;
-
-    TX1STAbits.TXEN = 1;
-    TX1STAbits.TX9 = 0;
-    TX1STAbits.SYNC = 0;
     TRISCbits.TRISC6 = 0;
-
-    RC1STAbits.CREN = 1;
-    RC1STAbits.RX9 = 0;
-    TRISCbits.TRISC7 = 1;
+    ANSELCbits.ANSC6 = 0;
+    RC6PPS = 0x10;
 
     SP1BRGH = 0x00;
-    SP1BRGL = 0x32;
-    TX1STAbits.BRGH = 1;
-    BAUD1CONbits.BRG16 = 1;
+    SP1BRGL = 0b00011001;
+    BAUD1CONbits.BRG16 = 0;
+
+    TX1STAbits.BRGH = 0;
+    TX1STAbits.SYNC = 0;
 
     RC1STAbits.SPEN = 1;
 
-    SPEN = 1;
+    TX1STAbits.TXEN = 1;
+    TX1STAbits.TX9 = 0;
 
-    TRISBbits.TRISB1=0;
-    ANSELBbits.ANSB1=0;
-    PORTBbits.RB1=1;
 
 }
+
 
 void send_char(char word){
     while(!TXIF);
     TXREG = word;
 }
 
-void send_string(char* st_pt){
+void send_string(char* st_pt)
+{
     while(*st_pt)
         send_char(*st_pt++);
 }
-# 269 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 293 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+char* angle;
+void calcAngle()
+{
+
+
+
+    if(RA0 == 1 && RA1 == 0)
+    {
+
+        angle = "90";
+    }
+    else if(RA0 == 1 && RA1 == 1)
+    {
+
+        angle = "180";
+    }
+    else if(RA0 == 0 && RA1 == 1)
+    {
+
+        angle = "270";
+    }
+    else
+    {
+
+        angle = "0";
+    }
+}
+# 333 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+void rundutycycle(unsigned int dutycyc){
+
+
+
+    T2CON = 0x01;
+    T2CON |= 0x04;
+
+
+    while(1){
+        CCPR1L = dutycyc>>2;
+        CCP1CON &= 0xCF;
+        CCP1CON |= (0x30&(dutycyc<<4));
+        if(RC2==1 && RC2==0){dutycyc=172; }
+        else if(RC3==1 && RC2==1){dutycyc=512; }
+        else if(RC3==0 && RC2==1){dutycyc=858; }
+        else {dutycyc=1020;}
+
+        dutycyc=dutycyc;
+    }
+}
+# 366 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
 void main(void){
-# 295 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-    Initialize();
-    send_string("[!]Serial Connection successful");
+# 382 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+    EUSART_Initialize();
 
+    send_string("[*]Serial Connection successful");
 
-
-
+    while(1){}
+# 402 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     return;
 }
