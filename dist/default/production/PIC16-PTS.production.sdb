@@ -9,16 +9,52 @@
 [v _send_char send_char `(v  1 e 1 0 ]
 "86
 [v _send_string send_string `(v  1 e 1 0 ]
-"366
+"202
+[v _itoa itoa `(*.4uc  1 e 1 0 ]
+"227
 [v _main main `(v  1 e 1 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+[s S164 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"470 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h
+[u S173 . 1 `S164 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES173  1 e 1 @13 ]
+[s S143 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"756
+[u S152 . 1 `S143 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES152  1 e 1 @18 ]
 [s S22 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -28,7 +64,7 @@
 `uc 1 TRISC6 1 0 :1:6 
 `uc 1 TRISC7 1 0 :1:7 
 ]
-"818 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h
+"818
 [u S31 . 1 `S22 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES31  1 e 1 @19 ]
 "3828
@@ -73,6 +109,35 @@
 "4398
 [u S76 . 1 `S67 1 . 1 0 ]
 [v _BAUD1CONbits BAUD1CONbits `VES76  1 e 1 @287 ]
+"6503
+[v _TMR1L TMR1L `VEuc  1 e 1 @524 ]
+"6673
+[v _TMR1H TMR1H `VEuc  1 e 1 @525 ]
+"6793
+[v _T1CON T1CON `VEuc  1 e 1 @526 ]
+[s S188 . 1 `uc 1 ON 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 nSYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CKPS 1 0 :2:4 
+]
+"6824
+[s S194 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 T1RD16 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S201 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+]
+[s S205 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RD161 1 0 :1:1 
+]
+[u S208 . 1 `S188 1 . 1 0 `S194 1 . 1 0 `S201 1 . 1 0 `S205 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES208  1 e 1 @526 ]
 "9421
 [v _T2CON T2CON `VEuc  1 e 1 @654 ]
 "11152
@@ -95,28 +160,24 @@
 "34796
 "34796
 [v _ANSELCbits ANSELCbits `VES52  1 e 1 @8014 ]
-"41152
-"41152
-[v _RA0 RA0 `VEb  1 e 0 @96 ]
-"41173
-[v _RA1 RA1 `VEb  1 e 0 @97 ]
+"41530
 "41530
 [v _RC2 RC2 `VEb  1 e 0 @114 ]
 "41551
 [v _RC3 RC3 `VEb  1 e 0 @115 ]
 "44485
 [v _TXIF TXIF `VEb  1 e 0 @14460 ]
-"293 C:/Users/rocke/Desktop/PIC16-PTS/main.c
-[v _angle angle `*.25uc  1 e 2 0 ]
-"366
+"227 C:/Users/rocke/Desktop/PIC16-PTS/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"407
+"273
+[v main@time_taken time_taken `i  1 a 2 40 ]
+"337
 } 0
 "86
 [v _send_string send_string `(v  1 e 1 0 ]
 {
-[v send_string@st_pt st_pt `*.25uc  1 p 2 1 ]
+[v send_string@st_pt st_pt `*.26uc  1 p 2 4 ]
 "90
 } 0
 "81
@@ -127,7 +188,89 @@
 [v send_char@word word `uc  1 a 1 0 ]
 "84
 } 0
-"59
+"202
+[v _itoa itoa `(*.4uc  1 e 1 0 ]
+{
+"207
+[v itoa@c c `i  1 a 2 2 ]
+"205
+[v itoa@original original `i  1 a 2 0 ]
+"202
+[v itoa@value value `i  1 p 2 9 ]
+"204
+[v itoa@buffer buffer `[12]uc  1 s 12 buffer ]
+"224
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 36 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 35 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 26 ]
+"70
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 20 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 13 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 18 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 25 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 24 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 17 ]
+"8
+[v ___fldiv@a a `d  1 p 4 0 ]
+[v ___fldiv@b b `d  1 p 4 4 ]
+"185
+} 0
+"59 C:/Users/rocke/Desktop/PIC16-PTS/main.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
 "78

@@ -20824,35 +20824,7 @@ void send_string(char* st_pt)
     while(*st_pt)
         send_char(*st_pt++);
 }
-# 293 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-char* angle;
-void calcAngle()
-{
-
-
-
-    if(RA0 == 1 && RA1 == 0)
-    {
-
-        angle = "90";
-    }
-    else if(RA0 == 1 && RA1 == 1)
-    {
-
-        angle = "180";
-    }
-    else if(RA0 == 0 && RA1 == 1)
-    {
-
-        angle = "270";
-    }
-    else
-    {
-
-        angle = "0";
-    }
-}
-# 333 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 163 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
 void rundutycycle(unsigned int dutycyc){
 
 
@@ -20873,18 +20845,100 @@ void rundutycycle(unsigned int dutycyc){
         dutycyc=dutycyc;
     }
 }
-# 366 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+
+char itoa_opt(int x)
+{
+    switch(x)
+    {
+        case 1:return '1';
+        case 2:return '2';
+        case 3:return '3';
+        case 4:return '4';
+        case 5:return '5';
+        case 6:return '6';
+        case 7:return '7';
+        case 8:return '8';
+        case 9:return '9';
+        case 0:return '0';
+        default: return'x';
+    }
+}
+
+char *itoa(int value)
+ {
+     static char buffer[12];
+     int original = value;
+
+     int c = sizeof(buffer)-1;
+
+     buffer[c] = 0;
+
+     if (value < 0)
+         value = -value;
+
+     do
+     {
+         buffer[--c] = (value % 10) + '0';
+         value /= 10;
+     } while (value);
+
+     if (original < 0)
+         buffer[--c] = '-';
+
+     return &buffer[c];
+ }
+
+
 void main(void){
-# 382 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 250 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     EUSART_Initialize();
 
-
     _delay((unsigned long)((1000)*(2000000/4000.0)));
-    send_string("[*]Serial Connection successful");
-    angle = "90";
-    send_string(angle);
+    send_string("[*]Serial Connection successful\r\n");
+# 264 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+    TRISBbits.TRISB0 = 0;
+    PORTBbits.RB0 =0;
 
-    while(1){}
-# 406 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+    TRISBbits.TRISB4 = 0;
+    PORTBbits.RB4 =0;
+
+
+
+    T1CON = 0x10;
+    int time_taken = 0;
+    while(1)
+    {
+
+        TMR1H = 0;
+        TMR1L = 0;
+
+
+        PORTBbits.RB0 = 1;
+        _delay((unsigned long)((10)*(2000000/4000000.0)));
+        PORTBbits.RB0 = 0;
+
+        while(!PORTBbits.RB4);
+        T1CONbits.ON = 1;
+        while(PORTBbits.RB4);
+        T1CONbits.ON = 0;
+
+        time_taken= (TMR1L | (TMR1H<<8));
+        time_taken= (TMR1L | (TMR1H<<8))/58.82;
+
+        if(time_taken>=0 && time_taken<=400)
+        {
+            send_string("[+] Distance = ");
+            send_string(itoa(time_taken));
+            send_string(" cm\r\n");
+        }
+        else
+        {
+            send_string("[!]Out of Range\r\n");
+        }
+        _delay((unsigned long)((500)*(2000000/4000.0)));
+
+
+    }
+# 336 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     return;
 }
