@@ -20878,9 +20878,13 @@ void main(void){
 # 382 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     EUSART_Initialize();
 
+
+    _delay((unsigned long)((1000)*(2000000/4000.0)));
     send_string("[*]Serial Connection successful");
+    angle = "90";
+    send_string(angle);
 
     while(1){}
-# 402 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 406 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     return;
 }

@@ -381,7 +381,11 @@ void main(void){
     //PIN_MANAGER_Initialize();
     EUSART_Initialize();
     //Initialize();
+    //send_char('X\n');
+    __delay_ms(1000);   // to avoid corrupted characters in serial tx
     send_string("[*]Serial Connection successful");
+    angle = "90";
+    send_string(angle);
     //send_char('U');
     while(1){}
     
