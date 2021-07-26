@@ -20824,7 +20824,20 @@ void send_string(char* st_pt)
     while(*st_pt)
         send_char(*st_pt++);
 }
-# 163 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 110 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+void ranging_sys_init(void){
+
+
+    T0CON0bits.T0EN = 0;
+    T0CON0bits.T016BIT = 1;
+    T0CON0bits.T0OUTPS = 0b0000;
+
+    T0CON1bits.T0CS = 0b010;
+    T0CON1bits.T0ASYNC = 1;
+    T0CON1bits.T0CKPS = 0b0001;
+
+}
+# 176 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
 void rundutycycle(unsigned int dutycyc){
 
 
@@ -20888,57 +20901,61 @@ char *itoa(int value)
      return &buffer[c];
  }
 
+int a = 0;
 
 void main(void){
-# 250 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+
+
+
+
     EUSART_Initialize();
+    ranging_sys_init();
+
+
 
     _delay((unsigned long)((1000)*(2000000/4000.0)));
     send_string("[*]Serial Connection successful\r\n");
-# 264 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-    TRISBbits.TRISB0 = 0;
-    PORTBbits.RB0 =0;
-
-    TRISBbits.TRISB4 = 0;
-    PORTBbits.RB4 =0;
 
 
 
-    T1CON = 0x10;
-    int time_taken = 0;
-    while(1)
+
+
+
+    TRISB = 0xFE;
+    ANSELB = 0xEF;
+
+   while(1)
     {
-
-        TMR1H = 0;
-        TMR1L = 0;
-
+        TMR0H = 0;
+        TMR0L = 0;
+        T0CON1bits.T0CKPS = 0b0001;
 
         PORTBbits.RB0 = 1;
         _delay((unsigned long)((10)*(2000000/4000000.0)));
         PORTBbits.RB0 = 0;
 
         while(!PORTBbits.RB4);
-        T1CONbits.ON = 1;
+        T0CON0bits.T0EN = 1;
         while(PORTBbits.RB4);
-        T1CONbits.ON = 0;
+        T0CON0bits.T0EN = 0;
 
-        time_taken= (TMR1L | (TMR1H<<8));
-        time_taken= (TMR1L | (TMR1H<<8))/58.82;
+        a = (TMR0L | (TMR0H<<8));
+        a = a*0.068;
+        a = a + 1;
 
-        if(time_taken>=0 && time_taken<=400)
+        if(a>=2 && a<=400)
         {
-            send_string("[+] Distance = ");
-            send_string(itoa(time_taken));
-            send_string(" cm\r\n");
+
+          send_string("Distance = ");
+          send_string(itoa(a));
+          send_string(" cm\r\n");
         }
         else
         {
-            send_string("[!]Out of Range\r\n");
+          send_string("Out of Range\r\n");
         }
-        _delay((unsigned long)((500)*(2000000/4000.0)));
-
-
+        _delay((unsigned long)((400)*(2000000/4000.0)));
     }
-# 336 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 326 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     return;
 }

@@ -107,6 +107,19 @@ void send_string(char* st_pt)
  * 
  */
 
+void ranging_sys_init(void){
+
+    
+    T0CON0bits.T0EN = 0;    // Disabling TMR0
+    T0CON0bits.T016BIT = 1; // configuring TMR0 for 16 bit operation
+    T0CON0bits.T0OUTPS = 0b0000; // setting TMR0 pre-scaler to none
+    
+    T0CON1bits.T0CS = 0b010;    // selecting Fosc/4 as clk source
+    T0CON1bits.T0ASYNC = 1;     // configuring TMR0 for async operaiton
+    T0CON1bits.T0CKPS = 0b0001; // setting TMR0 post-scaler as 1:2
+
+}
+
 
 
 /*
@@ -223,112 +236,89 @@ char *itoa(int value)
      return &buffer[c];
  }
 
+int a = 0;
 
 void main(void){
-       
-    /*Use long names to avoid name conflicts
-    
-    TRISB = 0b00010000;           //RB4 as Input PIN (ECHO)
-    TRISD = 0x00; // LCD Pins as Output
-    GIE = 1;                      //Global Interrupt Enable
-    RBIF = 0;                     //Clear PORTB On-Change Interrupt Flag
-    RBIE = 1;                     //Enable PORTB On-Change Interrupt
-    
-    
-    T1CON = 0x10;                 //Initialize Timer Module
-    */
-    
-    
-    /*
-     * ===========================================
-     * 
-     * EUSART TRANSMISSION
-     * ============================================= 
-     
-    */
+    //TRISDbits.TRISD1 = 0;
+    //LATDbits.LATD1 = 1; // for checking if PIC is working
+
     //Configuring EUSART for transmission
     EUSART_Initialize();
+    ranging_sys_init();
 
+
+    
     __delay_ms(1000);   // to avoid corrupted characters in serial tx
     send_string("[*]Serial Connection successful\r\n");
+    
     //send_string(itoa(143)); //remember to add a \r\n for clean formatting
     //angle = "90\r\n"; //the \r\n are used to go to a new line
     //send_string("Angle: "); 
     //send_string(angle);
    
+    TRISB = 0xFE; // setting port  RB0 as output and RB4 as input
+    ANSELB = 0xEF;
 
-    
-    
-    
-    
-    TRISBbits.TRISB0 = 0; /* Set RB0 pin as a digital output pin */
-    PORTBbits.RB0 =0;  /* Initially sets the RB0 pin as activ low */
-
-    TRISBbits.TRISB4 = 0; /* Set RB4 pin as a digital input pin */
-    PORTBbits.RB4 =0;  /* Initially sets the RB4 pin as activ low */
-    
-    
-    
-    T1CON = 0x10; /* Set timer1 prescaler value to 1:2 prscale and disable timer1 */
-    int time_taken = 0;
-    while(1)
+   while(1)
     {
-        /* Initialize Timer1 register to zero */
-        TMR1H = 0;
-        TMR1L = 0;
+        TMR0H = 0;                  //Sets the Initial Value of Timer
+        TMR0L = 0;                  //Sets the Initial Value of Timer
+        T0CON1bits.T0CKPS = 0b0001; //Resetting post scaler since TMR0L write clears it
 
-        /* send 10us puls to triger pin of HC-SR04 from RB0 pin */
-        PORTBbits.RB0 = 1;
-        __delay_us(10);
-        PORTBbits.RB0 = 0;
+        PORTBbits.RB0 = 1;               //TRIGGER HIGH
+        __delay_us(10);               //10uS Delay
+        PORTBbits.RB0 = 0;               //TRIGGER LOW
 
-        while(!PORTBbits.RB4);   /* wait till echo output signal goes high */
-        T1CONbits.ON  = 1;    /* enable the Timer1 */
-        while(PORTBbits.RB4);  /* wait till echo output signal goes low */
-        T1CONbits.ON = 0; /*disable timer1 */
+        while(!PORTBbits.RB4);           //Waiting for Echo
+        T0CON0bits.T0EN = 1;               //Timer Starts
+        while(PORTBbits.RB4);            //Waiting for Echo goes LOW
+        T0CON0bits.T0EN = 0;               //Timer Stops
 
-        time_taken= (TMR1L | (TMR1H<<8)); /*read the content of Timer1 registers */
-        time_taken= (TMR1L | (TMR1H<<8))/58.82; /* convert duration into distance */
+        a = (TMR0L | (TMR0H<<8));   //Reads Timer Value
+        a = a*0.068;                //Converts Time to Distance
+        a = a + 1; //TODO: change this value to reflect correct calibration
         
-        if(time_taken>=0 && time_taken<=400)
+        if(a>=2 && a<=400)          //Check whether the result is valid or not
         {
-            send_string("[+] Distance = ");
-            send_string(itoa(time_taken));
-            send_string(" cm\r\n");
+
+          send_string("Distance = ");
+          send_string(itoa(a));
+          send_string(" cm\r\n");
         }
         else
         {
-            send_string("[!]Out of Range\r\n");
+          send_string("Out of Range\r\n");
         }
-        __delay_ms(500);
-        
-        
-    }
+        __delay_ms(400);
+    }  
     
     
     
-    
-    
-    
-    
-    /*
-     * TESTING FOR USART STRING FORMATTING AND ITOA
-     * 
-     *  while(1){
-            int a = 231;
-            int digit_0 = a%10;
-            a = a/10;
-            int digit_1 = a%10;
-            a = a/10;
-            int digit_2 = a%10;
-            char dist_str[3] = {itoa_opt(digit_0),itoa_opt(digit_1),itoa_opt(digit_2)};
-            send_string("Distance = ");
-            send_string(dist_str);
-            send_string(" cm");
-            send_string("\r\n");
-            __delay_ms(1000);
-        }   
-     */
+
+//    
+//    
+//    
+//    
+//    
+//    
+//    /*
+//     * TESTING FOR USART STRING FORMATTING AND ITOA
+//     * 
+//     *  while(1){
+//            int a = 231;
+//            int digit_0 = a%10;
+//            a = a/10;
+//            int digit_1 = a%10;
+//            a = a/10;
+//            int digit_2 = a%10;
+//            char dist_str[3] = {itoa_opt(digit_0),itoa_opt(digit_1),itoa_opt(digit_2)};
+//            send_string("Distance = ");
+//            send_string(dist_str);
+//            send_string(" cm");
+//            send_string("\r\n");
+//            __delay_ms(1000);
+//        }   
+//     */
 
     
     
