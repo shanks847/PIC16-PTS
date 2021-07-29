@@ -49,14 +49,24 @@
 #define _XTAL_FREQ 2000000
 #define Baud_rate 1200
 
-/* =======|
- * EUSART |
- * =======|
+#define DPSW0           RA0
+#define DPSW1           RA1
+#define DPSW2           RA2
+#define DPSW3           RA3
+#define ECHO            RB4
+#define TRIG            RB3
+#define OC_LEC          RB2 //LED for optical encoder
+#define LDRI0           RB1
+#define LDRI1           RB0
+
+
+/* ============|
+ * SERIAL COMS |
+ * ============|
  */
 
 
-
-void EUSART_Initialize(void)
+void cfg_eusart(void)
 {
     TRISCbits.TRISC6 = 0;   // configuring pin 6 on port c as output
     ANSELCbits.ANSC6 = 0;   // configuring pin 6 on port c as digital output
@@ -77,6 +87,30 @@ void EUSART_Initialize(void)
 
 }
 
+void cfg_pwm(void)
+{
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 1;
+    
+    ANSELAbits.ANSA0 = 0;
+    ANSELAbits.ANSA1 = 0;
+    ANSELAbits.ANSA2 = 0;
+    ANSELAbits.ANSA3 = 0;
+    
+    TRISBbits.TRISB5 = 0; 
+    ANSELBbits.ANSB5 = 0; 
+    RB5PPS = 0x0A;//Routing CCP2 peripheral to pin 5 on port b
+    CCP2CON = 0x9F;
+    CCPTMRS0 = 0x05;
+    PR2 = 19;
+    CCPR2L = 0xFF;
+    CCPR2H = 0xFF;
+    T2CLKCON = 0x01;
+    T2CON = 0xF0;
+}
+
 
 void send_char(char word){
     while(!TXIF);
@@ -90,25 +124,26 @@ void send_string(char* st_pt)
 }
 
 
-/* =========|
- * LCD      |
- * =========|
- 
-*/
-
-
 
 /* ===========================
  * ULTRASONIC DISTANCE SENSOR
  * ============================
  * 
- * 
-
- * 
  */
 
 void ranging_sys_init(void){
 
+    // configuring IO pins for ranging(orientation included)
+    TRISBbits.TRISB4 = 1; // ECHO pin - input
+    TRISBbits.TRISB3 = 0; // TRIG pin - output
+    TRISBbits.TRISB2 = 0; // LED on encoder - output
+    TRISBbits.TRISB1 = 1; // LDR0 - input
+    TRISBbits.TRISB0 = 1; // LDR1 - input
+    ANSELB = 0x00; // all pins on port b are digital
+    
+    LATBbits.LATB2 = 1;
+    
+    
     
     T0CON0bits.T0EN = 0;    // Disabling TMR0
     T0CON0bits.T016BIT = 1; // configuring TMR0 for 16 bit operation
@@ -118,62 +153,43 @@ void ranging_sys_init(void){
     T0CON1bits.T0ASYNC = 1;     // configuring TMR0 for async operaiton
     T0CON1bits.T0CKPS = 0b0001; // setting TMR0 post-scaler as 1:2
 
+  
+    
 }
 
 
 
-/*
- * =================
- * ORIENTATION LUT
- * =================
- */
+//REFACTOR TO USE itoa_opt
 
-#define LDRI0       RA0
-#define LDRI1       RA1
-/*REFACTOR TO USE itoa_opt
-char* angle;
-void calcAngle()
+int calcAngle(void)
 {
-
-    //1)Poll pins RA0 and RA1
+    int angle = 0;
     
-    if(LDRI0 == 1 && LDRI1 == 0)
+    //LDRI0 is the inner photo resistor
+  
+    if((LDRI0 == 1) && (LDRI1 == 0))
     {
         //90 deg
-        angle = "90";
+        angle = 90;
     }
-    else if(LDRI0 == 1 && LDRI1 == 1)
+    else if((LDRI0 == 1) && (LDRI1 == 1))
     {
         //180 deg
-        angle = "180";
+        angle = 180;
     }
-    else if(LDRI0 == 0 && LDRI1 == 1)
+    else if((LDRI0 == 0) && (LDRI1 ==1))
     {
         //270deg
-        angle = "270";
+        angle = 270;
     }
     else
     {
         //0 or 360deg or error
-        angle = "0";   
+        angle = 0;   
     }
+    
+    return angle;
 }
-*/
-
-
-/*
- * =====================
- * PWM BLDC FAN CONTROL
- * ======================
- * 
- * TODO: MODIFY CODE TO WORK WITH MY PIC AND ADJUST TMR2 VALUE
- */
-
-#define DPSW0           PORTAbits.RA0
-#define DPSW1           PORTAbits.RA1
-#define DPSW2           PORTAbits.RA2
-#define DPSW3           PORTAbits.RA3
-
 
 
 
@@ -220,20 +236,31 @@ char *itoa(int value)
      return &buffer[c];
  }
 
-int a = 0;
+int a = 0; // for storing distance
+
+
+/*
+ * =====================
+ * PWM BLDC FAN CONTROL
+ * ======================
+ * 
+ */
             
 void set_pwm_dc(int dc)
 {
         if(dc>20)
         {
             CCPR2H = 20;
+            //CCPR2L = 0XFF;
         }
         else if(dc <= 0)
         {
             CCPR2H = 0;
+            //CCPR2L = 0;
         }
         else{
             CCPR2H = dc;
+            //CCPR2L = 0XFF;
         }
 }
 
@@ -275,73 +302,47 @@ int dpsw_to_dc(void)
     
 
 void main(void){
-//    TRISDbits.TRISD1 = 0;
-//    ANSELDbits.ANSD1 = 0;
-//    
-//    TRISEbits.TRISE2 = 1;
-//    ANSELEbits.ANSE2 = 0;
     
     
+    // Configuring the EUSART 
+    cfg_eusart();
+    cfg_pwm();
+    ranging_sys_init();
     
-
-    //Configuring EUSART for transmission
-//    EUSART_Initialize();
-//    TRISAbits.TRISA0 = 1;
-//    TRISAbits.TRISA1 = 1;
-//    TRISAbits.TRISA2 = 1;
-//    TRISAbits.TRISA3 = 1;
-//    
-//    ANSELAbits.ANSA0 = 0;
-//    ANSELAbits.ANSA1 = 0;
-//    ANSELAbits.ANSA2 = 0;
-//    ANSELAbits.ANSA3 = 0;
-    //ranging_sys_init();
-
-   //For testing the FAN
-    ANSELCbits.ANSC1 = 0;
-    TRISCbits.TRISC1 = 0;
-    LATCbits.LATC1 = 1;
+    /*================
+     * TESTING PWM
+     * =============
+    while(1){
     
+    set_pwm_dc(20);
     
-    /*
-     * 100% Duty cycle*/
+    __delay_ms(5000);
     
-    //Research PWM more and determine if there is a better PWM freq 
-    
-//    TRISCbits.TRISC1 = 0;
-//    ANSELCbits.ANSC1 = 0;
-//    RC1PPS = 0x0A;
-//    CCP2CON = 0x9F;
-//    CCPTMRS0 = 0x05;
-//    PR2 = 19;
-//    CCPR2L = 0xFF;
-//    CCPR2H = 0xFF;
-//    T2CLKCON = 0x01;
-//    T2CON = 0xF0;
-    
-    while(1);
-    /*
-    __delay_ms(10000);
-    
-    set_pwm_dc(5);
-    
-    
-    __delay_ms(2000);
-    
-    set_pwm_dc(18);
+    set_pwm_dc(0);
      
-    __delay_ms(2000);
-   */
-//    __delay_ms(1000);
-//    send_string("[!]Connected\r\n");
-//    while(1){
-//        send_string(itoa(dpsw_to_dc()));
-//        send_string("\r\n");
-//        __delay_ms(3000);
-//        
-//        //if(PORTEbits.RE2 == 1){LATDbits.LATD1 = 1;}else{LATDbits.LATD1 = 0;} //testing if photo resistor working
-//    }
+    __delay_ms(5000);
     
+     set_pwm_dc(20);
+    }
+    */
+    
+ 
+    
+    /*
+     * ================
+     * TESTING 4-DIP SW 
+     * =================
+    __delay_ms(1000);
+    send_string("[!]Connected\r\n");
+    while(1){
+        send_string(itoa(dpsw_to_dc()));
+        send_string("\r\n");
+        __delay_ms(3000);
+        
+        //if(PORTEbits.RE2 == 1){LATDbits.LATD1 = 1;}else{LATDbits.LATD1 = 0;} //testing if photo resistor working
+    }
+     * */
+//    
     
     
                 
@@ -353,22 +354,24 @@ void main(void){
     //send_string("Angle: "); 
     //send_string(angle);
    
-    /*===============
+    /* ===============
      * RANGING SYSTEM
      * =================
-     * 
-    TRISB = 0xFE; // setting port  RB0 as output and RB4 as input
-    ANSELB = 0xEF;
+     
+    TRISBbits.TRISB4 = 1; // setting port  RB0 as output and RB4 as input
+    TRISBbits.TRISB3 = 0;
+    ANSELBbits.ANSB4 = 0;
+    ANSELBbits.ANSB3 = 0;
 
    while(1)
     {
         TMR0H = 0;                  //Sets the Initial Value of Timer
         TMR0L = 0;                  //Sets the Initial Value of Timer
-        T0CON1bits1.T0CKPS = 0b0001; //Resetting post scaler since TMR0L write clears it
+        T0CON1bits.T0CKPS = 0b0001; //Resetting post scaler since TMR0L write clears it
 
-        PORTBbits.RB0 = 1;               //TRIGGER HIGH
+        PORTBbits.RB3 = 1;               //TRIGGER HIGH
         __delay_us(10);               //10uS Delay
-        PORTBbits.RB0 = 0;               //TRIGGER LOW
+        PORTBbits.RB3 = 0;               //TRIGGER LOW
 
         while(!PORTBbits.RB4);           //Waiting for Echo
         T0CON0bits.T0EN = 1;               //Timer Starts
@@ -392,15 +395,9 @@ void main(void){
         }
         __delay_ms(400);
     }  
-    */
+   
     
-    
-    
-    /*
-     * MOTOR SYSTEM
-     * 
-     */
-    
+   
     
 
 //    
@@ -409,7 +406,7 @@ void main(void){
 //    
 //    
 //    
-//    /*
+//    
 //     * TESTING FOR USART STRING FORMATTING AND ITOA
 //     * 
 //     *  while(1){
@@ -428,6 +425,72 @@ void main(void){
 //        }   
 //     */
 
+    
+    /* Testing Angle system
+    
+    __delay_ms(1000);   // to avoid corrupted characters in serial tx
+    send_string("[*]Serial Connection successful\r\n");
+    
+    while(1){
+        send_string("Angle = ");
+        send_string(itoa(calcAngle()));
+        send_string(" deg\r\n");
+        __delay_ms(1000);
+    }
+    */
+    
+    
+    
+    // INTEGRATION TEST
+    __delay_ms(1000);   // to avoid corrupted characters in serial tx
+    send_string("[*]Serial Connection successful\r\n");
+    
+    int dc = 0;
+    
+    while(1)
+    {
+        set_pwm_dc(dpsw_to_dc());
+        TMR0H = 0;                  //Sets the Initial Value of Timer
+        TMR0L = 0;                  //Sets the Initial Value of Timer
+        T0CON1bits.T0CKPS = 0b0001; //Resetting post scaler since TMR0L write clears it
+
+        PORTBbits.RB3 = 1;               //TRIGGER HIGH
+        __delay_us(10);               //10uS Delay
+        PORTBbits.RB3 = 0;               //TRIGGER LOW
+
+        while(!PORTBbits.RB4);           //Waiting for Echo
+        T0CON0bits.T0EN = 1;               //Timer Starts
+        while(PORTBbits.RB4);            //Waiting for Echo goes LOW
+        T0CON0bits.T0EN = 0;               //Timer Stops
+
+        a = (TMR0L | (TMR0H<<8));   //Reads Timer Value
+        a = a*0.068;                //Converts Time to Distance
+        a = a + 1; //TODO: change this value to reflect correct calibration
+        
+        dc = CCPR2H; // duty cycle
+        
+        if(a>=2 && a<=400)          //Check whether the result is valid or not
+        {
+
+            send_string("Distance = ");
+            send_string(itoa(a));
+            send_string(" cm");
+          
+            send_string("\tAngle = ");
+            send_string(itoa(calcAngle()));
+            send_string(" deg");
+            //__delay_ms(1000);
+            
+            send_string("\tPWM Duty Cycle = ");
+            send_string(itoa(dc));
+            send_string("\r\n");
+        }
+        else
+        {
+          send_string("Out of Range\r\n");
+        }
+        __delay_ms(400);
+    }  
     
     
     

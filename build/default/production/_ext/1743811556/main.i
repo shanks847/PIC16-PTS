@@ -20791,8 +20791,8 @@ extern __bank0 __bit __timeout;
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
 # 45 "C:/Users/rocke/Desktop/PIC16-PTS/main.c" 2
-# 59 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-void EUSART_Initialize(void)
+# 69 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+void cfg_eusart(void)
 {
     TRISCbits.TRISC6 = 0;
     ANSELCbits.ANSC6 = 0;
@@ -20813,6 +20813,30 @@ void EUSART_Initialize(void)
 
 }
 
+void cfg_pwm(void)
+{
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 1;
+
+    ANSELAbits.ANSA0 = 0;
+    ANSELAbits.ANSA1 = 0;
+    ANSELAbits.ANSA2 = 0;
+    ANSELAbits.ANSA3 = 0;
+
+    TRISBbits.TRISB5 = 0;
+    ANSELBbits.ANSB5 = 0;
+    RB5PPS = 0x0A;
+    CCP2CON = 0x9F;
+    CCPTMRS0 = 0x05;
+    PR2 = 19;
+    CCPR2L = 0xFF;
+    CCPR2H = 0xFF;
+    T2CLKCON = 0x01;
+    T2CON = 0xF0;
+}
+
 
 void send_char(char word){
     while(!TXIF);
@@ -20824,8 +20848,19 @@ void send_string(char* st_pt)
     while(*st_pt)
         send_char(*st_pt++);
 }
-# 110 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 134 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
 void ranging_sys_init(void){
+
+
+    TRISBbits.TRISB4 = 1;
+    TRISBbits.TRISB3 = 0;
+    TRISBbits.TRISB2 = 0;
+    TRISBbits.TRISB1 = 1;
+    TRISBbits.TRISB0 = 1;
+    ANSELB = 0x00;
+
+    LATBbits.LATB2 = 1;
+
 
 
     T0CON0bits.T0EN = 0;
@@ -20836,8 +20871,47 @@ void ranging_sys_init(void){
     T0CON1bits.T0ASYNC = 1;
     T0CON1bits.T0CKPS = 0b0001;
 
+
+
 }
-# 181 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+
+
+
+
+
+int calcAngle(void)
+{
+    int angle = 0;
+
+
+
+    if((RB1 == 1) && (RB0 == 0))
+    {
+
+        angle = 90;
+    }
+    else if((RB1 == 1) && (RB0 == 1))
+    {
+
+        angle = 180;
+    }
+    else if((RB1 == 0) && (RB0 ==1))
+    {
+
+        angle = 270;
+    }
+    else
+    {
+
+        angle = 0;
+    }
+
+    return angle;
+}
+
+
+
+
 char itoa_opt(int x)
 {
     switch(x)
@@ -20881,19 +20955,22 @@ char *itoa(int value)
  }
 
 int a = 0;
-
+# 249 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
 void set_pwm_dc(int dc)
 {
         if(dc>20)
         {
             CCPR2H = 20;
+
         }
         else if(dc <= 0)
         {
             CCPR2H = 0;
+
         }
         else{
             CCPR2H = dc;
+
         }
 }
 
@@ -20905,10 +20982,10 @@ int dpsw_to_dc(void)
     int d2;
     int d3;
 
-    if(PORTAbits.RA0){d0 = 1000;} else {d0 = 0;}
-    if(PORTAbits.RA1){d1 = 100;} else {d1 = 0;}
-    if(PORTAbits.RA2){d2 = 10;} else {d2 = 0;}
-    if(PORTAbits.RA3){d3 = 1;} else {d3 = 0;}
+    if(RA0){d0 = 1000;} else {d0 = 0;}
+    if(RA1){d1 = 100;} else {d1 = 0;}
+    if(RA2){d2 = 10;} else {d2 = 0;}
+    if(RA3){d3 = 1;} else {d3 = 0;}
 
     int binary_d = d0 + d1 + d2 + d3;
 
@@ -20935,12 +21012,64 @@ int dpsw_to_dc(void)
 
 
 void main(void){
-# 301 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-    ANSELCbits.ANSC1 = 0;
-    TRISCbits.TRISC1 = 0;
-    LATCbits.LATC1 = 1;
-# 322 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-    while(1);
-# 434 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+
+
+
+    cfg_eusart();
+    cfg_pwm();
+    ranging_sys_init();
+# 445 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+    _delay((unsigned long)((1000)*(2000000/4000.0)));
+    send_string("[*]Serial Connection successful\r\n");
+
+    int dc = 0;
+
+    while(1)
+    {
+        set_pwm_dc(dpsw_to_dc());
+        TMR0H = 0;
+        TMR0L = 0;
+        T0CON1bits.T0CKPS = 0b0001;
+
+        PORTBbits.RB3 = 1;
+        _delay((unsigned long)((10)*(2000000/4000000.0)));
+        PORTBbits.RB3 = 0;
+
+        while(!PORTBbits.RB4);
+        T0CON0bits.T0EN = 1;
+        while(PORTBbits.RB4);
+        T0CON0bits.T0EN = 0;
+
+        a = (TMR0L | (TMR0H<<8));
+        a = a*0.068;
+        a = a + 1;
+
+        dc = CCPR2H;
+
+        if(a>=2 && a<=400)
+        {
+
+            send_string("Distance = ");
+            send_string(itoa(a));
+            send_string(" cm");
+
+            send_string("\tAngle = ");
+            send_string(itoa(calcAngle()));
+            send_string(" deg");
+
+
+            send_string("\tPWM Duty Cycle = ");
+            send_string(itoa(dc));
+            send_string("\r\n");
+        }
+        else
+        {
+          send_string("Out of Range\r\n");
+        }
+        _delay((unsigned long)((400)*(2000000/4000.0)));
+    }
+
+
+
     return;
 }

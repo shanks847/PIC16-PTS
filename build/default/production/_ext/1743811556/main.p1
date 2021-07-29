@@ -63,12 +63,94 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4030
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 4030: extern volatile RC1STAbits_t RC1STAbits __attribute__((address(0x11D)));
 [v _RC1STAbits `VS200 ~T0 @X0 0 e@285 ]
+"683
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 683:     struct {
+[s S43 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S43 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"682
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 682: typedef union {
+[u S42 `S43 1 ]
+[n S42 . . ]
+"694
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 694: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x011)));
+[v _TRISAbits `VS42 ~T0 @X0 0 e@17 ]
+"33545
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 33545:     struct {
+[s S1503 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1503 . ANSA0 ANSA1 ANSA2 ANSA3 ANSA4 ANSA5 ANSA6 ANSA7 ]
+"33544
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 33544: typedef union {
+[u S1502 `S1503 1 ]
+[n S1502 . . ]
+"33556
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 33556: extern volatile ANSELAbits_t ANSELAbits __attribute__((address(0x1F38)));
+[v _ANSELAbits `VS1502 ~T0 @X0 0 e@7992 ]
+"745
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 745:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"744
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 744: typedef union {
+[u S44 `S45 1 ]
+[n S44 . . ]
+"756
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 756: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x012)));
+[v _TRISBbits `VS44 ~T0 @X0 0 e@18 ]
+"34165
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 34165:     struct {
+[s S1523 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1523 . ANSB0 ANSB1 ANSB2 ANSB3 ANSB4 ANSB5 ANSB6 ANSB7 ]
+"34164
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 34164: typedef union {
+[u S1522 `S1523 1 ]
+[n S1522 . . ]
+"34176
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 34176: extern volatile ANSELBbits_t ANSELBbits __attribute__((address(0x1F43)));
+[v _ANSELBbits `VS1522 ~T0 @X0 0 e@8003 ]
+"32439
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 32439: extern volatile unsigned char RB5PPS __attribute__((address(0x1F1D)));
+[v _RB5PPS `Vuc ~T0 @X0 0 e@7965 ]
+"11434
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 11434: extern volatile unsigned char CCP2CON __attribute__((address(0x312)));
+[v _CCP2CON `Vuc ~T0 @X0 0 e@786 ]
+"9187
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 9187: extern volatile unsigned char CCPTMRS0 __attribute__((address(0x21E)));
+[v _CCPTMRS0 `Vuc ~T0 @X0 0 e@542 ]
+"9388
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 9388: extern volatile unsigned char PR2 __attribute__((address(0x28D)));
+[v _PR2 `Vuc ~T0 @X0 0 e@653 ]
+"11394
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 11394: extern volatile unsigned char CCPR2L __attribute__((address(0x310)));
+[v _CCPR2L `Vuc ~T0 @X0 0 e@784 ]
+"11414
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 11414: extern volatile unsigned char CCPR2H __attribute__((address(0x311)));
+[v _CCPR2H `Vuc ~T0 @X0 0 e@785 ]
+"9695
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 9695: extern volatile unsigned char T2CLKCON __attribute__((address(0x290)));
+[v _T2CLKCON `Vuc ~T0 @X0 0 e@656 ]
+"9421
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 9421: extern volatile unsigned char T2CON __attribute__((address(0x28E)));
+[v _T2CON `Vuc ~T0 @X0 0 e@654 ]
 "44485
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 44485: extern volatile __bit TXIF __attribute__((address(0x387C)));
 [v _TXIF `Vb ~T0 @X0 0 e@14460 ]
 "3828
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 3828: extern volatile unsigned char TXREG __attribute__((address(0x11A)));
 [v _TXREG `Vuc ~T0 @X0 0 e@282 ]
+"34159
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 34159: extern volatile unsigned char ANSELB __attribute__((address(0x1F43)));
+[v _ANSELB `Vuc ~T0 @X0 0 e@8003 ]
+"1025
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1025:     struct {
+[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S55 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"1024
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1024: typedef union {
+[u S54 `S55 1 ]
+[n S54 . . ]
+"1036
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1036: extern volatile LATBbits_t LATBbits __attribute__((address(0x017)));
+[v _LATBbits `VS54 ~T0 @X0 0 e@23 ]
 "1635
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1635:     struct {
 [s S79 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -107,32 +189,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1725
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1725: extern volatile T0CON1bits_t T0CON1bits __attribute__((address(0x01F)));
 [v _T0CON1bits `VS81 ~T0 @X0 0 e@31 ]
-"11414
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 11414: extern volatile unsigned char CCPR2H __attribute__((address(0x311)));
-[v _CCPR2H `Vuc ~T0 @X0 0 e@785 ]
-"397
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 397:     struct {
-[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"396
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 396: typedef union {
-[u S32 `S33 1 ]
-[n S32 . . ]
-"408
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 408: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
-[v _PORTAbits `VS32 ~T0 @X0 0 e@12 ]
+"41341
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 41341: extern volatile __bit RB1 __attribute__((address(0x69)));
+[v _RB1 `Vb ~T0 @X0 0 e@105 ]
+"41320
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 41320: extern volatile __bit RB0 __attribute__((address(0x68)));
+[v _RB0 `Vb ~T0 @X0 0 e@104 ]
+"41152
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 41152: extern volatile __bit RA0 __attribute__((address(0x60)));
+[v _RA0 `Vb ~T0 @X0 0 e@96 ]
+"41173
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 41173: extern volatile __bit RA1 __attribute__((address(0x61)));
+[v _RA1 `Vb ~T0 @X0 0 e@97 ]
+"41194
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 41194: extern volatile __bit RA2 __attribute__((address(0x62)));
+[v _RA2 `Vb ~T0 @X0 0 e@98 ]
+"41215
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 41215: extern volatile __bit RA3 __attribute__((address(0x63)));
+[v _RA3 `Vb ~T0 @X0 0 e@99 ]
 [p mainexit ]
-"1087
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1087:     struct {
-[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S57 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"1086
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1086: typedef union {
-[u S56 `S57 1 ]
-[n S56 . . ]
-"1098
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1098: extern volatile LATCbits_t LATCbits __attribute__((address(0x018)));
-[v _LATCbits `VS56 ~T0 @X0 0 e@24 ]
+[v F183 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\builtins.h
+[v __delay `JF183 ~T0 @X0 0 e ]
+[p i __delay ]
+"1375 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1375: extern volatile unsigned char TMR0H __attribute__((address(0x01D)));
+[v _TMR0H `Vuc ~T0 @X0 0 e@29 ]
+"1237
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1237: extern volatile unsigned char TMR0L __attribute__((address(0x01C)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@28 ]
+"459
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 459:     struct {
+[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"458
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 458: typedef union {
+[u S34 `S35 1 ]
+[n S34 . . ]
+"470
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 470: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS34 ~T0 @X0 0 e@13 ]
 "10 C:/Users/rocke/Desktop/PIC16-PTS/main.c
 [p x FEXTOSC  =  XT     ]
 "11
@@ -1814,511 +1910,804 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36346
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 36346: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"59 C:/Users/rocke/Desktop/PIC16-PTS/main.c
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 59: void EUSART_Initialize(void)
-[v _EUSART_Initialize `(v ~T0 @X0 1 ef ]
-"60
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 60: {
-{
-[e :U _EUSART_Initialize ]
-[f ]
-"61
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 61:     TRISCbits.TRISC6 = 0;
-[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-"62
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 62:     ANSELCbits.ANSC6 = 0;
-[e = . . _ANSELCbits 0 6 -> -> 0 `i `uc ]
-"63
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 63:     RC6PPS = 0x10;
-[e = _RC6PPS -> -> 16 `i `uc ]
-"65
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 65:     SP1BRGH = 0x00;
-[e = _SP1BRGH -> -> 0 `i `uc ]
-"66
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 66:     SP1BRGL = 0b00011001;
-[e = _SP1BRGL -> -> 25 `i `uc ]
-"67
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 67:     BAUD1CONbits.BRG16 = 0;
-[e = . . _BAUD1CONbits 0 3 -> -> 0 `i `uc ]
-"69
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 69:     TX1STAbits.BRGH = 0;
-[e = . . _TX1STAbits 0 2 -> -> 0 `i `uc ]
+"69 C:/Users/rocke/Desktop/PIC16-PTS/main.c
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 69: void cfg_eusart(void)
+[v _cfg_eusart `(v ~T0 @X0 1 ef ]
 "70
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 70:     TX1STAbits.SYNC = 0;
-[e = . . _TX1STAbits 0 4 -> -> 0 `i `uc ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 70: {
+{
+[e :U _cfg_eusart ]
+[f ]
+"71
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 71:     TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
 "72
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 72:     RC1STAbits.SPEN = 1;
-[e = . . _RC1STAbits 0 7 -> -> 1 `i `uc ]
-"74
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 74:     TX1STAbits.TXEN = 1;
-[e = . . _TX1STAbits 0 5 -> -> 1 `i `uc ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 72:     ANSELCbits.ANSC6 = 0;
+[e = . . _ANSELCbits 0 6 -> -> 0 `i `uc ]
+"73
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 73:     RC6PPS = 0x10;
+[e = _RC6PPS -> -> 16 `i `uc ]
 "75
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 75:     TX1STAbits.TX9 = 0;
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 75:     SP1BRGH = 0x00;
+[e = _SP1BRGH -> -> 0 `i `uc ]
+"76
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 76:     SP1BRGL = 0b00011001;
+[e = _SP1BRGL -> -> 25 `i `uc ]
+"77
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 77:     BAUD1CONbits.BRG16 = 0;
+[e = . . _BAUD1CONbits 0 3 -> -> 0 `i `uc ]
+"79
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 79:     TX1STAbits.BRGH = 0;
+[e = . . _TX1STAbits 0 2 -> -> 0 `i `uc ]
+"80
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 80:     TX1STAbits.SYNC = 0;
+[e = . . _TX1STAbits 0 4 -> -> 0 `i `uc ]
+"82
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 82:     RC1STAbits.SPEN = 1;
+[e = . . _RC1STAbits 0 7 -> -> 1 `i `uc ]
+"84
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 84:     TX1STAbits.TXEN = 1;
+[e = . . _TX1STAbits 0 5 -> -> 1 `i `uc ]
+"85
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 85:     TX1STAbits.TX9 = 0;
 [e = . . _TX1STAbits 0 6 -> -> 0 `i `uc ]
-"78
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 78: }
+"88
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 88: }
 [e :UE 1618 ]
 }
-"81
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 81: void send_char(char word){
+"90
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 90: void cfg_pwm(void)
+[v _cfg_pwm `(v ~T0 @X0 1 ef ]
+"91
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 91: {
+{
+[e :U _cfg_pwm ]
+[f ]
+"92
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 92:     TRISAbits.TRISA0 = 1;
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+"93
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 93:     TRISAbits.TRISA1 = 1;
+[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
+"94
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 94:     TRISAbits.TRISA2 = 1;
+[e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
+"95
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 95:     TRISAbits.TRISA3 = 1;
+[e = . . _TRISAbits 0 3 -> -> 1 `i `uc ]
+"97
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 97:     ANSELAbits.ANSA0 = 0;
+[e = . . _ANSELAbits 0 0 -> -> 0 `i `uc ]
+"98
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 98:     ANSELAbits.ANSA1 = 0;
+[e = . . _ANSELAbits 0 1 -> -> 0 `i `uc ]
+"99
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 99:     ANSELAbits.ANSA2 = 0;
+[e = . . _ANSELAbits 0 2 -> -> 0 `i `uc ]
+"100
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 100:     ANSELAbits.ANSA3 = 0;
+[e = . . _ANSELAbits 0 3 -> -> 0 `i `uc ]
+"102
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 102:     TRISBbits.TRISB5 = 0;
+[e = . . _TRISBbits 0 5 -> -> 0 `i `uc ]
+"103
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 103:     ANSELBbits.ANSB5 = 0;
+[e = . . _ANSELBbits 0 5 -> -> 0 `i `uc ]
+"104
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 104:     RB5PPS = 0x0A;
+[e = _RB5PPS -> -> 10 `i `uc ]
+"105
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 105:     CCP2CON = 0x9F;
+[e = _CCP2CON -> -> 159 `i `uc ]
+"106
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 106:     CCPTMRS0 = 0x05;
+[e = _CCPTMRS0 -> -> 5 `i `uc ]
+"107
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 107:     PR2 = 19;
+[e = _PR2 -> -> 19 `i `uc ]
+"108
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 108:     CCPR2L = 0xFF;
+[e = _CCPR2L -> -> 255 `i `uc ]
+"109
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 109:     CCPR2H = 0xFF;
+[e = _CCPR2H -> -> 255 `i `uc ]
+"110
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 110:     T2CLKCON = 0x01;
+[e = _T2CLKCON -> -> 1 `i `uc ]
+"111
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 111:     T2CON = 0xF0;
+[e = _T2CON -> -> 240 `i `uc ]
+"112
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 112: }
+[e :UE 1619 ]
+}
+"115
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 115: void send_char(char word){
 [v _send_char `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _send_char ]
 [v _word `uc ~T0 @X0 1 r1 ]
 [f ]
-"82
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 82:     while(!TXIF);
-[e $U 1620  ]
-[e :U 1621 ]
-[e :U 1620 ]
-[e $ ! _TXIF 1621  ]
+"116
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 116:     while(!TXIF);
+[e $U 1621  ]
 [e :U 1622 ]
-"83
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 83:     TXREG = word;
+[e :U 1621 ]
+[e $ ! _TXIF 1622  ]
+[e :U 1623 ]
+"117
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 117:     TXREG = word;
 [e = _TXREG -> _word `uc ]
-"84
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 84: }
-[e :UE 1619 ]
+"118
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 118: }
+[e :UE 1620 ]
 }
-"86
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 86: void send_string(char* st_pt)
+"120
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 120: void send_string(char* st_pt)
 [v _send_string `(v ~T0 @X0 1 ef1`*uc ]
-"87
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 87: {
+"121
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 121: {
 {
 [e :U _send_string ]
-"86
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 86: void send_string(char* st_pt)
+"120
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 120: void send_string(char* st_pt)
 [v _st_pt `*uc ~T0 @X0 1 r1 ]
-"87
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 87: {
+"121
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 121: {
 [f ]
-"88
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 88:     while(*st_pt)
-[e $U 1624  ]
-[e :U 1625 ]
-"89
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 89:         send_char(*st_pt++);
-[e ( _send_char (1 *U ++ _st_pt * -> -> 1 `i `x -> -> # *U _st_pt `i `x ]
-[e :U 1624 ]
-"88
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 88:     while(*st_pt)
-[e $ != -> *U _st_pt `i -> 0 `i 1625  ]
+"122
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 122:     while(*st_pt)
+[e $U 1625  ]
 [e :U 1626 ]
-"90
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 90: }
-[e :UE 1623 ]
+"123
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 123:         send_char(*st_pt++);
+[e ( _send_char (1 *U ++ _st_pt * -> -> 1 `i `x -> -> # *U _st_pt `i `x ]
+[e :U 1625 ]
+"122
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 122:     while(*st_pt)
+[e $ != -> *U _st_pt `i -> 0 `i 1626  ]
+[e :U 1627 ]
+"124
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 124: }
+[e :UE 1624 ]
 }
-"110
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 110: void ranging_sys_init(void){
+"134
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 134: void ranging_sys_init(void){
 [v _ranging_sys_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _ranging_sys_init ]
 [f ]
-"113
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 113:     T0CON0bits.T0EN = 0;
+"137
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 137:     TRISBbits.TRISB4 = 1;
+[e = . . _TRISBbits 0 4 -> -> 1 `i `uc ]
+"138
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 138:     TRISBbits.TRISB3 = 0;
+[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
+"139
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 139:     TRISBbits.TRISB2 = 0;
+[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
+"140
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 140:     TRISBbits.TRISB1 = 1;
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
+"141
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 141:     TRISBbits.TRISB0 = 1;
+[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
+"142
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 142:     ANSELB = 0x00;
+[e = _ANSELB -> -> 0 `i `uc ]
+"144
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 144:     LATBbits.LATB2 = 1;
+[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+"148
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 148:     T0CON0bits.T0EN = 0;
 [e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
-"114
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 114:     T0CON0bits.T016BIT = 1;
+"149
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 149:     T0CON0bits.T016BIT = 1;
 [e = . . _T0CON0bits 0 1 -> -> 1 `i `uc ]
-"115
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 115:     T0CON0bits.T0OUTPS = 0b0000;
+"150
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 150:     T0CON0bits.T0OUTPS = 0b0000;
 [e = . . _T0CON0bits 0 0 -> -> 0 `i `uc ]
-"117
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 117:     T0CON1bits.T0CS = 0b010;
+"152
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 152:     T0CON1bits.T0CS = 0b010;
 [e = . . _T0CON1bits 0 2 -> -> 2 `i `uc ]
-"118
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 118:     T0CON1bits.T0ASYNC = 1;
+"153
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 153:     T0CON1bits.T0ASYNC = 1;
 [e = . . _T0CON1bits 0 1 -> -> 1 `i `uc ]
-"119
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 119:     T0CON1bits.T0CKPS = 0b0001;
+"154
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 154:     T0CON1bits.T0CKPS = 0b0001;
 [e = . . _T0CON1bits 0 0 -> -> 1 `i `uc ]
-"121
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 121: }
-[e :UE 1627 ]
-}
-"181
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 181: char itoa_opt(int x)
-[v _itoa_opt `(uc ~T0 @X0 1 ef1`i ]
-"182
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 182: {
-{
-[e :U _itoa_opt ]
-"181
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 181: char itoa_opt(int x)
-[v _x `i ~T0 @X0 1 r1 ]
-"182
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 182: {
-[f ]
-"183
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 183:     switch(x)
-[e $U 1630  ]
-"184
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 184:     {
-{
-"185
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 185:         case 1:return '1';
-[e :U 1631 ]
-[e ) -> -> 49 `ui `uc ]
-[e $UE 1628  ]
-"186
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 186:         case 2:return '2';
-[e :U 1632 ]
-[e ) -> -> 50 `ui `uc ]
-[e $UE 1628  ]
-"187
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 187:         case 3:return '3';
-[e :U 1633 ]
-[e ) -> -> 51 `ui `uc ]
-[e $UE 1628  ]
-"188
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 188:         case 4:return '4';
-[e :U 1634 ]
-[e ) -> -> 52 `ui `uc ]
-[e $UE 1628  ]
-"189
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 189:         case 5:return '5';
-[e :U 1635 ]
-[e ) -> -> 53 `ui `uc ]
-[e $UE 1628  ]
-"190
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 190:         case 6:return '6';
-[e :U 1636 ]
-[e ) -> -> 54 `ui `uc ]
-[e $UE 1628  ]
-"191
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 191:         case 7:return '7';
-[e :U 1637 ]
-[e ) -> -> 55 `ui `uc ]
-[e $UE 1628  ]
-"192
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 192:         case 8:return '8';
-[e :U 1638 ]
-[e ) -> -> 56 `ui `uc ]
-[e $UE 1628  ]
-"193
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 193:         case 9:return '9';
-[e :U 1639 ]
-[e ) -> -> 57 `ui `uc ]
-[e $UE 1628  ]
-"194
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 194:         case 0:return '0';
-[e :U 1640 ]
-[e ) -> -> 48 `ui `uc ]
-[e $UE 1628  ]
-"195
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 195:         default: return'x';
-[e :U 1641 ]
-[e ) -> -> 120 `ui `uc ]
-[e $UE 1628  ]
-"196
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 196:     }
-}
-[e $U 1629  ]
-[e :U 1630 ]
-[e [\ _x , $ -> 1 `i 1631
- , $ -> 2 `i 1632
- , $ -> 3 `i 1633
- , $ -> 4 `i 1634
- , $ -> 5 `i 1635
- , $ -> 6 `i 1636
- , $ -> 7 `i 1637
- , $ -> 8 `i 1638
- , $ -> 9 `i 1639
- , $ -> 0 `i 1640
- 1641 ]
-[e :U 1629 ]
-"197
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 197: }
+"158
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 158: }
 [e :UE 1628 ]
 }
+"164
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 164: int calcAngle(void)
+[v _calcAngle `(i ~T0 @X0 1 ef ]
+"165
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 165: {
+{
+[e :U _calcAngle ]
+[f ]
+"166
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 166:     int angle = 0;
+[v _angle `i ~T0 @X0 1 a ]
+[e = _angle -> 0 `i ]
+"170
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 170:     if((RB1 == 1) && (RB0 == 0))
+[e $ ! && == -> _RB1 `i -> 1 `i == -> _RB0 `i -> 0 `i 1630  ]
+"171
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 171:     {
+{
+"173
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 173:         angle = 90;
+[e = _angle -> 90 `i ]
+"174
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 174:     }
+}
+[e $U 1631  ]
+"175
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 175:     else if((RB1 == 1) && (RB0 == 1))
+[e :U 1630 ]
+[e $ ! && == -> _RB1 `i -> 1 `i == -> _RB0 `i -> 1 `i 1632  ]
+"176
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 176:     {
+{
+"178
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 178:         angle = 180;
+[e = _angle -> 180 `i ]
+"179
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 179:     }
+}
+[e $U 1633  ]
+"180
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 180:     else if((RB1 == 0) && (RB0 ==1))
+[e :U 1632 ]
+[e $ ! && == -> _RB1 `i -> 0 `i == -> _RB0 `i -> 1 `i 1634  ]
+"181
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 181:     {
+{
+"183
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 183:         angle = 270;
+[e = _angle -> 270 `i ]
+"184
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 184:     }
+}
+[e $U 1635  ]
+"185
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 185:     else
+[e :U 1634 ]
+"186
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 186:     {
+{
+"188
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 188:         angle = 0;
+[e = _angle -> 0 `i ]
+"189
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 189:     }
+}
+[e :U 1635 ]
+[e :U 1633 ]
+[e :U 1631 ]
+"191
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 191:     return angle;
+[e ) _angle ]
+[e $UE 1629  ]
+"192
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 192: }
+[e :UE 1629 ]
+}
+"197
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 197: char itoa_opt(int x)
+[v _itoa_opt `(uc ~T0 @X0 1 ef1`i ]
+"198
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 198: {
+{
+[e :U _itoa_opt ]
+"197
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 197: char itoa_opt(int x)
+[v _x `i ~T0 @X0 1 r1 ]
+"198
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 198: {
+[f ]
 "199
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 199: char *itoa(int value)
-[v _itoa `(*uc ~T0 @X0 1 ef1`i ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 199:     switch(x)
+[e $U 1638  ]
 "200
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 200:  {
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 200:     {
+{
+"201
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 201:         case 1:return '1';
+[e :U 1639 ]
+[e ) -> -> 49 `ui `uc ]
+[e $UE 1636  ]
+"202
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 202:         case 2:return '2';
+[e :U 1640 ]
+[e ) -> -> 50 `ui `uc ]
+[e $UE 1636  ]
+"203
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 203:         case 3:return '3';
+[e :U 1641 ]
+[e ) -> -> 51 `ui `uc ]
+[e $UE 1636  ]
+"204
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 204:         case 4:return '4';
+[e :U 1642 ]
+[e ) -> -> 52 `ui `uc ]
+[e $UE 1636  ]
+"205
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 205:         case 5:return '5';
+[e :U 1643 ]
+[e ) -> -> 53 `ui `uc ]
+[e $UE 1636  ]
+"206
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 206:         case 6:return '6';
+[e :U 1644 ]
+[e ) -> -> 54 `ui `uc ]
+[e $UE 1636  ]
+"207
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 207:         case 7:return '7';
+[e :U 1645 ]
+[e ) -> -> 55 `ui `uc ]
+[e $UE 1636  ]
+"208
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 208:         case 8:return '8';
+[e :U 1646 ]
+[e ) -> -> 56 `ui `uc ]
+[e $UE 1636  ]
+"209
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 209:         case 9:return '9';
+[e :U 1647 ]
+[e ) -> -> 57 `ui `uc ]
+[e $UE 1636  ]
+"210
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 210:         case 0:return '0';
+[e :U 1648 ]
+[e ) -> -> 48 `ui `uc ]
+[e $UE 1636  ]
+"211
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 211:         default: return'x';
+[e :U 1649 ]
+[e ) -> -> 120 `ui `uc ]
+[e $UE 1636  ]
+"212
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 212:     }
+}
+[e $U 1637  ]
+[e :U 1638 ]
+[e [\ _x , $ -> 1 `i 1639
+ , $ -> 2 `i 1640
+ , $ -> 3 `i 1641
+ , $ -> 4 `i 1642
+ , $ -> 5 `i 1643
+ , $ -> 6 `i 1644
+ , $ -> 7 `i 1645
+ , $ -> 8 `i 1646
+ , $ -> 9 `i 1647
+ , $ -> 0 `i 1648
+ 1649 ]
+[e :U 1637 ]
+"213
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 213: }
+[e :UE 1636 ]
+}
+"215
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 215: char *itoa(int value)
+[v _itoa `(*uc ~T0 @X0 1 ef1`i ]
+"216
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 216:  {
 {
 [e :U _itoa ]
-"199
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 199: char *itoa(int value)
+"215
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 215: char *itoa(int value)
 [v _value `i ~T0 @X0 1 r1 ]
-"200
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 200:  {
+"216
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 216:  {
 [f ]
-"201
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 201:      static char buffer[12];
-[v F12178 `uc ~T0 @X0 -> 12 `i s buffer ]
-"202
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 202:      int original = value;
+"217
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 217:      static char buffer[12];
+[v F12181 `uc ~T0 @X0 -> 12 `i s buffer ]
+"218
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 218:      int original = value;
 [v _original `i ~T0 @X0 1 a ]
 [e = _original _value ]
-"204
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 204:      int c = sizeof(buffer)-1;
-[v _c `i ~T0 @X0 1 a ]
-[e = _c -> - -> # F12178 `ui -> -> 1 `i `ui `i ]
-"206
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 206:      buffer[c] = 0;
-[e = *U + &U F12178 * -> -> _c `ui `ux -> -> # *U &U F12178 `ui `ux -> -> 0 `i `uc ]
-"208
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 208:      if (value < 0)
-[e $ ! < _value -> 0 `i 1643  ]
-"209
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 209:          value = -value;
-[e = _value -U _value ]
-[e :U 1643 ]
-"211
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 211:      do
-[e :U 1646 ]
-"212
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 212:      {
-{
-"213
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 213:          buffer[--c] = (value % 10) + '0';
-[e = *U + &U F12178 * -> -> =- _c -> 1 `i `ui `ux -> -> # *U &U F12178 `ui `ux -> + -> % _value -> 10 `i `ui -> 48 `ui `uc ]
-"214
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 214:          value /= 10;
-[e =/ _value -> 10 `i ]
-"215
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 215:      } while (value);
-}
-[e $ != _value -> 0 `i 1646  ]
-[e :U 1645 ]
-"217
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 217:      if (original < 0)
-[e $ ! < _original -> 0 `i 1647  ]
-"218
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 218:          buffer[--c] = '-';
-[e = *U + &U F12178 * -> -> =- _c -> 1 `i `ui `ux -> -> # *U &U F12178 `ui `ux -> -> 45 `ui `uc ]
-[e :U 1647 ]
 "220
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 220:      return &buffer[c];
-[e ) &U *U + &U F12178 * -> -> _c `ui `ux -> -> # *U &U F12178 `ui `ux ]
-[e $UE 1642  ]
-"221
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 221:  }
-[e :UE 1642 ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 220:      int c = sizeof(buffer)-1;
+[v _c `i ~T0 @X0 1 a ]
+[e = _c -> - -> # F12181 `ui -> -> 1 `i `ui `i ]
+"222
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 222:      buffer[c] = 0;
+[e = *U + &U F12181 * -> -> _c `ui `ux -> -> # *U &U F12181 `ui `ux -> -> 0 `i `uc ]
+"224
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 224:      if (value < 0)
+[e $ ! < _value -> 0 `i 1651  ]
+"225
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 225:          value = -value;
+[e = _value -U _value ]
+[e :U 1651 ]
+"227
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 227:      do
+[e :U 1654 ]
+"228
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 228:      {
+{
+"229
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 229:          buffer[--c] = (value % 10) + '0';
+[e = *U + &U F12181 * -> -> =- _c -> 1 `i `ui `ux -> -> # *U &U F12181 `ui `ux -> + -> % _value -> 10 `i `ui -> 48 `ui `uc ]
+"230
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 230:          value /= 10;
+[e =/ _value -> 10 `i ]
+"231
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 231:      } while (value);
 }
-"223
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 223: int a = 0;
+[e $ != _value -> 0 `i 1654  ]
+[e :U 1653 ]
+"233
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 233:      if (original < 0)
+[e $ ! < _original -> 0 `i 1655  ]
+"234
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 234:          buffer[--c] = '-';
+[e = *U + &U F12181 * -> -> =- _c -> 1 `i `ui `ux -> -> # *U &U F12181 `ui `ux -> -> 45 `ui `uc ]
+[e :U 1655 ]
+"236
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 236:      return &buffer[c];
+[e ) &U *U + &U F12181 * -> -> _c `ui `ux -> -> # *U &U F12181 `ui `ux ]
+[e $UE 1650  ]
+"237
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 237:  }
+[e :UE 1650 ]
+}
+"239
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 239: int a = 0;
 [v _a `i ~T0 @X0 1 e ]
 [i _a
 -> 0 `i
 ]
-"225
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 225: void set_pwm_dc(int dc)
+"249
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 249: void set_pwm_dc(int dc)
 [v _set_pwm_dc `(v ~T0 @X0 1 ef1`i ]
-"226
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 226: {
+"250
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 250: {
 {
 [e :U _set_pwm_dc ]
-"225
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 225: void set_pwm_dc(int dc)
+"249
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 249: void set_pwm_dc(int dc)
 [v _dc `i ~T0 @X0 1 r1 ]
-"226
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 226: {
+"250
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 250: {
 [f ]
-"227
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 227:         if(dc>20)
-[e $ ! > _dc -> 20 `i 1649  ]
-"228
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 228:         {
+"251
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 251:         if(dc>20)
+[e $ ! > _dc -> 20 `i 1657  ]
+"252
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 252:         {
 {
-"229
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 229:             CCPR2H = 20;
+"253
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 253:             CCPR2H = 20;
 [e = _CCPR2H -> -> 20 `i `uc ]
-"230
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 230:         }
+"255
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 255:         }
 }
-[e $U 1650  ]
-"231
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 231:         else if(dc <= 0)
-[e :U 1649 ]
-[e $ ! <= _dc -> 0 `i 1651  ]
-"232
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 232:         {
+[e $U 1658  ]
+"256
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 256:         else if(dc <= 0)
+[e :U 1657 ]
+[e $ ! <= _dc -> 0 `i 1659  ]
+"257
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 257:         {
 {
-"233
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 233:             CCPR2H = 0;
+"258
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 258:             CCPR2H = 0;
 [e = _CCPR2H -> -> 0 `i `uc ]
-"234
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 234:         }
+"260
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 260:         }
 }
-[e $U 1652  ]
-"235
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 235:         else{
-[e :U 1651 ]
+[e $U 1660  ]
+"261
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 261:         else{
+[e :U 1659 ]
 {
-"236
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 236:             CCPR2H = dc;
+"262
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 262:             CCPR2H = dc;
 [e = _CCPR2H -> _dc `uc ]
-"237
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 237:         }
+"264
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 264:         }
 }
-[e :U 1652 ]
-[e :U 1650 ]
-"238
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 238: }
-[e :UE 1648 ]
+[e :U 1660 ]
+[e :U 1658 ]
+"265
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 265: }
+[e :UE 1656 ]
 }
-"240
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 240: int dpsw_to_dc(void)
+"267
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 267: int dpsw_to_dc(void)
 [v _dpsw_to_dc `(i ~T0 @X0 1 ef ]
-"241
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 241: {
+"268
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 268: {
 {
 [e :U _dpsw_to_dc ]
 [f ]
-"243
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 243:     int d0;
+"270
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 270:     int d0;
 [v _d0 `i ~T0 @X0 1 a ]
-"244
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 244:     int d1;
+"271
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 271:     int d1;
 [v _d1 `i ~T0 @X0 1 a ]
-"245
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 245:     int d2;
+"272
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 272:     int d2;
 [v _d2 `i ~T0 @X0 1 a ]
-"246
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 246:     int d3;
+"273
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 273:     int d3;
 [v _d3 `i ~T0 @X0 1 a ]
-"248
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 248:     if(PORTAbits.RA0){d0 = 1000;} else {d0 = 0;}
-[e $ ! != -> . . _PORTAbits 0 0 `i -> 0 `i 1654  ]
+"275
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 275:     if(RA0){d0 = 1000;} else {d0 = 0;}
+[e $ ! _RA0 1662  ]
 {
 [e = _d0 -> 1000 `i ]
 }
-[e $U 1655  ]
-[e :U 1654 ]
+[e $U 1663  ]
+[e :U 1662 ]
 {
 [e = _d0 -> 0 `i ]
 }
-[e :U 1655 ]
-"249
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 249:     if(PORTAbits.RA1){d1 = 100;} else {d1 = 0;}
-[e $ ! != -> . . _PORTAbits 0 1 `i -> 0 `i 1656  ]
+[e :U 1663 ]
+"276
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 276:     if(RA1){d1 = 100;} else {d1 = 0;}
+[e $ ! _RA1 1664  ]
 {
 [e = _d1 -> 100 `i ]
 }
-[e $U 1657  ]
-[e :U 1656 ]
+[e $U 1665  ]
+[e :U 1664 ]
 {
 [e = _d1 -> 0 `i ]
 }
-[e :U 1657 ]
-"250
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 250:     if(PORTAbits.RA2){d2 = 10;} else {d2 = 0;}
-[e $ ! != -> . . _PORTAbits 0 2 `i -> 0 `i 1658  ]
+[e :U 1665 ]
+"277
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 277:     if(RA2){d2 = 10;} else {d2 = 0;}
+[e $ ! _RA2 1666  ]
 {
 [e = _d2 -> 10 `i ]
 }
-[e $U 1659  ]
-[e :U 1658 ]
+[e $U 1667  ]
+[e :U 1666 ]
 {
 [e = _d2 -> 0 `i ]
 }
-[e :U 1659 ]
-"251
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 251:     if(PORTAbits.RA3){d3 = 1;} else {d3 = 0;}
-[e $ ! != -> . . _PORTAbits 0 3 `i -> 0 `i 1660  ]
+[e :U 1667 ]
+"278
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 278:     if(RA3){d3 = 1;} else {d3 = 0;}
+[e $ ! _RA3 1668  ]
 {
 [e = _d3 -> 1 `i ]
 }
-[e $U 1661  ]
-[e :U 1660 ]
+[e $U 1669  ]
+[e :U 1668 ]
 {
 [e = _d3 -> 0 `i ]
 }
-[e :U 1661 ]
-"253
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 253:     int binary_d = d0 + d1 + d2 + d3;
+[e :U 1669 ]
+"280
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 280:     int binary_d = d0 + d1 + d2 + d3;
 [v _binary_d `i ~T0 @X0 1 a ]
 [e = _binary_d + + + _d0 _d1 _d2 _d3 ]
-"255
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 255:     if(binary_d == 0)
-[e $ ! == _binary_d -> 0 `i 1662  ]
-"256
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 256:     {
+"282
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 282:     if(binary_d == 0)
+[e $ ! == _binary_d -> 0 `i 1670  ]
+"283
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 283:     {
 {
-"257
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 257:         return 0;
+"284
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 284:         return 0;
 [e ) -> 0 `i ]
-[e $UE 1653  ]
-"258
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 258:     }
+[e $UE 1661  ]
+"285
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 285:     }
 }
-[e :U 1662 ]
-"260
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 260:     int num_base = 1;
+[e :U 1670 ]
+"287
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 287:     int num_base = 1;
 [v _num_base `i ~T0 @X0 1 a ]
 [e = _num_base -> 1 `i ]
-"261
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 261:     int rem = 0;
+"288
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 288:     int rem = 0;
 [v _rem `i ~T0 @X0 1 a ]
 [e = _rem -> 0 `i ]
-"262
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 262:     int decimal_num = 5;
+"289
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 289:     int decimal_num = 5;
 [v _decimal_num `i ~T0 @X0 1 a ]
 [e = _decimal_num -> 5 `i ]
-"264
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 264:     while ( binary_d > 0)
-[e $U 1663  ]
-[e :U 1664 ]
-"265
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 265:     {
+"291
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 291:     while ( binary_d > 0)
+[e $U 1671  ]
+[e :U 1672 ]
+"292
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 292:     {
 {
-"266
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 266:         rem = binary_d % 10;
+"293
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 293:         rem = binary_d % 10;
 [e = _rem % _binary_d -> 10 `i ]
-"267
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 267:         decimal_num = decimal_num + rem * num_base;
+"294
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 294:         decimal_num = decimal_num + rem * num_base;
 [e = _decimal_num + _decimal_num * _rem _num_base ]
-"268
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 268:         binary_d = binary_d/ 10;
+"295
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 295:         binary_d = binary_d/ 10;
 [e = _binary_d / _binary_d -> 10 `i ]
-"269
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 269:         num_base = num_base * 2;
+"296
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 296:         num_base = num_base * 2;
 [e = _num_base * _num_base -> 2 `i ]
-"270
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 270:     }
+"297
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 297:     }
 }
-[e :U 1663 ]
-"264
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 264:     while ( binary_d > 0)
-[e $ > _binary_d -> 0 `i 1664  ]
-[e :U 1665 ]
-"273
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 273:     return decimal_num;
+[e :U 1671 ]
+"291
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 291:     while ( binary_d > 0)
+[e $ > _binary_d -> 0 `i 1672  ]
+[e :U 1673 ]
+"300
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 300:     return decimal_num;
 [e ) _decimal_num ]
-[e $UE 1653  ]
-"274
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 274: }
-[e :UE 1653 ]
+[e $UE 1661  ]
+"301
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 301: }
+[e :UE 1661 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"277
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 277: void main(void){
+"304
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 304: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"301
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 301:     ANSELCbits.ANSC1 = 0;
-[e = . . _ANSELCbits 0 1 -> -> 0 `i `uc ]
-"302
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 302:     TRISCbits.TRISC1 = 0;
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-"303
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 303:     LATCbits.LATC1 = 1;
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-"322
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 322:     while(1);
-[e :U 1668 ]
-[e :U 1667 ]
-[e $U 1668  ]
-[e :U 1669 ]
-"434
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 434:     return;
-[e $UE 1666  ]
-"435
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 435: }
-[e :UE 1666 ]
+"308
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 308:     cfg_eusart();
+[e ( _cfg_eusart ..  ]
+"309
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 309:     cfg_pwm();
+[e ( _cfg_pwm ..  ]
+"310
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 310:     ranging_sys_init();
+[e ( _ranging_sys_init ..  ]
+"445
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 445:     _delay((unsigned long)((1000)*(2000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 2000000 `l `d .4000.0 `ul ]
+"446
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 446:     send_string("[*]Serial Connection successful\r\n");
+[e ( _send_string (1 :s 1C ]
+"448
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 448:     int dc = 0;
+[v _dc `i ~T0 @X0 1 a ]
+[e = _dc -> 0 `i ]
+"450
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 450:     while(1)
+[e :U 1676 ]
+"451
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 451:     {
+{
+"452
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 452:         set_pwm_dc(dpsw_to_dc());
+[e ( _set_pwm_dc (1 ( _dpsw_to_dc ..  ]
+"453
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 453:         TMR0H = 0;
+[e = _TMR0H -> -> 0 `i `uc ]
+"454
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 454:         TMR0L = 0;
+[e = _TMR0L -> -> 0 `i `uc ]
+"455
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 455:         T0CON1bits.T0CKPS = 0b0001;
+[e = . . _T0CON1bits 0 0 -> -> 1 `i `uc ]
+"457
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 457:         PORTBbits.RB3 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+"458
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 458:         _delay((unsigned long)((10)*(2000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 2000000 `l `d .4000000.0 `ul ]
+"459
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 459:         PORTBbits.RB3 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"461
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 461:         while(!PORTBbits.RB4);
+[e $U 1678  ]
+[e :U 1679 ]
+[e :U 1678 ]
+[e $ ! != -> . . _PORTBbits 0 4 `i -> 0 `i 1679  ]
+[e :U 1680 ]
+"462
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 462:         T0CON0bits.T0EN = 1;
+[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
+"463
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 463:         while(PORTBbits.RB4);
+[e $U 1681  ]
+[e :U 1682 ]
+[e :U 1681 ]
+[e $ != -> . . _PORTBbits 0 4 `i -> 0 `i 1682  ]
+[e :U 1683 ]
+"464
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 464:         T0CON0bits.T0EN = 0;
+[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
+"466
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 466:         a = (TMR0L | (TMR0H<<8));
+[e = _a | -> _TMR0L `i << -> _TMR0H `i -> 8 `i ]
+"467
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 467:         a = a*0.068;
+[e = _a -> * -> _a `d .0.068 `i ]
+"468
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 468:         a = a + 1;
+[e = _a + _a -> 1 `i ]
+"470
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 470:         dc = CCPR2H;
+[e = _dc -> _CCPR2H `i ]
+"472
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 472:         if(a>=2 && a<=400)
+[e $ ! && >= _a -> 2 `i <= _a -> 400 `i 1684  ]
+"473
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 473:         {
+{
+"475
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 475:             send_string("Distance = ");
+[e ( _send_string (1 :s 2C ]
+"476
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 476:             send_string(itoa(a));
+[e ( _send_string (1 ( _itoa (1 _a ]
+"477
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 477:             send_string(" cm");
+[e ( _send_string (1 :s 3C ]
+"479
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 479:             send_string("\tAngle = ");
+[e ( _send_string (1 :s 4C ]
+"480
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 480:             send_string(itoa(calcAngle()));
+[e ( _send_string (1 ( _itoa (1 ( _calcAngle ..  ]
+"481
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 481:             send_string(" deg");
+[e ( _send_string (1 :s 5C ]
+"484
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 484:             send_string("\tPWM Duty Cycle = ");
+[e ( _send_string (1 :s 6C ]
+"485
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 485:             send_string(itoa(dc));
+[e ( _send_string (1 ( _itoa (1 _dc ]
+"486
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 486:             send_string("\r\n");
+[e ( _send_string (1 :s 7C ]
+"487
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 487:         }
 }
+[e $U 1685  ]
+"488
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 488:         else
+[e :U 1684 ]
+"489
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 489:         {
+{
+"490
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 490:           send_string("Out of Range\r\n");
+[e ( _send_string (1 :s 8C ]
+"491
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 491:         }
+}
+[e :U 1685 ]
+"492
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 492:         _delay((unsigned long)((400)*(2000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 2000000 `l `d .4000.0 `ul ]
+"493
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 493:     }
+}
+[e :U 1675 ]
+[e $U 1676  ]
+[e :U 1677 ]
+"497
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 497:     return;
+[e $UE 1674  ]
+"498
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 498: }
+[e :UE 1674 ]
+}
+[a 3C 32 99 109 0 ]
+[a 5C 32 100 101 103 0 ]
+[a 4C 9 65 110 103 108 101 32 61 32 0 ]
+[a 6C 9 80 87 77 32 68 117 116 121 32 67 121 99 108 101 32 61 32 0 ]
+[a 2C 68 105 115 116 97 110 99 101 32 61 32 0 ]
+[a 1C 91 42 93 83 101 114 105 97 108 32 67 111 110 110 101 99 116 105 111 110 32 115 117 99 99 101 115 115 102 117 108 13 10 0 ]
+[a 8C 79 117 116 32 111 102 32 82 97 110 103 101 13 10 0 ]
+[a 7C 13 10 0 ]
