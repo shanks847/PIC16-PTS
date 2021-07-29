@@ -3,10 +3,10 @@ Microchip MPLAB XC8 Compiler V2.32
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
-  -h+dist/default/production\PIC16-PTS.production.sym \
-  --cmf=dist/default/production\PIC16-PTS.production.cmf -z -Q16F18877 \
-  -oC:\Users\rocke\AppData\Local\Temp\xcAsjvk.4 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/PIC16-PTS.production.map -E1 -ver=XC8 Compiler \
+  -h+dist/default/debug\PIC16-PTS.debug.sym \
+  --cmf=dist/default/debug\PIC16-PTS.debug.cmf -z -Q16F18877 \
+  -oC:\Users\rocke\AppData\Local\Temp\xcAs550.4 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/debug/PIC16-PTS.debug.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=02000h-02FEFh -pstack=STACK -ACODE=00h-07FFhx16 \
   -ASTRCODE=00h-07FFFh -ASTRING=00h-0FFhx128 -ACONST=00h-0FFhx128 \
   -AENTRY=00h-0FFhx128 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
@@ -54,8 +54,8 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o \
-  dist/default/production\PIC16-PTS.production.o 
+  -pfunctab=ENTRY -k C:\Users\rocke\AppData\Local\Temp\xcAs550.o \
+  dist/default/debug\PIC16-PTS.debug.o 
 
 Object code version is 3.11
 
@@ -64,15 +64,15 @@ Machine type is 16F18877
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
+C:\Users\rocke\AppData\Local\Temp\xcAs550.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
-dist/default/production\PIC16-PTS.production.o
+dist/default/debug\PIC16-PTS.debug.o
                 cinit                               7F5      7F5        B      FEA       0
                 config                             8007     8007        5        0       4
-                maintext                            7ED      7ED        8      FDA       0
-                clrtext                             7E7      7E7        6      FCE       0
+                maintext                            7E2      7E2       13      FC4       0
+                clrtext                             7DC      7DC        6      FB8       0
                 bssCOMMON                            70       70        E       70       1
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -82,8 +82,8 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                              2        2        2         0
                 cinit                               7F5      7F5        B         0
                 reset_vec                             0        0        2         0
-                maintext                            7ED      7ED        8         0
-                clrtext                             7E7      7E7        6         0
+                maintext                            7E2      7E2       13         0
+                clrtext                             7DC      7DC        6         0
 
         CLASS   STRCODE        
 
@@ -372,8 +372,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE        2
                 bssCOMMON                      000070  00000E  00007E        70       1  COMMON      1
-                clrtext                        0007E7  000006  0007ED       FCE       0  CODE        2
-                maintext                       0007ED  000008  0007F5       FDA       0  CODE        2
+                clrtext                        0007DC  000006  0007E2       FB8       0  CODE        2
+                maintext                       0007E2  000013  0007F5       FC4       0  CODE        2
                 cinit                          0007F5  00000B  000800       FEA       0  CODE        2
 
 
@@ -432,12 +432,12 @@ UNUSED ADDRESS RANGES
         BANK8            00420-0046F              50           1
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-02FEF             FF0           1
-        CODE             00004-007E6             7E3           2
+        CODE             00004-007DB             7D8           2
                          00800-07FFF             800
-        CONST            00004-007E6             100           2
+        CONST            00004-007DB             100           2
                          00800-07FFF             100
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00004-007E6             100           2
+        ENTRY            00004-007DB             100           2
                          00800-07FFF             100
         IDLOC            08000-08003               4           2
         RAM              00020-0006F              50           1
@@ -556,18 +556,21 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
         STACK            02000-02FEF             FF0           1
-        STRCODE          00004-007E6             7E3           2
+        STRCODE          00004-007DB             7D8           2
                          00800-07FFF            7800
-        STRING           00004-007E6             100           2
+        STRING           00004-007DB             100           2
                          00800-07FFF             100
 
                                   Symbol Table
 
 _ANSELCbits              (abs)        01F4E
+_ANSELDbits              (abs)        01F59
+_ANSELEbits              (abs)        01F64
 _BAUD1CONbits            (abs)        0011F
 _CCPR2H                  (abs)        00311
-_LATCbits                (abs)        00018
+_LATDbits                (abs)        00019
 _PORTAbits               (abs)        0000C
+_PORTEbits               (abs)        00010
 _RC1STAbits              (abs)        0011D
 _RC6PPS                  (abs)        01F26
 _SP1BRGH                 (abs)        0011C
@@ -575,6 +578,8 @@ _SP1BRGL                 (abs)        0011B
 _T0CON0bits              (abs)        0001E
 _T0CON1bits              (abs)        0001F
 _TRISCbits               (abs)        00013
+_TRISDbits               (abs)        00014
+_TRISEbits               (abs)        00015
 _TX1STAbits              (abs)        0011E
 _TXIF                    (abs)        0387C
 _TXREG                   (abs)        0011A
@@ -900,11 +905,11 @@ __end_of_main            maintext     007F5
 __initialization         cinit        007F5
 __pbssCOMMON             bssCOMMON    00070
 __pcstackCOMMON          cstackCOMMON 00000
-__pmaintext              maintext     007ED
+__pmaintext              maintext     007E2
 __size_of_main           (abs)        00000
-_main                    maintext     007ED
+_main                    maintext     007E2
 btemp                    (abs)        0007E
-clear_ram0               clrtext      007E7
+clear_ram0               clrtext      007DC
 end_of_initialization    cinit        007FD
 intlevel0                functab      00000
 intlevel1                functab      00000
@@ -928,7 +933,7 @@ shared
 shared estimated size: 8
 
 C:/Users/rocke/Desktop/PIC16-PTS/main.c
-		_main          		CODE           	07ED	0000	8
+		_main          		CODE           	07E2	0000	19
 
-C:/Users/rocke/Desktop/PIC16-PTS/main.c estimated size: 8
+C:/Users/rocke/Desktop/PIC16-PTS/main.c estimated size: 19
 

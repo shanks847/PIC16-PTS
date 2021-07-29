@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Wed Jul 28 19:17:46 2021
+                                                                                               Tue Jul 27 23:02:55 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F18877
@@ -1148,215 +1148,239 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1134  1FED                     	;# 
   1135  1FEE                     	;# 
   1136  1FEF                     	;# 
-  1137  0018                     _LATCbits	set	24
-  1138  000C                     _PORTAbits	set	12
-  1139  001F                     _T0CON1bits	set	31
-  1140  001E                     _T0CON0bits	set	30
-  1141  0013                     _TRISCbits	set	19
-  1142  011A                     _TXREG	set	282
-  1143  011D                     _RC1STAbits	set	285
-  1144  011E                     _TX1STAbits	set	286
-  1145  011F                     _BAUD1CONbits	set	287
-  1146  011B                     _SP1BRGL	set	283
-  1147  011C                     _SP1BRGH	set	284
-  1148  0311                     _CCPR2H	set	785
-  1149  387C                     _TXIF	set	14460
-  1150  1F26                     _RC6PPS	set	7974
-  1151  1F4E                     _ANSELCbits	set	8014
-  1152                           
-  1153                           	psect	cinit
-  1154  07F5                     start_initialization:	
-  1155                           ; #config settings
-  1156                           
-  1157  07F5                     __initialization:
-  1158                           
-  1159                           ; Clear objects allocated to COMMON
-  1160  07F5  3070               	movlw	low __pbssCOMMON
-  1161  07F6  0084               	movwf	4
-  1162  07F7  3000               	movlw	high __pbssCOMMON
-  1163  07F8  0085               	movwf	5
-  1164  07F9  300E               	movlw	14
-  1165  07FA  3187  27E7  3187   	fcall	clear_ram0
-  1166  07FD                     end_of_initialization:	
-  1167                           ;End of C runtime variable initialization code
-  1168                           
-  1169  07FD                     __end_of__initialization:
-  1170  07FD  0140               	movlb	0
-  1171  07FE  3187  2FED         	ljmp	_main	;jump to C main() function
-  1172                           
-  1173                           	psect	bssCOMMON
-  1174  0070                     __pbssCOMMON:
-  1175  0070                     _a:
-  1176  0070                     	ds	2
-  1177  0072                     itoa@buffer:
-  1178  0072                     	ds	12
-  1179                           
-  1180                           	psect	clrtext
-  1181  07E7                     clear_ram0:	
-  1182                           ;	Called with FSR0 containing the base address, and
-  1183                           ;	WREG with the size to clear
+  1137  0019                     _LATDbits	set	25
+  1138  0010                     _PORTEbits	set	16
+  1139  0015                     _TRISEbits	set	21
+  1140  0014                     _TRISDbits	set	20
+  1141  000C                     _PORTAbits	set	12
+  1142  001F                     _T0CON1bits	set	31
+  1143  001E                     _T0CON0bits	set	30
+  1144  0013                     _TRISCbits	set	19
+  1145  011A                     _TXREG	set	282
+  1146  011D                     _RC1STAbits	set	285
+  1147  011E                     _TX1STAbits	set	286
+  1148  011F                     _BAUD1CONbits	set	287
+  1149  011B                     _SP1BRGL	set	283
+  1150  011C                     _SP1BRGH	set	284
+  1151  0311                     _CCPR2H	set	785
+  1152  387C                     _TXIF	set	14460
+  1153  1F64                     _ANSELEbits	set	8036
+  1154  1F59                     _ANSELDbits	set	8025
+  1155  1F26                     _RC6PPS	set	7974
+  1156  1F4E                     _ANSELCbits	set	8014
+  1157                           
+  1158                           	psect	cinit
+  1159  07F5                     start_initialization:	
+  1160                           ; #config settings
+  1161                           
+  1162  07F5                     __initialization:
+  1163                           
+  1164                           ; Clear objects allocated to COMMON
+  1165  07F5  3070               	movlw	low __pbssCOMMON
+  1166  07F6  0084               	movwf	4
+  1167  07F7  3000               	movlw	high __pbssCOMMON
+  1168  07F8  0085               	movwf	5
+  1169  07F9  300E               	movlw	14
+  1170  07FA  3187  27DC  3187   	fcall	clear_ram0
+  1171  07FD                     end_of_initialization:	
+  1172                           ;End of C runtime variable initialization code
+  1173                           
+  1174  07FD                     __end_of__initialization:
+  1175  07FD  0140               	movlb	0
+  1176  07FE  3187  2FE2         	ljmp	_main	;jump to C main() function
+  1177                           
+  1178                           	psect	bssCOMMON
+  1179  0070                     __pbssCOMMON:
+  1180  0070                     _a:
+  1181  0070                     	ds	2
+  1182  0072                     itoa@buffer:
+  1183  0072                     	ds	12
   1184                           
-  1185  07E7  0064               	clrwdt	;clear the watchdog before getting into this loop
-  1186  07E8                     clrloop0:
-  1187  07E8  0180               	clrf	0	;clear RAM location pointed to by FSR
-  1188  07E9  3101               	addfsr 0,1
-  1189  07EA  0B89               	decfsz	9,f	;Have we reached the end of clearing yet?
-  1190  07EB  2FE8               	goto	clrloop0	;have we reached the end yet?
-  1191  07EC  3400               	retlw	0	;all done for this memory range, return
-  1192                           
-  1193                           	psect	cstackCOMMON
-  1194  0000                     __pcstackCOMMON:
-  1195  0000                     ?_main:
-  1196  0000                     ??_main:	
-  1197                           ; 1 bytes @ 0x0
-  1198                           
-  1199                           
-  1200                           	psect	maintext
-  1201  07ED                     __pmaintext:	
+  1185                           	psect	clrtext
+  1186  07DC                     clear_ram0:	
+  1187                           ;	Called with FSR0 containing the base address, and
+  1188                           ;	WREG with the size to clear
+  1189                           
+  1190  07DC  0064               	clrwdt	;clear the watchdog before getting into this loop
+  1191  07DD                     clrloop0:
+  1192  07DD  0180               	clrf	0	;clear RAM location pointed to by FSR
+  1193  07DE  3101               	addfsr 0,1
+  1194  07DF  0B89               	decfsz	9,f	;Have we reached the end of clearing yet?
+  1195  07E0  2FDD               	goto	clrloop0	;have we reached the end yet?
+  1196  07E1  3400               	retlw	0	;all done for this memory range, return
+  1197                           
+  1198                           	psect	cstackCOMMON
+  1199  0000                     __pcstackCOMMON:
+  1200  0000                     ?_main:
+  1201  0000                     ??_main:	
   1202                           ; 1 bytes @ 0x0
-  1203 ;;
-  1204 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-  1205 ;;
-  1206 ;; *************** function _main *****************
-  1207 ;; Defined at:
-  1208 ;;		line 277 in file "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-  1209 ;; Parameters:    Size  Location     Type
-  1210 ;;		None
-  1211 ;; Auto vars:     Size  Location     Type
-  1212 ;;		None
-  1213 ;; Return value:  Size  Location     Type
-  1214 ;;                  1    wreg      void 
-  1215 ;; Registers used:
-  1216 ;;		None
-  1217 ;; Tracked objects:
-  1218 ;;		On entry : B3F/0
-  1219 ;;		On exit  : 0/0
-  1220 ;;		Unchanged: 0/0
-  1221 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1203                           
+  1204                           
+  1205                           	psect	maintext
+  1206  07E2                     __pmaintext:	
+  1207                           ; 1 bytes @ 0x0
+  1208 ;;
+  1209 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+  1210 ;;
+  1211 ;; *************** function _main *****************
+  1212 ;; Defined at:
+  1213 ;;		line 277 in file "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+  1214 ;; Parameters:    Size  Location     Type
+  1215 ;;		None
+  1216 ;; Auto vars:     Size  Location     Type
+  1217 ;;		None
+  1218 ;; Return value:  Size  Location     Type
+  1219 ;;                  1    wreg      void 
+  1220 ;; Registers used:
+  1221 ;;		None
+  1222 ;; Tracked objects:
+  1223 ;;		On entry : B3F/0
+  1224 ;;		On exit  : 0/0
+  1225 ;;		Unchanged: 0/0
+  1226 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK2
       +6  BANK27  BANK28  BANK29  BANK30  BANK31  BANK32  BANK33  BANK34  BANK35  BANK36  BANK37  BANK38  BANK39  BANK40  BANK4
       +1  BANK42  BANK43  BANK44  BANK45  BANK46  BANK47  BANK48  BANK49  BANK50
-  1222 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1227 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0
-  1223 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1228 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0
-  1224 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  1229 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0
-  1225 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1230 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0
-  1226 ;;Total ram usage:        0 bytes
-  1227 ;; This function calls:
-  1228 ;;		Nothing
-  1229 ;; This function is called by:
-  1230 ;;		Startup code after reset
-  1231 ;; This function uses a non-reentrant model
-  1232 ;;
-  1233                           
-  1234                           
-  1235                           ;psect for function _main
-  1236  07ED                     _main:
-  1237  07ED                     l833:	
-  1238                           ;incstack = 0
-  1239                           ; Regs used in _main: []
-  1240                           
-  1241                           
-  1242                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 301:     ANSELCbits.ANSC1 = 0;
-  1243  07ED  017E               	movlb	62	; select bank62
-  1244  07EE  10CE               	bcf	78,1	;volatile
+  1231 ;;Total ram usage:        0 bytes
+  1232 ;; This function calls:
+  1233 ;;		Nothing
+  1234 ;; This function is called by:
+  1235 ;;		Startup code after reset
+  1236 ;; This function uses a non-reentrant model
+  1237 ;;
+  1238                           
+  1239                           
+  1240                           ;psect for function _main
+  1241  07E2                     _main:
+  1242  07E2                     l845:	
+  1243                           ;incstack = 0
+  1244                           ; Regs used in _main: []
   1245                           
-  1246                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 302:     TRISCbits.TRISC1 = 0;
-  1247  07EF  0140               	movlb	0	; select bank0
-  1248  07F0  1093               	bcf	19,1	;volatile
-  1249                           
-  1250                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 303:     LATCbits.LATC1 = 1;
-  1251  07F1  1498               	bsf	24,1	;volatile
-  1252  07F2                     l102:	
-  1253                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 322:     while(1);
+  1246                           
+  1247                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 278:     TRISDbits.TRISD1 = 0;
+  1248  07E2  0140               	movlb	0	; select bank0
+  1249  07E3  1094               	bcf	20,1	;volatile
+  1250                           
+  1251                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 279:     ANSELDbits.ANSD1 = 0;
+  1252  07E4  017E               	movlb	62	; select bank62
+  1253  07E5  10D9               	bcf	89,1	;volatile
   1254                           
-  1255  07F2                     l103:
-  1256  07F2  2FF2               	goto	l102
-  1257  07F3  3180  2802         	ljmp	start
-  1258  07F5                     __end_of_main:
-  1259  007E                     btemp	set	126	;btemp
-  1260  007E                     wtemp0	set	126
-  1261                           
-  1262                           	psect	config
-  1263                           
-  1264                           ;Config register CONFIG1 @ 0x8007
-  1265                           ;	External Oscillator mode selection bits
-  1266                           ;	FEXTOSC = XT, XT (crystal oscillator) above 500kHz, below 4MHz; PFM set to medium powe
+  1255                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 281:     TRISEbits.TRISE2 = 1;
+  1256  07E6  0140               	movlb	0	; select bank0
+  1257  07E7  1515               	bsf	21,2	;volatile
+  1258                           
+  1259                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 282:     ANSELEbits.ANSE2 = 0;
+  1260  07E8  017E               	movlb	62	; select bank62
+  1261  07E9  1164               	bcf	100,2	;volatile
+  1262  07EA                     l112:	
+  1263                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 335:     while(1){
+  1264                           
+  1265                           
+  1266                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 340:         if(PORTEbits.RE2 == 1){LATDbits.L
+      +                          ATD1 = 1;}else{LATDbits.LATD1 = 0;}
+  1267  07EA  0140               	movlb	0	; select bank0
+  1268  07EB  1D10               	btfss	16,2	;volatile
+  1269  07EC  2FEE               	goto	u141
+  1270  07ED  2FEF               	goto	u140
+  1271  07EE                     u141:
+  1272  07EE  2FF1               	goto	l113
+  1273  07EF                     u140:
+  1274  07EF                     l847:
+  1275  07EF  1499               	bsf	25,1	;volatile
+  1276  07F0  2FEA               	goto	l112
+  1277  07F1                     l113:
+  1278  07F1  1099               	bcf	25,1	;volatile
+  1279  07F2  2FEA               	goto	l112
+  1280  07F3  3180  2802         	ljmp	start
+  1281  07F5                     __end_of_main:
+  1282  007E                     btemp	set	126	;btemp
+  1283  007E                     wtemp0	set	126
+  1284                           
+  1285                           	psect	config
+  1286                           
+  1287                           ;Config register CONFIG1 @ 0x8007
+  1288                           ;	External Oscillator mode selection bits
+  1289                           ;	FEXTOSC = XT, XT (crystal oscillator) above 500kHz, below 4MHz; PFM set to medium powe
       +                          r
-  1267                           ;	Power-up default value for COSC bits
-  1268                           ;	RSTOSC = EXT1X, EXTOSC operating per FEXTOSC bits
-  1269                           ;	Clock Out Enable bit
-  1270                           ;	CLKOUTEN = OFF, CLKOUT function is disabled; i/o or oscillator function on OSC2
-  1271                           ;	Clock Switch Enable bit
-  1272                           ;	CSWEN = ON, Writing to NOSC and NDIV is allowed
-  1273                           ;	Fail-Safe Clock Monitor Enable bit
-  1274                           ;	FCMEN = ON, FSCM timer enabled
-  1275  8007                     	org	32775
-  1276  8007  3FF9               	dw	16377
-  1277                           
-  1278                           ;Config register CONFIG2 @ 0x8008
-  1279                           ;	Master Clear Enable bit
-  1280                           ;	MCLRE = ON, MCLR pin is Master Clear function
-  1281                           ;	Power-up Timer Enable bit
-  1282                           ;	PWRTE = OFF, PWRT disabled
-  1283                           ;	Low-Power BOR enable bit
-  1284                           ;	LPBOREN = OFF, ULPBOR disabled
-  1285                           ;	Brown-out reset enable bits
-  1286                           ;	BOREN = ON, Brown-out Reset Enabled, SBOREN bit is ignored
-  1287                           ;	Brown-out Reset Voltage Selection
-  1288                           ;	BORV = LO, Brown-out Reset Voltage (VBOR) set to 1.9V on LF, and 2.45V on F Devices
-  1289                           ;	Zero-cross detect disable
-  1290                           ;	ZCD = OFF, Zero-cross detect circuit is disabled at POR.
-  1291                           ;	Peripheral Pin Select one-way control
-  1292                           ;	PPS1WAY = ON, The PPSLOCK bit can be cleared and set only once in software
-  1293                           ;	Stack Overflow/Underflow Reset Enable bit
-  1294                           ;	STVREN = ON, Stack Overflow or Underflow will cause a reset
-  1295                           ;	Background Debugger
-  1296                           ;	DEBUG = OFF, Background Debugger disabled
-  1297  8008                     	org	32776
-  1298  8008  3FFF               	dw	16383
-  1299                           
-  1300                           ;Config register CONFIG3 @ 0x8009
-  1301                           ;	WDT Period Select bits
-  1302                           ;	WDTCPS = WDTCPS_31, Divider ratio 1:65536; software control of WDTPS
-  1303                           ;	WDT operating mode
-  1304                           ;	WDTE = OFF, WDT Disabled, SWDTEN is ignored
-  1305                           ;	WDT Window Select bits
-  1306                           ;	WDTCWS = WDTCWS_7, window always open (100%); software control; keyed access not requi
+  1290                           ;	Power-up default value for COSC bits
+  1291                           ;	RSTOSC = EXT1X, EXTOSC operating per FEXTOSC bits
+  1292                           ;	Clock Out Enable bit
+  1293                           ;	CLKOUTEN = OFF, CLKOUT function is disabled; i/o or oscillator function on OSC2
+  1294                           ;	Clock Switch Enable bit
+  1295                           ;	CSWEN = ON, Writing to NOSC and NDIV is allowed
+  1296                           ;	Fail-Safe Clock Monitor Enable bit
+  1297                           ;	FCMEN = ON, FSCM timer enabled
+  1298  8007                     	org	32775
+  1299  8007  3FF9               	dw	16377
+  1300                           
+  1301                           ;Config register CONFIG2 @ 0x8008
+  1302                           ;	Master Clear Enable bit
+  1303                           ;	MCLRE = ON, MCLR pin is Master Clear function
+  1304                           ;	Power-up Timer Enable bit
+  1305                           ;	PWRTE = OFF, PWRT disabled
+  1306                           ;	Low-Power BOR enable bit
+  1307                           ;	LPBOREN = OFF, ULPBOR disabled
+  1308                           ;	Brown-out reset enable bits
+  1309                           ;	BOREN = ON, Brown-out Reset Enabled, SBOREN bit is ignored
+  1310                           ;	Brown-out Reset Voltage Selection
+  1311                           ;	BORV = LO, Brown-out Reset Voltage (VBOR) set to 1.9V on LF, and 2.45V on F Devices
+  1312                           ;	Zero-cross detect disable
+  1313                           ;	ZCD = OFF, Zero-cross detect circuit is disabled at POR.
+  1314                           ;	Peripheral Pin Select one-way control
+  1315                           ;	PPS1WAY = ON, The PPSLOCK bit can be cleared and set only once in software
+  1316                           ;	Stack Overflow/Underflow Reset Enable bit
+  1317                           ;	STVREN = ON, Stack Overflow or Underflow will cause a reset
+  1318                           ;	Background Debugger
+  1319                           ;	DEBUG = OFF, Background Debugger disabled
+  1320  8008                     	org	32776
+  1321  8008  3FFF               	dw	16383
+  1322                           
+  1323                           ;Config register CONFIG3 @ 0x8009
+  1324                           ;	WDT Period Select bits
+  1325                           ;	WDTCPS = WDTCPS_31, Divider ratio 1:65536; software control of WDTPS
+  1326                           ;	WDT operating mode
+  1327                           ;	WDTE = OFF, WDT Disabled, SWDTEN is ignored
+  1328                           ;	WDT Window Select bits
+  1329                           ;	WDTCWS = WDTCWS_7, window always open (100%); software control; keyed access not requi
       +                          red
-  1307                           ;	WDT input clock selector
-  1308                           ;	WDTCCS = SC, Software Control
-  1309  8009                     	org	32777
-  1310  8009  3F9F               	dw	16287
-  1311                           
-  1312                           ;Config register CONFIG4 @ 0x800A
-  1313                           ;	UserNVM self-write protection bits
-  1314                           ;	WRT = OFF, Write protection off
-  1315                           ;	Scanner Enable bit
-  1316                           ;	SCANE = available, Scanner module is available for use
-  1317                           ;	Low Voltage Programming Enable bit
-  1318                           ;	LVP = ON, Low Voltage programming enabled. MCLR/Vpp pin function is MCLR.
-  1319  800A                     	org	32778
-  1320  800A  3FFF               	dw	16383
-  1321                           
-  1322                           ;Config register CONFIG5 @ 0x800B
-  1323                           ;	UserNVM Program memory code protection bit
-  1324                           ;	CP = OFF, Program Memory code protection disabled
-  1325                           ;	DataNVM code protection bit
-  1326                           ;	CPD = OFF, Data EEPROM code protection disabled
-  1327  800B                     	org	32779
-  1328  800B  3FFF               	dw	16383
+  1330                           ;	WDT input clock selector
+  1331                           ;	WDTCCS = SC, Software Control
+  1332  8009                     	org	32777
+  1333  8009  3F9F               	dw	16287
+  1334                           
+  1335                           ;Config register CONFIG4 @ 0x800A
+  1336                           ;	UserNVM self-write protection bits
+  1337                           ;	WRT = OFF, Write protection off
+  1338                           ;	Scanner Enable bit
+  1339                           ;	SCANE = available, Scanner module is available for use
+  1340                           ;	Low Voltage Programming Enable bit
+  1341                           ;	LVP = ON, Low Voltage programming enabled. MCLR/Vpp pin function is MCLR.
+  1342  800A                     	org	32778
+  1343  800A  3FFF               	dw	16383
+  1344                           
+  1345                           ;Config register CONFIG5 @ 0x800B
+  1346                           ;	UserNVM Program memory code protection bit
+  1347                           ;	CP = OFF, Program Memory code protection disabled
+  1348                           ;	DataNVM code protection bit
+  1349                           ;	CPD = OFF, Data EEPROM code protection disabled
+  1350  800B                     	org	32779
+  1351  800B  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -1893,19 +1917,22 @@ BANK50              50      0       0     107        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Wed Jul 28 19:17:46 2021
+Symbol Table                                                                                   Tue Jul 27 23:02:55 2021
 
-                      _a 0070                      l102 07F2                      l103 07F2  
-                    l833 07ED                      wreg 0009             _BAUD1CONbits 011F  
-                   _TXIF 387C                     _main 07ED                     fsr0h 0005  
+                      _a 0070                      l112 07EA                      l113 07F1  
+                    l845 07E2                      l847 07EF                      u140 07EF  
+                    u141 07EE                      wreg 0009             _BAUD1CONbits 011F  
+                   _TXIF 387C                     _main 07E2                     fsr0h 0005  
                    indf0 0000                     fsr0l 0004                     btemp 007E  
                    start 0002                    ?_main 0000                    _TXREG 011A  
                   wtemp0 007E          __initialization 07F5             __end_of_main 07F5  
                  ??_main 0000                   _CCPR2H 0311                   _RC6PPS 1F26  
-__end_of__initialization 07FD           __pcstackCOMMON 0000               __pmaintext 07ED  
-                _SP1BRGH 011C                  _SP1BRGL 011B                  clrloop0 07E8  
-   end_of_initialization 07FD                _PORTAbits 000C                _TRISCbits 0013  
+__end_of__initialization 07FD           __pcstackCOMMON 0000               __pmaintext 07E2  
+                _SP1BRGH 011C                  _SP1BRGL 011B                  clrloop0 07DD  
+   end_of_initialization 07FD                _PORTAbits 000C                _PORTEbits 0010  
+              _TRISCbits 0013                _TRISDbits 0014                _TRISEbits 0015  
     start_initialization 07F5               itoa@buffer 0072              __pbssCOMMON 0070  
-              ___latbits 0004                 _LATCbits 0018                clear_ram0 07E7  
-             _ANSELCbits 1F4E               _T0CON0bits 001E               _T0CON1bits 001F  
-          __size_of_main 0008               _RC1STAbits 011D               _TX1STAbits 011E  
+              ___latbits 0004                 _LATDbits 0019                clear_ram0 07DC  
+             _ANSELCbits 1F4E               _ANSELDbits 1F59               _ANSELEbits 1F64  
+             _T0CON0bits 001E               _T0CON1bits 001F            __size_of_main 0013  
+             _RC1STAbits 011D               _TX1STAbits 011E  

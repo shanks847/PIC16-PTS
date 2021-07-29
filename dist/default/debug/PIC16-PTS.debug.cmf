@@ -11,15 +11,15 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\PIC16-PTS.production.o
-cinit CODE 0 7F5 7F5 B 2
-maintext CODE 0 7ED 7ED 8 2
-clrtext CODE 0 7E7 7E7 6 2
-bssCOMMON COMMON 1 70 70 E 1
-config CONFIG 4 8007 8007 5 2
-$C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
+$C:\Users\rocke\AppData\Local\Temp\xcAs550.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
+config CONFIG 4 8007 8007 5 2
+$dist/default/debug\PIC16-PTS.debug.o
+cinit CODE 0 7F5 7F5 B 2
+maintext CODE 0 7E2 7E2 13 2
+clrtext CODE 0 7DC 7DC 6 2
+bssCOMMON COMMON 1 70 70 E 1
 config CONFIG 4 8007 8007 5 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -88,9 +88,9 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 4-7E6 2
+CONST 4-7DB 2
 CONST 800-7FFF 2
-ENTRY 4-7E6 2
+ENTRY 4-7DB 2
 ENTRY 800-7FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
@@ -148,7 +148,7 @@ SFR61 1E80-1EEF 1
 SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
 STACK 2000-2FEF 1
-CODE 4-7E6 2
+CODE 4-7DB 2
 CODE 800-7FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -203,9 +203,9 @@ BANK49 18A0-18EF 1
 BANK50 1920-196F 1
 BIGRAM 2000-2FEF 1
 EEDATA F000-F0FF 2
-STRCODE 4-7E6 2
+STRCODE 4-7DB 2
 STRCODE 800-7FFF 2
-STRING 4-7E6 2
+STRING 4-7DB 2
 STRING 800-7FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -220,31 +220,33 @@ STRING 800-7FFF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/default/production\PIC16-PTS.production.o
-7F5 cinit CODE >2340:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7F5 cinit CODE >2343:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7F5 cinit CODE >2370:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7F6 cinit CODE >2371:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7F7 cinit CODE >2372:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7F8 cinit CODE >2373:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7F9 cinit CODE >2374:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7FA cinit CODE >2375:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7FD cinit CODE >2381:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7FD cinit CODE >2383:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7FE cinit CODE >2384:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7ED maintext CODE >277:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7ED maintext CODE >301:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7EF maintext CODE >302:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F1 maintext CODE >303:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7F2 maintext CODE >322:C:/Users/rocke/Desktop/PIC16-PTS/main.c
-7E7 clrtext CODE >2359:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7E7 clrtext CODE >2360:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7E8 clrtext CODE >2361:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7E8 clrtext CODE >2362:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7E9 clrtext CODE >2363:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7EA clrtext CODE >2364:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7EB clrtext CODE >2365:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
-7EC clrtext CODE >2366:C:\Users\rocke\AppData\Local\Temp\xcAsjvk.s
+$dist/default/debug\PIC16-PTS.debug.o
+7F5 cinit CODE >2350:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7F5 cinit CODE >2353:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7F5 cinit CODE >2380:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7F6 cinit CODE >2381:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7F7 cinit CODE >2382:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7F8 cinit CODE >2383:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7F9 cinit CODE >2384:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7FA cinit CODE >2385:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7FD cinit CODE >2391:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7FD cinit CODE >2393:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7FE cinit CODE >2394:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7E2 maintext CODE >277:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E2 maintext CODE >278:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E4 maintext CODE >279:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E6 maintext CODE >281:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7E8 maintext CODE >282:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7EA maintext CODE >335:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7EA maintext CODE >340:C:/Users/rocke/Desktop/PIC16-PTS/main.c
+7DC clrtext CODE >2369:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7DC clrtext CODE >2370:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7DD clrtext CODE >2371:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7DD clrtext CODE >2372:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7DE clrtext CODE >2373:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7DF clrtext CODE >2374:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7E0 clrtext CODE >2375:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
+7E1 clrtext CODE >2376:C:\Users\rocke\AppData\Local\Temp\xcAs550.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -257,7 +259,7 @@ $dist/default/production\PIC16-PTS.production.o
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-___latbits 4 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+___latbits 4 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Hspace_0 800 0 ABS 0 - -
 __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
@@ -265,34 +267,36 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10013 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-_TXIF 387C 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-___sp 0 0 STACK 2 stack C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-_main FDA 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
-btemp 7E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-start 4 0 CODE 0 init C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-__size_of_main 0 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_TXIF 387C 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+___sp 0 0 STACK 2 stack C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+_main FC4 0 CODE 0 maintext dist/default/debug\PIC16-PTS.debug.o
+btemp 7E 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+start 4 0 CODE 0 init C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+__size_of_main 0 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\rocke\AppData\Local\Temp\xcAs550.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-wtemp0 7E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+wtemp0 7E 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_RC1STAbits 11D 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_RC1STAbits 11D 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Hclrtext 0 0 ABS 0 clrtext -
-_CCPR2H 311 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_CCPR2H 311 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 2FEF 0 ABS 0 - C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-___stacklo 2000 0 ABS 0 - C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
-start_initialization FEA 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
-_TRISCbits 13 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-_RC6PPS 1F26 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-clear_ram0 FCE 0 CODE 0 clrtext dist/default/production\PIC16-PTS.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
+___stackhi 2FEF 0 ABS 0 - C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+___stacklo 2000 0 ABS 0 - C:\Users\rocke\AppData\Local\Temp\xcAs550.o
+start_initialization FEA 0 CODE 0 cinit dist/default/debug\PIC16-PTS.debug.o
+_TRISCbits 13 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+_TRISDbits 14 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+_TRISEbits 15 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+_RC6PPS 1F26 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+clear_ram0 FB8 0 CODE 0 clrtext dist/default/debug\PIC16-PTS.debug.o
+___int_sp 0 0 STACK 2 stack C:\Users\rocke\AppData\Local\Temp\xcAs550.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -483,7 +487,8 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
-_PORTAbits C 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_PORTAbits C 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+_PORTEbits 10 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 4 0 CODE 0 init -
@@ -518,7 +523,7 @@ __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\rocke\AppData\Local\Temp\xcAsjvk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\rocke\AppData\Local\Temp\xcAs550.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -573,44 +578,46 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext FDA 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
+__pmaintext FC4 0 CODE 0 maintext dist/default/debug\PIC16-PTS.debug.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_LATCbits 18 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-itoa@buffer 72 0 COMMON 1 bssCOMMON dist/default/production\PIC16-PTS.production.o
+_LATDbits 19 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+itoa@buffer 72 0 COMMON 1 bssCOMMON dist/default/debug\PIC16-PTS.debug.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\PIC16-PTS.production.o
+__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/debug\PIC16-PTS.debug.o
 __Lend_init 4 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization FFA 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
+end_of_initialization FFA 0 CODE 0 cinit dist/default/debug\PIC16-PTS.debug.o
 __Hintentry 4 0 CODE 0 intentry -
-_TX1STAbits 11E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_TX1STAbits 11E 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
-_BAUD1CONbits 11F 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_BAUD1CONbits 11F 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of__initialization FFA 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
+__end_of__initialization FFA 0 CODE 0 cinit dist/default/debug\PIC16-PTS.debug.o
 __Lfunctab 0 0 ENTRY 0 functab -
-_SP1BRGH 11C 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-_SP1BRGL 11B 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+_SP1BRGH 11C 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+_SP1BRGL 11B 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Lclrtext 0 0 ABS 0 clrtext -
-__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production\PIC16-PTS.production.o
-_T0CON0bits 1E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
-_T0CON1bits 1F 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/debug\PIC16-PTS.debug.o
+_T0CON0bits 1E 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+_T0CON1bits 1F 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_main FEA 0 CODE 0 maintext dist/default/production\PIC16-PTS.production.o
-_TXREG 11A 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+__end_of_main FEA 0 CODE 0 maintext dist/default/debug\PIC16-PTS.debug.o
+_TXREG 11A 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__initialization FEA 0 CODE 0 cinit dist/default/production\PIC16-PTS.production.o
-_ANSELCbits 1F4E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
+__initialization FEA 0 CODE 0 cinit dist/default/debug\PIC16-PTS.debug.o
+_ANSELCbits 1F4E 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+_ANSELDbits 1F59 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
+_ANSELEbits 1F64 0 ABS 0 - dist/default/debug\PIC16-PTS.debug.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -637,9 +644,9 @@ _ANSELCbits 1F4E 0 ABS 0 - dist/default/production\PIC16-PTS.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7F5 FEA B 2
-maintext 0 7ED FDA 8 2
+maintext 0 7E2 FC4 13 2
 reset_vec 0 0 0 4 2
-clrtext 0 7E7 FCE 6 2
+clrtext 0 7DC FB8 6 2
 bssCOMMON 1 70 70 E 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

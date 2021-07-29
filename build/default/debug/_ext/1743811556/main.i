@@ -20935,12 +20935,19 @@ int dpsw_to_dc(void)
 
 
 void main(void){
-# 301 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-    ANSELCbits.ANSC1 = 0;
-    TRISCbits.TRISC1 = 0;
-    LATCbits.LATC1 = 1;
-# 322 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-    while(1);
-# 434 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+    TRISDbits.TRISD1 = 0;
+    ANSELDbits.ANSD1 = 0;
+
+    TRISEbits.TRISE2 = 1;
+    ANSELEbits.ANSE2 = 0;
+# 335 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+    while(1){
+
+
+
+
+        if(PORTEbits.RE2 == 1){LATDbits.LATD1 = 1;}else{LATDbits.LATD1 = 0;}
+    }
+# 432 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
     return;
 }

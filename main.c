@@ -169,30 +169,14 @@ void calcAngle()
  * TODO: MODIFY CODE TO WORK WITH MY PIC AND ADJUST TMR2 VALUE
  */
 
-#define DPSW0           RC2
-#define DPSW1           RC3
+#define DPSW0           PORTAbits.RA0
+#define DPSW1           PORTAbits.RA1
+#define DPSW2           PORTAbits.RA2
+#define DPSW3           PORTAbits.RA3
 
 
-void rundutycycle(unsigned int dutycyc){
-    
-    //This needs to be modified to work, ref Lab Script #2 from ECNG LAB III
-    
-    T2CON = 0x01;           // Set Prescaler to be 4, hence PWM frequency is set to 4.88KHz.
-    T2CON |= 0x04;          // Enable the Timer2, hence enable the PWM. 
-                            // the |= sets the bits, ref xc8 mannual for info
 
-    while(1){
-        CCPR1L   = dutycyc>>2;                  // Put MSB 8 bits in CCPR1L
-        CCP1CON &= 0xCF;                        // Make bit4 and 5 zero
-        CCP1CON |= (0x30&(dutycyc<<4));         // Assign Last 2 LSBs to CCP1CON
-        if(DPSW0==1 && DPSW0==0){dutycyc=172; }
-        else if(DPSW1==1 && DPSW0==1){dutycyc=512; }
-        else if(DPSW1==0 && DPSW0==1){dutycyc=858; }
-        else {dutycyc=1020;}
 
-        dutycyc=dutycyc; //is this line necessary?
-    }
-}
 
 char itoa_opt(int x)
 {
@@ -237,25 +221,142 @@ char *itoa(int value)
  }
 
 int a = 0;
+            
+void set_pwm_dc(int dc)
+{
+        if(dc>20)
+        {
+            CCPR2H = 20;
+        }
+        else if(dc <= 0)
+        {
+            CCPR2H = 0;
+        }
+        else{
+            CCPR2H = dc;
+        }
+}
+
+int dpsw_to_dc(void)
+{
+    //converts the switch combination from 4DIP-SW to a duty cycle value between 0-20
+    int d0;
+    int d1;
+    int d2;
+    int d3;
+    
+    if(DPSW0){d0 = 1000;} else {d0 = 0;}
+    if(DPSW1){d1 = 100;} else {d1 = 0;}
+    if(DPSW2){d2 = 10;} else {d2 = 0;}
+    if(DPSW3){d3 = 1;} else {d3 = 0;}
+    
+    int binary_d = d0 + d1 + d2 + d3;
+
+    if(binary_d == 0)
+    {
+        return 0;
+    }
+    
+    int num_base = 1;
+    int rem = 0;
+    int decimal_num = 5; //offset to allow reaching max speed at 0b1111
+    
+    while ( binary_d > 0)  
+    {  
+        rem = binary_d % 10; /* divide the binary number by 10 and store the remainder in rem variable. */  
+        decimal_num = decimal_num + rem * num_base;  
+        binary_d = binary_d/ 10; // divide the number with quotient  
+        num_base = num_base * 2;  
+    }  
+    
+    
+    return decimal_num;
+}
+    
 
 void main(void){
-    //TRISDbits.TRISD1 = 0;
-    //LATDbits.LATD1 = 1; // for checking if PIC is working
+//    TRISDbits.TRISD1 = 0;
+//    ANSELDbits.ANSD1 = 0;
+//    
+//    TRISEbits.TRISE2 = 1;
+//    ANSELEbits.ANSE2 = 0;
+    
+    
+    
 
     //Configuring EUSART for transmission
-    EUSART_Initialize();
-    ranging_sys_init();
+//    EUSART_Initialize();
+//    TRISAbits.TRISA0 = 1;
+//    TRISAbits.TRISA1 = 1;
+//    TRISAbits.TRISA2 = 1;
+//    TRISAbits.TRISA3 = 1;
+//    
+//    ANSELAbits.ANSA0 = 0;
+//    ANSELAbits.ANSA1 = 0;
+//    ANSELAbits.ANSA2 = 0;
+//    ANSELAbits.ANSA3 = 0;
+    //ranging_sys_init();
 
-
+   //For testing the FAN
+    ANSELCbits.ANSC1 = 0;
+    TRISCbits.TRISC1 = 0;
+    LATCbits.LATC1 = 1;
     
-    __delay_ms(1000);   // to avoid corrupted characters in serial tx
-    send_string("[*]Serial Connection successful\r\n");
+    
+    /*
+     * 100% Duty cycle*/
+    
+    //Research PWM more and determine if there is a better PWM freq 
+    
+//    TRISCbits.TRISC1 = 0;
+//    ANSELCbits.ANSC1 = 0;
+//    RC1PPS = 0x0A;
+//    CCP2CON = 0x9F;
+//    CCPTMRS0 = 0x05;
+//    PR2 = 19;
+//    CCPR2L = 0xFF;
+//    CCPR2H = 0xFF;
+//    T2CLKCON = 0x01;
+//    T2CON = 0xF0;
+    
+    while(1);
+    /*
+    __delay_ms(10000);
+    
+    set_pwm_dc(5);
+    
+    
+    __delay_ms(2000);
+    
+    set_pwm_dc(18);
+     
+    __delay_ms(2000);
+   */
+//    __delay_ms(1000);
+//    send_string("[!]Connected\r\n");
+//    while(1){
+//        send_string(itoa(dpsw_to_dc()));
+//        send_string("\r\n");
+//        __delay_ms(3000);
+//        
+//        //if(PORTEbits.RE2 == 1){LATDbits.LATD1 = 1;}else{LATDbits.LATD1 = 0;} //testing if photo resistor working
+//    }
+    
+    
+    
+                
+    //__delay_ms(1000);   // to avoid corrupted characters in serial tx
+    //send_string("[*]Serial Connection successful\r\n");
     
     //send_string(itoa(143)); //remember to add a \r\n for clean formatting
     //angle = "90\r\n"; //the \r\n are used to go to a new line
     //send_string("Angle: "); 
     //send_string(angle);
    
+    /*===============
+     * RANGING SYSTEM
+     * =================
+     * 
     TRISB = 0xFE; // setting port  RB0 as output and RB4 as input
     ANSELB = 0xEF;
 
@@ -263,7 +364,7 @@ void main(void){
     {
         TMR0H = 0;                  //Sets the Initial Value of Timer
         TMR0L = 0;                  //Sets the Initial Value of Timer
-        T0CON1bits.T0CKPS = 0b0001; //Resetting post scaler since TMR0L write clears it
+        T0CON1bits1.T0CKPS = 0b0001; //Resetting post scaler since TMR0L write clears it
 
         PORTBbits.RB0 = 1;               //TRIGGER HIGH
         __delay_us(10);               //10uS Delay
@@ -291,7 +392,14 @@ void main(void){
         }
         __delay_ms(400);
     }  
+    */
     
+    
+    
+    /*
+     * MOTOR SYSTEM
+     * 
+     */
     
     
 

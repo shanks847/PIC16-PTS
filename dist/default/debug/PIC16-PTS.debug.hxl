@@ -1,14 +1,14 @@
 ### HEXMate logfile and output summary ###
 ### Memory Usage ###
  Unused memory ranges:
-  8h - FCDh
+  8h - FB7h
   1000h - FFFFh
   10000h - 1000Dh
   10018h - 1003Fh
   
- dist/default/production\PIC16-PTS.production.hex ranges:
+ dist/default/debug\PIC16-PTS.debug.hex ranges:
   0h - 7h
-  FCEh - FFFh
+  FB8h - FFFh
   1000Eh - 10017h
   
 ### Hex Memory Map ###
@@ -22,7 +22,8 @@
   T = Trailing code
   & = Find & replace opcode
   X = Find & delete opcode
-  1 = dist/default/production\PIC16-PTS.production.hex
+  1 = dist/default/debug\PIC16-PTS.debug.hex
 00000000: 11111111--------------------------------------------------------
-00000FC0: --------------11111111111111111111111111111111111111111111111111
+00000F80: --------------------------------------------------------11111111
+00000FC0: 1111111111111111111111111111111111111111111111111111111111111111
 00010000: --------------1111111111----------------------------------------

@@ -122,17 +122,72 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 408: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
 [v _PORTAbits `VS32 ~T0 @X0 0 e@12 ]
 [p mainexit ]
-"1087
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1087:     struct {
-[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S57 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"1086
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1086: typedef union {
-[u S56 `S57 1 ]
-[n S56 . . ]
-"1098
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1098: extern volatile LATCbits_t LATCbits __attribute__((address(0x018)));
-[v _LATCbits `VS56 ~T0 @X0 0 e@24 ]
+"869
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 869:     struct {
+[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S49 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+"868
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 868: typedef union {
+[u S48 `S49 1 ]
+[n S48 . . ]
+"880
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 880: extern volatile TRISDbits_t TRISDbits __attribute__((address(0x014)));
+[v _TRISDbits `VS48 ~T0 @X0 0 e@20 ]
+"35405
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 35405:     struct {
+[s S1563 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1563 . ANSD0 ANSD1 ANSD2 ANSD3 ANSD4 ANSD5 ANSD6 ANSD7 ]
+"35404
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 35404: typedef union {
+[u S1562 `S1563 1 ]
+[n S1562 . . ]
+"35416
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 35416: extern volatile ANSELDbits_t ANSELDbits __attribute__((address(0x1F59)));
+[v _ANSELDbits `VS1562 ~T0 @X0 0 e@8025 ]
+"931
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 931:     struct {
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . TRISE0 TRISE1 TRISE2 ]
+"930
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 930: typedef union {
+[u S50 `S51 1 ]
+[n S50 . . ]
+"937
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 937: extern volatile TRISEbits_t TRISEbits __attribute__((address(0x015)));
+[v _TRISEbits `VS50 ~T0 @X0 0 e@21 ]
+"35839
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 35839:     struct {
+[s S1577 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1577 . ANSE0 ANSE1 ANSE2 ]
+"35838
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 35838: typedef union {
+[u S1576 `S1577 1 ]
+[n S1576 . . ]
+"35845
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 35845: extern volatile ANSELEbits_t ANSELEbits __attribute__((address(0x1F64)));
+[v _ANSELEbits `VS1576 ~T0 @X0 0 e@8036 ]
+"645
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 645:     struct {
+[s S41 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S41 . RE0 RE1 RE2 RE3 ]
+"644
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 644: typedef union {
+[u S40 `S41 1 ]
+[n S40 . . ]
+"652
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 652: extern volatile PORTEbits_t PORTEbits __attribute__((address(0x010)));
+[v _PORTEbits `VS40 ~T0 @X0 0 e@16 ]
+"1149
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1149:     struct {
+[s S59 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S59 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"1148
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1148: typedef union {
+[u S58 `S59 1 ]
+[n S58 . . ]
+"1160
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18877.h: 1160: extern volatile LATDbits_t LATDbits __attribute__((address(0x019)));
+[v _LATDbits `VS58 ~T0 @X0 0 e@25 ]
 "10 C:/Users/rocke/Desktop/PIC16-PTS/main.c
 [p x FEXTOSC  =  XT     ]
 "11
@@ -2300,25 +2355,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-"301
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 301:     ANSELCbits.ANSC1 = 0;
-[e = . . _ANSELCbits 0 1 -> -> 0 `i `uc ]
-"302
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 302:     TRISCbits.TRISC1 = 0;
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-"303
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 303:     LATCbits.LATC1 = 1;
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-"322
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 322:     while(1);
+"278
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 278:     TRISDbits.TRISD1 = 0;
+[e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
+"279
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 279:     ANSELDbits.ANSD1 = 0;
+[e = . . _ANSELDbits 0 1 -> -> 0 `i `uc ]
+"281
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 281:     TRISEbits.TRISE2 = 1;
+[e = . . _TRISEbits 0 2 -> -> 1 `i `uc ]
+"282
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 282:     ANSELEbits.ANSE2 = 0;
+[e = . . _ANSELEbits 0 2 -> -> 0 `i `uc ]
+"335
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 335:     while(1){
 [e :U 1668 ]
+{
+"340
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 340:         if(PORTEbits.RE2 == 1){LATDbits.LATD1 = 1;}else{LATDbits.LATD1 = 0;}
+[e $ ! == -> . . _PORTEbits 0 2 `i -> 1 `i 1670  ]
+{
+[e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
+}
+[e $U 1671  ]
+[e :U 1670 ]
+{
+[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 1671 ]
+"341
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 341:     }
+}
 [e :U 1667 ]
 [e $U 1668  ]
 [e :U 1669 ]
-"434
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 434:     return;
+"432
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 432:     return;
 [e $UE 1666  ]
-"435
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 435: }
+"433
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 433: }
 [e :UE 1666 ]
 }
