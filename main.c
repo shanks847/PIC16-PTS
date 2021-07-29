@@ -101,7 +101,7 @@ void cfg_pwm(void)
     
     TRISBbits.TRISB5 = 0; 
     ANSELBbits.ANSB5 = 0; 
-    RB5PPS = 0x0A;//Routing CCP2 peripheral to pin 5 on port b
+    RB5PPS = 0x0A;  //Routing CCP2 peripheral to pin 5 on port b
     CCP2CON = 0x9F;
     CCPTMRS0 = 0x05;
     PR2 = 19;
@@ -159,8 +159,6 @@ void ranging_sys_init(void){
 
 
 
-//REFACTOR TO USE itoa_opt
-
 int calcAngle(void)
 {
     int angle = 0;
@@ -214,12 +212,12 @@ char itoa_opt(int x)
 
 char *itoa(int value) 
  {
-     static char buffer[12];        // 12 bytes is big enough for an INT32
+     static char buffer[12];        // using 12 bytes to hold int32 dtype
      int original = value;        // save original value
  
      int c = sizeof(buffer)-1;
  
-     buffer[c] = 0;                // write trailing null in last byte of buffer    
+     buffer[c] = 0;                // write null char at the end   
  
      if (value < 0)                 // if it's negative, note that and take the absolute value
          value = -value;
@@ -236,7 +234,7 @@ char *itoa(int value)
      return &buffer[c];
  }
 
-int a = 0; // for storing distance
+int distance = 0; // for storing distance
 
 
 /*
