@@ -234,7 +234,7 @@ char *itoa(int value)
      return &buffer[c];
  }
 
-int distance = 0; // for storing distance
+int a = 0; // for storing distance
 
 
 /*
@@ -444,6 +444,7 @@ void main(void){
     send_string("[*]Serial Connection successful\r\n");
     
     int dc = 0;
+    
     
     while(1)
     {

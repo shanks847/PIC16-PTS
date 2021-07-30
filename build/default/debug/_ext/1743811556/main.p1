@@ -2578,129 +2578,129 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 446:     int dc = 0;
 [v _dc `i ~T0 @X0 1 a ]
 [e = _dc -> 0 `i ]
-"448
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 448:     while(1)
-[e :U 1676 ]
 "449
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 449:     {
-{
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 449:     while(1)
+[e :U 1676 ]
 "450
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 450:         set_pwm_dc(dpsw_to_dc());
-[e ( _set_pwm_dc (1 ( _dpsw_to_dc ..  ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 450:     {
+{
 "451
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 451:         TMR0H = 0;
-[e = _TMR0H -> -> 0 `i `uc ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 451:         set_pwm_dc(dpsw_to_dc());
+[e ( _set_pwm_dc (1 ( _dpsw_to_dc ..  ]
 "452
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 452:         TMR0L = 0;
-[e = _TMR0L -> -> 0 `i `uc ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 452:         TMR0H = 0;
+[e = _TMR0H -> -> 0 `i `uc ]
 "453
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 453:         T0CON1bits.T0CKPS = 0b0001;
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 453:         TMR0L = 0;
+[e = _TMR0L -> -> 0 `i `uc ]
+"454
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 454:         T0CON1bits.T0CKPS = 0b0001;
 [e = . . _T0CON1bits 0 0 -> -> 1 `i `uc ]
-"455
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 455:         PORTBbits.RB3 = 1;
-[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
 "456
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 456:         _delay((unsigned long)((10)*(2000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 2000000 `l `d .4000000.0 `ul ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 456:         PORTBbits.RB3 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
 "457
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 457:         PORTBbits.RB3 = 0;
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 457:         _delay((unsigned long)((10)*(2000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 2000000 `l `d .4000000.0 `ul ]
+"458
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 458:         PORTBbits.RB3 = 0;
 [e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
-"459
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 459:         while(!PORTBbits.RB4);
+"460
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 460:         while(!PORTBbits.RB4);
 [e $U 1678  ]
 [e :U 1679 ]
 [e :U 1678 ]
 [e $ ! != -> . . _PORTBbits 0 4 `i -> 0 `i 1679  ]
 [e :U 1680 ]
-"460
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 460:         T0CON0bits.T0EN = 1;
-[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
 "461
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 461:         while(PORTBbits.RB4);
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 461:         T0CON0bits.T0EN = 1;
+[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
+"462
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 462:         while(PORTBbits.RB4);
 [e $U 1681  ]
 [e :U 1682 ]
 [e :U 1681 ]
 [e $ != -> . . _PORTBbits 0 4 `i -> 0 `i 1682  ]
 [e :U 1683 ]
-"462
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 462:         T0CON0bits.T0EN = 0;
+"463
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 463:         T0CON0bits.T0EN = 0;
 [e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
-"464
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 464:         a = (TMR0L | (TMR0H<<8));
-[e = _a | -> _TMR0L `i << -> _TMR0H `i -> 8 `i ]
 "465
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 465:         a = a*0.068;
-[e = _a -> * -> _a `d .0.068 `i ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 465:         a = (TMR0L | (TMR0H<<8));
+[e = _a | -> _TMR0L `i << -> _TMR0H `i -> 8 `i ]
 "466
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 466:         a = a + 1;
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 466:         a = a*0.068;
+[e = _a -> * -> _a `d .0.068 `i ]
+"467
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 467:         a = a + 1;
 [e = _a + _a -> 1 `i ]
-"468
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 468:         dc = CCPR2H;
+"469
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 469:         dc = CCPR2H;
 [e = _dc -> _CCPR2H `i ]
-"470
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 470:         if(a>=2 && a<=400)
-[e $ ! && >= _a -> 2 `i <= _a -> 400 `i 1684  ]
 "471
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 471:         {
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 471:         if(a>=2 && a<=400)
+[e $ ! && >= _a -> 2 `i <= _a -> 400 `i 1684  ]
+"472
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 472:         {
 {
-"473
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 473:             send_string("Distance = ");
-[e ( _send_string (1 :s 2C ]
 "474
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 474:             send_string(itoa(a));
-[e ( _send_string (1 ( _itoa (1 _a ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 474:             send_string("Distance = ");
+[e ( _send_string (1 :s 2C ]
 "475
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 475:             send_string(" cm");
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 475:             send_string(itoa(a));
+[e ( _send_string (1 ( _itoa (1 _a ]
+"476
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 476:             send_string(" cm");
 [e ( _send_string (1 :s 3C ]
-"477
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 477:             send_string("\tAngle = ");
-[e ( _send_string (1 :s 4C ]
 "478
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 478:             send_string(itoa(calcAngle()));
-[e ( _send_string (1 ( _itoa (1 ( _calcAngle ..  ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 478:             send_string("\tAngle = ");
+[e ( _send_string (1 :s 4C ]
 "479
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 479:             send_string(" deg");
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 479:             send_string(itoa(calcAngle()));
+[e ( _send_string (1 ( _itoa (1 ( _calcAngle ..  ]
+"480
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 480:             send_string(" deg");
 [e ( _send_string (1 :s 5C ]
-"482
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 482:             send_string("\tPWM Duty Cycle = ");
-[e ( _send_string (1 :s 6C ]
 "483
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 483:             send_string(itoa(dc));
-[e ( _send_string (1 ( _itoa (1 _dc ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 483:             send_string("\tPWM Duty Cycle = ");
+[e ( _send_string (1 :s 6C ]
 "484
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 484:             send_string("\r\n");
-[e ( _send_string (1 :s 7C ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 484:             send_string(itoa(dc));
+[e ( _send_string (1 ( _itoa (1 _dc ]
 "485
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 485:         }
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 485:             send_string("\r\n");
+[e ( _send_string (1 :s 7C ]
+"486
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 486:         }
 }
 [e $U 1685  ]
-"486
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 486:         else
-[e :U 1684 ]
 "487
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 487:         {
-{
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 487:         else
+[e :U 1684 ]
 "488
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 488:           send_string("Out of Range\r\n");
-[e ( _send_string (1 :s 8C ]
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 488:         {
+{
 "489
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 489:         }
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 489:           send_string("Out of Range\r\n");
+[e ( _send_string (1 :s 8C ]
+"490
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 490:         }
 }
 [e :U 1685 ]
-"490
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 490:         _delay((unsigned long)((400)*(2000000/4000.0)));
-[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 2000000 `l `d .4000.0 `ul ]
 "491
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 491:     }
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 491:         _delay((unsigned long)((400)*(2000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 2000000 `l `d .4000.0 `ul ]
+"492
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 492:     }
 }
 [e :U 1675 ]
 [e $U 1676  ]
 [e :U 1677 ]
-"495
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 495:     return;
-[e $UE 1674  ]
 "496
-[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 496: }
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 496:     return;
+[e $UE 1674  ]
+"497
+[; ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 497: }
 [e :UE 1674 ]
 }
 [a 3C 32 99 109 0 ]

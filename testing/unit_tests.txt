@@ -1,0 +1,92 @@
+Last updated: 30/7/2021
+Author: Shankar Ramharack
+
+All tests documented were done prior to demonstration on 29/07/2021.
+
+=========================
+
+// [EUSART_TC_1a & b] 
+
+cfg_eusart();
+send_char('A');
+
+=========================
+
+// [EUSART_TC_2a & b]
+
+cfg_eusart();
+send_string("axE");
+
+=========================
+
+// [EUSART_TC_3a & b]
+
+cfg_eusart();
+send_string(itoa(123))
+
+=========================
+
+// [RANGSYS_TC_0c]
+
+TRISBbits.TRISB1 = 1; // LDR0 - input
+TRISBbits.TRISB0 = 1; // LDR1 - input
+ANSELBbits.B1 = 0x00; 
+ANSELBbits.B0 = 0x00; 
+
+=========================
+
+// [RANGSYS_TC_0d]
+
+cfg_eusart();
+ranging_sys_init();
+
+__delay_ms(1000); 
+send_string("[*]Serial Connection successful\r\n");
+
+send_string("\tAngle = ");
+send_string(itoa(calcAngle()));
+send_string(" deg");
+
+=========================
+
+// [RANGSYS_TC_1]
+cfg_eusart();
+ranging_sys_init();
+
+__delay_ms(1000); 
+send_string("[*]Serial Connection successful\r\n");
+
+send_string("Distance = ");
+send_string(itoa(a));
+send_string(" cm");
+
+==========================
+
+// [MOTORSYS_TC_1]
+
+TRISBbits.TRISB5 = 0; 
+ANSELBbits.ANSB5 = 0; 
+LATBbits.LATB5 = 1;
+
+===============================
+
+// [MOTORSYS_TC_2b]
+
+cfg_pwm();
+
+while(1)
+{
+    
+    set_pwm_dc(20);
+    
+    __delay_ms(5000);
+    
+    set_pwm_dc(0);
+     
+    __delay_ms(5000);
+    
+     set_pwm_dc(20);
+}
+
+=================================
+

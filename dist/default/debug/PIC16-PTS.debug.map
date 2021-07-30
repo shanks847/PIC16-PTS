@@ -3,10 +3,10 @@ Microchip MPLAB XC8 Compiler V2.32
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
-  -h+dist/default/production\PIC16-PTS.production.sym \
-  --cmf=dist/default/production\PIC16-PTS.production.cmf -z -Q16F18877 \
-  -oC:\Users\rocke\AppData\Local\Temp\xcAs87g.4 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/PIC16-PTS.production.map -E1 -ver=XC8 Compiler \
+  -h+dist/default/debug\PIC16-PTS.debug.sym \
+  --cmf=dist/default/debug\PIC16-PTS.debug.cmf -z -Q16F18877 \
+  -oC:\Users\rocke\AppData\Local\Temp\xcAsbqo.4 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/debug/PIC16-PTS.debug.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=02037h-02FEFh -pstack=STACK -ACODE=00h-07FFhx16 \
   -ASTRCODE=00h-07FFFh -ASTRING=00h-0FFhx128 -ACONST=00h-0FFhx128 \
   -AENTRY=00h-0FFhx128 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
@@ -54,8 +54,8 @@ Linker command line:
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\rocke\AppData\Local\Temp\xcAs87g.o \
-  dist/default/production\PIC16-PTS.production.o 
+  -pfunctab=ENTRY -k C:\Users\rocke\AppData\Local\Temp\xcAsbqo.o \
+  dist/default/debug\PIC16-PTS.debug.o 
 
 Object code version is 3.11
 
@@ -64,11 +64,11 @@ Machine type is 16F18877
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\rocke\AppData\Local\Temp\xcAs87g.o
+C:\Users\rocke\AppData\Local\Temp\xcAsbqo.o
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        5        0       4
-dist/default/production\PIC16-PTS.production.o
+dist/default/debug\PIC16-PTS.debug.o
                 cinit                               7F5      7F5        B      FEA       0
                 config                             8007     8007        5        0       4
                 text16                              129      129       23      252       0

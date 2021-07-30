@@ -1,4 +1,4 @@
-# 1 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,43 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "C:/Users/rocke/Desktop/PIC16-PTS/main.c" 2
-# 10 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-#pragma config FEXTOSC = XT
-#pragma config RSTOSC = EXT1X
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = ON
-#pragma config BORV = LO
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config WRT = OFF
-#pragma config SCANE = available
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-#pragma config CPD = OFF
-
-
-
-
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\pic\\__eeprom.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20787,287 +20751,184 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 2 3
-# 44 "C:/Users/rocke/Desktop/PIC16-PTS/main.c" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\pic\\__eeprom.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
-# 45 "C:/Users/rocke/Desktop/PIC16-PTS/main.c" 2
-# 69 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-void cfg_eusart(void)
+
+
+
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
 {
-    TRISCbits.TRISC6 = 0;
-    ANSELCbits.ANSC6 = 0;
-    RC6PPS = 0x10;
-
-    SP1BRGH = 0x00;
-    SP1BRGL = 0b00011001;
-    BAUD1CONbits.BRG16 = 0;
-
-    TX1STAbits.BRGH = 0;
-    TX1STAbits.SYNC = 0;
-
-    RC1STAbits.SPEN = 1;
-
-    TX1STAbits.TXEN = 1;
-    TX1STAbits.TX9 = 0;
-
-
-}
-
-void cfg_pwm(void)
-{
-    TRISAbits.TRISA0 = 1;
-    TRISAbits.TRISA1 = 1;
-    TRISAbits.TRISA2 = 1;
-    TRISAbits.TRISA3 = 1;
-
-    ANSELAbits.ANSA0 = 0;
-    ANSELAbits.ANSA1 = 0;
-    ANSELAbits.ANSA2 = 0;
-    ANSELAbits.ANSA3 = 0;
-
-    TRISBbits.TRISB5 = 0;
-    ANSELBbits.ANSB5 = 0;
-    RB5PPS = 0x0A;
-    CCP2CON = 0x9F;
-    CCPTMRS0 = 0x05;
-    PR2 = 19;
-    CCPR2L = 0xFF;
-    CCPR2H = 0xFF;
-    T2CLKCON = 0x01;
-    T2CON = 0xF0;
-}
-
-
-void send_char(char word){
-    while(!TXIF);
-    TXREG = word;
-}
-
-void send_string(char* st_pt)
-{
-    while(*st_pt)
-        send_char(*st_pt++);
-}
-# 134 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-void ranging_sys_init(void){
-
-
-    TRISBbits.TRISB4 = 1;
-    TRISBbits.TRISB3 = 0;
-    TRISBbits.TRISB2 = 0;
-    TRISBbits.TRISB1 = 1;
-    TRISBbits.TRISB0 = 1;
-    ANSELB = 0x00;
-
-    LATBbits.LATB2 = 1;
-
-
-
-    T0CON0bits.T0EN = 0;
-    T0CON0bits.T016BIT = 1;
-    T0CON0bits.T0OUTPS = 0b0000;
-
-    T0CON1bits.T0CS = 0b010;
-    T0CON1bits.T0ASYNC = 1;
-    T0CON1bits.T0CKPS = 0b0001;
-
-
-
-}
-
-
-
-int calcAngle(void)
-{
-    int angle = 0;
-
-
-
-    if((RB1 == 1) && (RB0 == 0))
-    {
-
-        angle = 90;
-    }
-    else if((RB1 == 1) && (RB0 == 1))
-    {
-
-        angle = 180;
-    }
-    else if((RB1 == 0) && (RB0 ==1))
-    {
-
-        angle = 270;
-    }
-    else
-    {
-
-        angle = 0;
-    }
-
-    return angle;
-}
-
-
-
-
-char itoa_opt(int x)
-{
-    switch(x)
-    {
-        case 1:return '1';
-        case 2:return '2';
-        case 3:return '3';
-        case 4:return '4';
-        case 5:return '5';
-        case 6:return '6';
-        case 7:return '7';
-        case 8:return '8';
-        case 9:return '9';
-        case 0:return '0';
-        default: return'x';
-    }
-}
-
-char *itoa(int value)
- {
-     static char buffer[12];
-     int original = value;
-
-     int c = sizeof(buffer)-1;
-
-     buffer[c] = 0;
-
-     if (value < 0)
-         value = -value;
-
-     do
-     {
-         buffer[--c] = (value % 10) + '0';
-         value /= 10;
-     } while (value);
-
-     if (original < 0)
-         buffer[--c] = '-';
-
-     return &buffer[c];
+ volatile unsigned char *cp = to;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\pic\\__eeprom.c"
+ while (NVMCON1bits.WR) {
+  continue;
+ }
+ NVMCON1bits.NVMREGS = 1;
+ NVMADRL = (unsigned char) from;
+ NVMADRH = 0x70;
+ while (size--) {
+  NVMCON1bits.RD = 1;
+  *cp++ = NVMDATL;
+  NVMADRL++;
  }
 
-int a = 0;
-# 247 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-void set_pwm_dc(int dc)
-{
-        if(dc>20)
-        {
-            CCPR2H = 20;
 
-        }
-        else if(dc <= 0)
-        {
-            CCPR2H = 0;
 
-        }
-        else{
-            CCPR2H = dc;
-
-        }
 }
 
-int dpsw_to_dc(void)
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
 {
+ const unsigned char *ptr =from;
+# 69 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c99\\pic\\__eeprom.c"
+ while (NVMCON1bits.WR) {
+  continue;
+ }
+ NVMCON1bits.NVMREGS = 1;
+ NVMADRL = (unsigned char) to - 1U;
+ NVMADRH = 0x70;
+ NVMDATH = 0;
+ while (size--) {
+  while (NVMCON1bits.WR) {
+   continue;
+  }
+  NVMDATL = *ptr++;
+  NVMADRL++;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  NVMCON1bits.WREN = 1;
+  NVMCON2 = 0x55;
+  NVMCON2 = 0xAA;
+  NVMCON1bits.WR = 1;
+  while (NVMCON1bits.WR) {
+   continue;
+  }
+  NVMCON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
 
-    int d0;
-    int d1;
-    int d2;
-    int d3;
-
-    if(RA0){d0 = 1000;} else {d0 = 0;}
-    if(RA1){d1 = 100;} else {d1 = 0;}
-    if(RA2){d2 = 10;} else {d2 = 0;}
-    if(RA3){d3 = 1;} else {d3 = 0;}
-
-    int binary_d = d0 + d1 + d2 + d3;
-
-    if(binary_d == 0)
-    {
-        return 0;
-    }
-
-    int num_base = 1;
-    int rem = 0;
-    int decimal_num = 5;
-
-    while ( binary_d > 0)
-    {
-        rem = binary_d % 10;
-        decimal_num = decimal_num + rem * num_base;
-        binary_d = binary_d/ 10;
-        num_base = num_base * 2;
-    }
 
 
-    return decimal_num;
 }
 
+unsigned char
+__eetoc(__eeprom void *addr)
+{
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
+}
 
-void main(void){
+unsigned int
+__eetoi(__eeprom void *addr)
+{
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
+}
 
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
+{
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+#pragma warning pop
 
+unsigned long
+__eetol(__eeprom void *addr)
+{
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
 
-    cfg_eusart();
-    cfg_pwm();
-    ranging_sys_init();
-# 443 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-    _delay((unsigned long)((1000)*(2000000/4000.0)));
-    send_string("[*]Serial Connection successful\r\n");
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
+{
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
 
-    int dc = 0;
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
+}
 
-    while(1)
-    {
-        set_pwm_dc(dpsw_to_dc());
-        TMR0H = 0;
-        TMR0L = 0;
-        T0CON1bits.T0CKPS = 0b0001;
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
+}
 
-        PORTBbits.RB3 = 1;
-        _delay((unsigned long)((10)*(2000000/4000000.0)));
-        PORTBbits.RB3 = 0;
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
 
-        while(!PORTBbits.RB4);
-        T0CON0bits.T0EN = 1;
-        while(PORTBbits.RB4);
-        T0CON0bits.T0EN = 0;
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
+}
 
-        a = (TMR0L | (TMR0H<<8));
-        a = a*0.068;
-        a = a + 1;
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
 
-        dc = CCPR2H;
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
 
-        if(a>=2 && a<=400)
-        {
+double
+__eetofl(__eeprom void *addr)
+{
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
 
-            send_string("Distance = ");
-            send_string(itoa(a));
-            send_string(" cm");
+float
+__fttoee(__eeprom void *addr, float data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
 
-            send_string("\tAngle = ");
-            send_string(itoa(calcAngle()));
-            send_string(" deg");
-
-
-            send_string("\tPWM Duty Cycle = ");
-            send_string(itoa(dc));
-            send_string("\r\n");
-        }
-        else
-        {
-          send_string("Out of Range\r\n");
-        }
-        _delay((unsigned long)((400)*(2000000/4000.0)));
-    }
-
-
-
-    return;
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }

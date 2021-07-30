@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Thu Jul 29 08:09:17 2021
+                                                                                               Thu Jul 29 08:15:26 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F18877
@@ -1766,8 +1766,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1735  04A5                     l1813:
   1736  04A5                     l1815:
   1737                           
-  1738                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 449:     {;C:/Users/rocke/Desktop/PIC16-PTS/ma
-      +                          in.c: 450:         set_pwm_dc(dpsw_to_dc());
+  1738                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 450:     {;C:/Users/rocke/Desktop/PIC16-PTS/ma
+      +                          in.c: 451:         set_pwm_dc(dpsw_to_dc());
   1739  04A5  3183  2340  3184   	fcall	_dpsw_to_dc
   1740  04A8  087A               	movf	?_dpsw_to_dc+1,w
   1741  04A9  00FC               	movwf	set_pwm_dc@dc+1
@@ -1776,38 +1776,38 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1744  04AC  3181  2170  3184   	fcall	_set_pwm_dc
   1745  04AF                     l1817:
   1746                           
-  1747                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 451:         TMR0H = 0;
+  1747                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 452:         TMR0H = 0;
   1748  04AF  0140               	movlb	0	; select bank0
   1749  04B0  019D               	clrf	29	;volatile
   1750  04B1                     l1819:
   1751                           
-  1752                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 452:         TMR0L = 0;
+  1752                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 453:         TMR0L = 0;
   1753  04B1  019C               	clrf	28	;volatile
   1754  04B2                     l1821:
   1755                           
-  1756                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 453:         T0CON1bits.T0CKPS = 0b0001;
+  1756                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 454:         T0CON1bits.T0CKPS = 0b0001;
   1757  04B2  081F               	movf	31,w	;volatile
   1758  04B3  39F0               	andlw	-16
   1759  04B4  3801               	iorlw	1
   1760  04B5  009F               	movwf	31	;volatile
   1761  04B6                     l1823:
   1762                           
-  1763                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 455:         PORTBbits.RB3 = 1;
+  1763                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 456:         PORTBbits.RB3 = 1;
   1764  04B6  158D               	bsf	13,3	;volatile
   1765  04B7                     l1825:
   1766                           
-  1767                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 456:         _delay((unsigned long)((10)*(2000
+  1767                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 457:         _delay((unsigned long)((10)*(2000
       +                          000/4000000.0)));
   1768  04B7  3200               	nop2	;2 cycle nop
   1769  04B8  3200               	nop2	;2 cycle nop
   1770  04B9  0000               	nop
   1771  04BA                     l1827:
   1772                           
-  1773                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 457:         PORTBbits.RB3 = 0;
+  1773                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 458:         PORTBbits.RB3 = 0;
   1774  04BA  0140               	movlb	0	; select bank0
   1775  04BB  118D               	bcf	13,3	;volatile
   1776  04BC                     l157:	
-  1777                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 459:         while(!PORTBbits.RB4);
+  1777                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 460:         while(!PORTBbits.RB4);
   1778                           
   1779  04BC  1E0D               	btfss	13,4	;volatile
   1780  04BD  2CBF               	goto	u1951
@@ -1817,10 +1817,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1784  04C0                     u1950:
   1785  04C0                     l159:
   1786                           
-  1787                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 460:         T0CON0bits.T0EN = 1;
+  1787                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 461:         T0CON0bits.T0EN = 1;
   1788  04C0  179E               	bsf	30,7	;volatile
   1789  04C1                     l160:	
-  1790                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 461:         while(PORTBbits.RB4);
+  1790                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 462:         while(PORTBbits.RB4);
   1791                           
   1792  04C1  1A0D               	btfsc	13,4	;volatile
   1793  04C2  2CC4               	goto	u1961
@@ -1830,18 +1830,18 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1797  04C5                     u1960:
   1798  04C5                     l162:
   1799                           
-  1800                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 462:         T0CON0bits.T0EN = 0;
+  1800                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 463:         T0CON0bits.T0EN = 0;
   1801  04C5  139E               	bcf	30,7	;volatile
   1802  04C6                     l1829:
   1803                           
-  1804                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 464:         a = (TMR0L | (TMR0H<<8));
+  1804                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 465:         a = (TMR0L | (TMR0H<<8));
   1805  04C6  081D               	movf	29,w	;volatile
   1806  04C7  00CA               	movwf	_a+1
   1807  04C8  081C               	movf	28,w	;volatile
   1808  04C9  00C9               	movwf	_a
   1809  04CA                     l1831:
   1810                           
-  1811                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 465:         a = a*0.068;
+  1811                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 466:         a = a*0.068;
   1812  04CA  0849               	movf	_a,w
   1813  04CB  00F0               	movwf	___xxtofl@val
   1814  04CC  084A               	movf	_a+1,w
@@ -1888,7 +1888,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1855  04FB  00C9               	movwf	_a
   1856  04FC                     l1833:
   1857                           
-  1858                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 466:         a = a + 1;
+  1858                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 467:         a = a + 1;
   1859  04FC  0849               	movf	_a,w
   1860  04FD  3E01               	addlw	1
   1861  04FE  00C9               	movwf	_a
@@ -1897,7 +1897,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1864  0501  00CA               	movwf	_a+1
   1865  0502                     l1835:
   1866                           
-  1867                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 468:         dc = CCPR2H;
+  1867                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 469:         dc = CCPR2H;
   1868  0502  0146               	movlb	6	; select bank6
   1869  0503  0811               	movf	17,w	;volatile
   1870  0504  0140               	movlb	0	; select bank0
@@ -1909,7 +1909,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1876  050A  00C8               	movwf	main@dc+1
   1877  050B                     l1837:
   1878                           
-  1879                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 470:         if(a>=2 && a<=400)
+  1879                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 471:         if(a>=2 && a<=400)
   1880  050B  084A               	movf	_a+1,w
   1881  050C  3A80               	xorlw	128
   1882  050D  00C5               	movwf	??_main
@@ -1946,8 +1946,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1913  0526                     u1980:
   1914  0526                     l1841:
   1915                           
-  1916                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 471:         {;C:/Users/rocke/Desktop/PIC16-PT
-      +                          S/main.c: 473:             send_string("Distance = ");
+  1916                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 472:         {;C:/Users/rocke/Desktop/PIC16-PT
+      +                          S/main.c: 474:             send_string("Distance = ");
   1917  0526  3044               	movlw	low (STR_2| (0+32768))
   1918  0527  0140               	movlb	0	; select bank0
   1919  0528  00A4               	movwf	send_string@st_pt
@@ -1956,7 +1956,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1922  052B  3180  20F1  3184   	fcall	_send_string
   1923  052E                     l1843:
   1924                           
-  1925                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 474:             send_string(itoa(a));
+  1925                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 475:             send_string(itoa(a));
   1926  052E  0140               	movlb	0	; select bank0
   1927  052F  084A               	movf	_a+1,w
   1928  0530  00FA               	movwf	itoa@value+1
@@ -1970,7 +1970,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1936  053A  3180  20F1  3184   	fcall	_send_string
   1937  053D                     l1845:
   1938                           
-  1939                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 475:             send_string(" cm");
+  1939                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 476:             send_string(" cm");
   1940  053D  305F               	movlw	low (STR_3| (0+32768))
   1941  053E  0140               	movlb	0	; select bank0
   1942  053F  00A4               	movwf	send_string@st_pt
@@ -1979,7 +1979,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1945  0542  3180  20F1  3184   	fcall	_send_string
   1946  0545                     l1847:
   1947                           
-  1948                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 477:             send_string("\tAngle = ");
+  1948                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 478:             send_string("\tAngle = ");
   1949  0545  3050               	movlw	low (STR_4| (0+32768))
   1950  0546  0140               	movlb	0	; select bank0
   1951  0547  00A4               	movwf	send_string@st_pt
@@ -1988,7 +1988,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1954  054A  3180  20F1  3184   	fcall	_send_string
   1955  054D                     l1849:
   1956                           
-  1957                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 478:             send_string(itoa(calcAngle())
+  1957                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 479:             send_string(itoa(calcAngle())
       +                          );
   1958  054D  3181  2195  3184   	fcall	_calcAngle
   1959  0550  0871               	movf	?_calcAngle+1,w
@@ -2002,7 +2002,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1967  055A  00A5               	movwf	send_string@st_pt+1
   1968  055B  3180  20F1  3184   	fcall	_send_string
   1969                           
-  1970                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 479:             send_string(" deg");
+  1970                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 480:             send_string(" deg");
   1971  055E  305A               	movlw	low (STR_5| (0+32768))
   1972  055F  0140               	movlb	0	; select bank0
   1973  0560  00A4               	movwf	send_string@st_pt
@@ -2010,7 +2010,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1975  0562  00A5               	movwf	send_string@st_pt+1
   1976  0563  3180  20F1  3184   	fcall	_send_string
   1977                           
-  1978                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 482:             send_string("\tPWM Duty Cycle
+  1978                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 483:             send_string("\tPWM Duty Cycle
       +                           = ");
   1979  0566  3022               	movlw	low (STR_6| (0+32768))
   1980  0567  0140               	movlb	0	; select bank0
@@ -2020,7 +2020,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1984  056B  3180  20F1  3184   	fcall	_send_string
   1985  056E                     l1851:
   1986                           
-  1987                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 483:             send_string(itoa(dc));
+  1987                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 484:             send_string(itoa(dc));
   1988  056E  0140               	movlb	0	; select bank0
   1989  056F  0848               	movf	main@dc+1,w
   1990  0570  00FA               	movwf	itoa@value+1
@@ -2034,7 +2034,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1998  057A  3180  20F1  3184   	fcall	_send_string
   1999  057D                     l1853:
   2000                           
-  2001                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 484:             send_string("\r\n");
+  2001                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 485:             send_string("\r\n");
   2002  057D  3041               	movlw	low ((STR_8+12)| (0+32768))
   2003  057E  0140               	movlb	0	; select bank0
   2004  057F  00A4               	movwf	send_string@st_pt
@@ -2042,12 +2042,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2006  0581  00A5               	movwf	send_string@st_pt+1
   2007  0582  3180  20F1  3184   	fcall	_send_string
   2008                           
-  2009                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 485:         }
+  2009                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 486:         }
   2010  0585  2D8E               	goto	l1857
   2011  0586                     l1855:
   2012                           
-  2013                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 487:         {;C:/Users/rocke/Desktop/PIC16-PT
-      +                          S/main.c: 488:           send_string("Out of Range\r\n");
+  2013                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 488:         {;C:/Users/rocke/Desktop/PIC16-PT
+      +                          S/main.c: 489:           send_string("Out of Range\r\n");
   2014  0586  3035               	movlw	low (STR_8| (0+32768))
   2015  0587  0140               	movlb	0	; select bank0
   2016  0588  00A4               	movwf	send_string@st_pt
@@ -2056,7 +2056,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2019  058B  3180  20F1  3184   	fcall	_send_string
   2020  058E                     l1857:
   2021                           
-  2022                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 490:         _delay((unsigned long)((400)*(200
+  2022                           ;C:/Users/rocke/Desktop/PIC16-PTS/main.c: 491:         _delay((unsigned long)((400)*(200
       +                          0000/4000.0)));
   2023  058E  3002               	movlw	2
   2024  058F  0140               	movlb	0	; select bank0
@@ -5876,7 +5876,7 @@ BANK50              50      0       0     107        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Thu Jul 29 08:09:17 2021
+Symbol Table                                                                                   Thu Jul 29 08:15:26 2021
 
                         _a 0049                         l81 00BF                         l90 0109  
                        l75 00D8                         l84 00C7                         l93 00F0  
