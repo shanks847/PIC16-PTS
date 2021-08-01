@@ -68,6 +68,19 @@ TRISBbits.TRISB5 = 0;
 ANSELBbits.ANSB5 = 0; 
 LATBbits.LATB5 = 1;
 
+==========================
+
+// [MOTOR_TC_2a]
+
+__delay_ms(1000);
+send_string("[!]Connected\r\n");
+while(1){
+    send_string(itoa(dpsw_to_dc()));
+    send_string("\r\n");
+    __delay_ms(3000);
+        
+}
+
 ===============================
 
 // [MOTORSYS_TC_2b]

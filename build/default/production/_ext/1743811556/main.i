@@ -20883,17 +20883,17 @@ int calcAngle(void)
 
 
 
-    if((RB1 == 1) && (RB0 == 0))
+    if(!(RB1 == 1) && !(RB0 == 0))
     {
 
         angle = 90;
     }
-    else if((RB1 == 1) && (RB0 == 1))
+    else if(!(RB1 == 1) && !(RB0 == 1))
     {
 
         angle = 180;
     }
-    else if((RB1 == 0) && (RB0 ==1))
+    else if(!(RB1 == 0) && !(RB0 ==1))
     {
 
         angle = 270;
@@ -20908,25 +20908,6 @@ int calcAngle(void)
 }
 
 
-
-
-char itoa_opt(int x)
-{
-    switch(x)
-    {
-        case 1:return '1';
-        case 2:return '2';
-        case 3:return '3';
-        case 4:return '4';
-        case 5:return '5';
-        case 6:return '6';
-        case 7:return '7';
-        case 8:return '8';
-        case 9:return '9';
-        case 0:return '0';
-        default: return'x';
-    }
-}
 
 char *itoa(int value)
  {
@@ -20952,9 +20933,9 @@ char *itoa(int value)
      return &buffer[c];
  }
 
-int a = 0;
-# 247 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
-void set_pwm_dc(int dc)
+int distance = 0;
+# 228 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+void set_pwm_dc(uint8_t dc)
 {
         if(dc>20)
         {
@@ -20972,7 +20953,7 @@ void set_pwm_dc(int dc)
         }
 }
 
-int dpsw_to_dc(void)
+uint8_t dpsw_to_dc(void)
 {
 
     int d0;
@@ -20992,9 +20973,9 @@ int dpsw_to_dc(void)
         return 0;
     }
 
-    int num_base = 1;
-    int rem = 0;
-    int decimal_num = 5;
+    uint8_t num_base = 1;
+    uint8_t rem = 0;
+    uint8_t decimal_num = 5;
 
     while ( binary_d > 0)
     {
@@ -21008,7 +20989,6 @@ int dpsw_to_dc(void)
     return decimal_num;
 }
 
-
 void main(void){
 
 
@@ -21016,11 +20996,14 @@ void main(void){
     cfg_eusart();
     cfg_pwm();
     ranging_sys_init();
-# 443 "C:/Users/rocke/Desktop/PIC16-PTS/main.c"
+
+
+
     _delay((unsigned long)((1000)*(2000000/4000.0)));
     send_string("[*]Serial Connection successful\r\n");
 
-    int dc = 0;
+    uint8_t dc = 0;
+
 
     while(1)
     {
@@ -21038,17 +21021,18 @@ void main(void){
         while(PORTBbits.RB4);
         T0CON0bits.T0EN = 0;
 
-        a = (TMR0L | (TMR0H<<8));
-        a = a*0.068;
-        a = a + 1;
+        distance = (TMR0L | (TMR0H<<8));
+
+        distance = distance*17/250;
+        distance = distance + 1;
 
         dc = CCPR2H;
 
-        if(a>=2 && a<=400)
+        if(distance>=2 && distance<=400)
         {
 
             send_string("Distance = ");
-            send_string(itoa(a));
+            send_string(itoa(distance));
             send_string(" cm");
 
             send_string("\tAngle = ");

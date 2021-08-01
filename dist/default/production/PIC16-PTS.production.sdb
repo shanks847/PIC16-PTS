@@ -15,30 +15,26 @@
 [v _ranging_sys_init ranging_sys_init `(v  1 e 1 0 ]
 "162
 [v _calcAngle calcAngle `(i  1 e 2 0 ]
-"213
+"194
 [v _itoa itoa `(*.4uc  1 e 1 0 ]
-"247
+"228
 [v _set_pwm_dc set_pwm_dc `(v  1 e 1 0 ]
-"265
-[v _dpsw_to_dc dpsw_to_dc `(i  1 e 2 0 ]
-"302
+"246
+[v _dpsw_to_dc dpsw_to_dc `(uc  1 e 1 0 ]
+"282
 [v _main main `(v  1 e 1 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
-"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
@@ -263,25 +259,28 @@
 [v _RB1 RB1 `VEb  1 e 0 @105 ]
 "44485
 [v _TXIF TXIF `VEb  1 e 0 @14460 ]
-"237 C:/Users/rocke/Desktop/PIC16-PTS/main.c
-[v _a a `i  1 e 2 0 ]
-"302
+"218 C:/Users/rocke/Desktop/PIC16-PTS/main.c
+[v _distance distance `i  1 e 2 0 ]
+"282
 [v _main main `(v  1 e 1 0 ]
 {
-"446
-[v main@dc dc `i  1 a 2 39 ]
-"496
+"295
+[v main@dc dc `uc  1 a 1 13 ]
+"347
 } 0
-"247
+"228
 [v _set_pwm_dc set_pwm_dc `(v  1 e 1 0 ]
 {
-[v set_pwm_dc@dc dc `i  1 p 2 11 ]
-"263
+[v set_pwm_dc@dc dc `uc  1 a 1 wreg ]
+[v set_pwm_dc@dc dc `uc  1 a 1 wreg ]
+"230
+[v set_pwm_dc@dc dc `uc  1 a 1 0 ]
+"244
 } 0
 "120
 [v _send_string send_string `(v  1 e 1 0 ]
 {
-[v send_string@st_pt st_pt `*.26uc  1 p 2 4 ]
+[v send_string@st_pt st_pt `*.26uc  1 p 2 10 ]
 "124
 } 0
 "115
@@ -297,49 +296,52 @@
 {
 "158
 } 0
-"213
+"194
 [v _itoa itoa `(*.4uc  1 e 1 0 ]
 {
-"218
-[v itoa@c c `i  1 a 2 2 ]
-"216
-[v itoa@original original `i  1 a 2 0 ]
-"213
-[v itoa@value value `i  1 p 2 9 ]
-"215
+"199
+[v itoa@c c `i  1 a 2 8 ]
+"197
+[v itoa@original original `i  1 a 2 6 ]
+"194
+[v itoa@value value `i  1 p 2 4 ]
+"196
 [v itoa@buffer buffer `[12]uc  1 s 12 buffer ]
-"235
+"216
 } 0
-"265
-[v _dpsw_to_dc dpsw_to_dc `(i  1 e 2 0 ]
+"246
+[v _dpsw_to_dc dpsw_to_dc `(uc  1 e 1 0 ]
 {
-"278
-[v dpsw_to_dc@binary_d binary_d `i  1 a 2 18 ]
-"287
-[v dpsw_to_dc@decimal_num decimal_num `i  1 a 2 16 ]
-"285
-[v dpsw_to_dc@num_base num_base `i  1 a 2 14 ]
-"286
-[v dpsw_to_dc@rem rem `i  1 a 2 12 ]
-"271
-[v dpsw_to_dc@d3 d3 `i  1 a 2 10 ]
-"270
-[v dpsw_to_dc@d2 d2 `i  1 a 2 8 ]
-"269
-[v dpsw_to_dc@d1 d1 `i  1 a 2 6 ]
+"259
+[v dpsw_to_dc@binary_d binary_d `i  1 a 2 19 ]
+"252
+[v dpsw_to_dc@d3 d3 `i  1 a 2 14 ]
+"251
+[v dpsw_to_dc@d2 d2 `i  1 a 2 12 ]
+"250
+[v dpsw_to_dc@d1 d1 `i  1 a 2 10 ]
+"249
+[v dpsw_to_dc@d0 d0 `i  1 a 2 8 ]
 "268
-[v dpsw_to_dc@d0 d0 `i  1 a 2 4 ]
-"299
+[v dpsw_to_dc@decimal_num decimal_num `uc  1 a 1 18 ]
+"266
+[v dpsw_to_dc@num_base num_base `uc  1 a 1 17 ]
+"267
+[v dpsw_to_dc@rem rem `uc  1 a 1 16 ]
+"280
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
 {
-"17
-[v ___wmul@product product `ui  1 a 2 4 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
-"53
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 2 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
+"51
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -356,13 +358,13 @@
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 6 ]
-[v ___awdiv@counter counter `uc  1 a 1 5 ]
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
 "5
-[v ___awdiv@divisor divisor `i  1 p 2 0 ]
-[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+[v ___awdiv@divisor divisor `i  1 p 2 6 ]
+[v ___awdiv@dividend dividend `i  1 p 2 8 ]
 "41
 } 0
 "90 C:/Users/rocke/Desktop/PIC16-PTS/main.c
@@ -382,67 +384,13 @@
 [v calcAngle@angle angle `i  1 a 2 2 ]
 "190
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 {
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-"13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
-"12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
-"10
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
-"44
-} 0
-"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
-{
-"45
-[v ___fltol@exp1 exp1 `uc  1 a 1 36 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 35 ]
-"43
-[v ___fltol@f1 f1 `d  1 p 4 26 ]
-"70
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S796 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S801 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S804 . 4 `l 1 i 4 0 `d 1 f 4 0 `S796 1 fAsBytes 4 0 `S801 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S804  1 a 4 20 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S873 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S876 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S873 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S876  1 a 2 24 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 19 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 18 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 13 ]
-"8
-[v ___flmul@b b `d  1 p 4 0 ]
-[v ___flmul@a a `d  1 p 4 4 ]
-"205
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
-[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-{
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-"6
-[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
-"5
-[v __Umul8_16@product product `ui  1 a 2 4 ]
-"4
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
-"60
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
 } 0

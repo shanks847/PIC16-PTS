@@ -165,17 +165,17 @@ int calcAngle(void)
     
     //LDRI0 is the inner photo resistor
   
-    if((LDRI0 == 1) && (LDRI1 == 0))
+    if(!(LDRI0 == 1) && !(LDRI1 == 0))
     {
         //90 deg
         angle = 90;
     }
-    else if((LDRI0 == 1) && (LDRI1 == 1))
+    else if(!(LDRI0 == 1) && !(LDRI1 == 1))
     {
         //180 deg
         angle = 180;
     }
-    else if((LDRI0 == 0) && (LDRI1 ==1))
+    else if(!(LDRI0 == 0) && !(LDRI1 ==1))
     {
         //270deg
         angle = 270;
@@ -190,25 +190,6 @@ int calcAngle(void)
 }
 
 
-
-
-char itoa_opt(int x)
-{
-    switch(x)
-    {
-        case 1:return '1';
-        case 2:return '2';
-        case 3:return '3';
-        case 4:return '4';
-        case 5:return '5';
-        case 6:return '6';
-        case 7:return '7';
-        case 8:return '8';
-        case 9:return '9';
-        case 0:return '0';
-        default: return'x'; 
-    }
-}
 
 char *itoa(int value) 
  {
@@ -234,7 +215,7 @@ char *itoa(int value)
      return &buffer[c];
  }
 
-int a = 0; // for storing distance
+int distance = 0; // for storing distance
 
 
 /*
@@ -244,7 +225,7 @@ int a = 0; // for storing distance
  * 
  */
             
-void set_pwm_dc(int dc)
+void set_pwm_dc(uint8_t dc)
 {
         if(dc>20)
         {
@@ -262,7 +243,7 @@ void set_pwm_dc(int dc)
         }
 }
 
-int dpsw_to_dc(void)
+uint8_t dpsw_to_dc(void)
 {
     //converts the switch combination from 4DIP-SW to a duty cycle value between 0-20
     int d0;
@@ -282,9 +263,9 @@ int dpsw_to_dc(void)
         return 0;
     }
     
-    int num_base = 1;
-    int rem = 0;
-    int decimal_num = 5; //offset to allow reaching max speed at 0b1111
+    uint8_t num_base = 1;
+    uint8_t rem = 0;
+    uint8_t decimal_num = 5; //offset to allow reaching max speed at 0b1111
     
     while ( binary_d > 0)  
     {  
@@ -298,152 +279,20 @@ int dpsw_to_dc(void)
     return decimal_num;
 }
     
-
 void main(void){
     
-    
-    // Configuring the EUSART 
+
+    //Configuring the EUSART 
     cfg_eusart();
     cfg_pwm();
     ranging_sys_init();
-    
-    /*================
-     * TESTING PWM
-     * =============
-    while(1){
-    
-    set_pwm_dc(20);
-    
-    __delay_ms(5000);
-    
-    set_pwm_dc(0);
-     
-    __delay_ms(5000);
-    
-     set_pwm_dc(20);
-    }
-    */
-    
- 
-    
-    /*
-     * ================
-     * TESTING 4-DIP SW 
-     * =================
-    __delay_ms(1000);
-    send_string("[!]Connected\r\n");
-    while(1){
-        send_string(itoa(dpsw_to_dc()));
-        send_string("\r\n");
-        __delay_ms(3000);
-        
-        //if(PORTEbits.RE2 == 1){LATDbits.LATD1 = 1;}else{LATDbits.LATD1 = 0;} //testing if photo resistor working
-    }
-     * */
-//    
-    
-    
-                
-    //__delay_ms(1000);   // to avoid corrupted characters in serial tx
-    //send_string("[*]Serial Connection successful\r\n");
-    
-    //send_string(itoa(143)); //remember to add a \r\n for clean formatting
-    //angle = "90\r\n"; //the \r\n are used to go to a new line
-    //send_string("Angle: "); 
-    //send_string(angle);
-   
-    /* ===============
-     * RANGING SYSTEM
-     * =================
-     
-    TRISBbits.TRISB4 = 1; // setting port  RB0 as output and RB4 as input
-    TRISBbits.TRISB3 = 0;
-    ANSELBbits.ANSB4 = 0;
-    ANSELBbits.ANSB3 = 0;
-
-   while(1)
-    {
-        TMR0H = 0;                  //Sets the Initial Value of Timer
-        TMR0L = 0;                  //Sets the Initial Value of Timer
-        T0CON1bits.T0CKPS = 0b0001; //Resetting post scaler since TMR0L write clears it
-
-        PORTBbits.RB3 = 1;               //TRIGGER HIGH
-        __delay_us(10);               //10uS Delay
-        PORTBbits.RB3 = 0;               //TRIGGER LOW
-
-        while(!PORTBbits.RB4);           //Waiting for Echo
-        T0CON0bits.T0EN = 1;               //Timer Starts
-        while(PORTBbits.RB4);            //Waiting for Echo goes LOW
-        T0CON0bits.T0EN = 0;               //Timer Stops
-
-        a = (TMR0L | (TMR0H<<8));   //Reads Timer Value
-        a = a*0.068;                //Converts Time to Distance
-        a = a + 1; //TODO: change this value to reflect correct calibration
-        
-        if(a>=2 && a<=400)          //Check whether the result is valid or not
-        {
-
-          send_string("Distance = ");
-          send_string(itoa(a));
-          send_string(" cm\r\n");
-        }
-        else
-        {
-          send_string("Out of Range\r\n");
-        }
-        __delay_ms(400);
-    }  
-   
-    
-   
-    
-
-//    
-//    
-//    
-//    
-//    
-//    
-//    
-//     * TESTING FOR USART STRING FORMATTING AND ITOA
-//     * 
-//     *  while(1){
-//            int a = 231;
-//            int digit_0 = a%10;
-//            a = a/10;
-//            int digit_1 = a%10;
-//            a = a/10;
-//            int digit_2 = a%10;
-//            char dist_str[3] = {itoa_opt(digit_0),itoa_opt(digit_1),itoa_opt(digit_2)};
-//            send_string("Distance = ");
-//            send_string(dist_str);
-//            send_string(" cm");
-//            send_string("\r\n");
-//            __delay_ms(1000);
-//        }   
-//     */
-
-    
-    /* Testing Angle system
-    
-    __delay_ms(1000);   // to avoid corrupted characters in serial tx
-    send_string("[*]Serial Connection successful\r\n");
-    
-    while(1){
-        send_string("Angle = ");
-        send_string(itoa(calcAngle()));
-        send_string(" deg\r\n");
-        __delay_ms(1000);
-    }
-    */
-    
     
     
     // INTEGRATION TEST
     __delay_ms(1000);   // to avoid corrupted characters in serial tx
     send_string("[*]Serial Connection successful\r\n");
     
-    int dc = 0;
+    uint8_t dc = 0; //duty cycle
     
     
     while(1)
@@ -462,17 +311,18 @@ void main(void){
         while(PORTBbits.RB4);            //Waiting for Echo goes LOW
         T0CON0bits.T0EN = 0;               //Timer Stops
 
-        a = (TMR0L | (TMR0H<<8));   //Reads Timer Value
-        a = a*0.068;                //Converts Time to Distance
-        a = a + 1; //TODO: change this value to reflect correct calibration
+        distance = (TMR0L | (TMR0H<<8));   //Reads Timer Value
+        //a = a*0.068
+        distance = distance*17/250;                //Converts Time to Distance and avoids conversion error
+        distance = distance + 1; // Offset obtained via calibration
         
         dc = CCPR2H; // duty cycle
         
-        if(a>=2 && a<=400)          //Check whether the result is valid or not
+        if(distance>=2 && distance<=400)          //Check whether the result is valid or not
         {
 
             send_string("Distance = ");
-            send_string(itoa(a));
+            send_string(itoa(distance));
             send_string(" cm");
           
             send_string("\tAngle = ");
@@ -491,8 +341,8 @@ void main(void){
         __delay_ms(400);
     }  
     
-    
-    
+   
+   
     return;
 }
 
